@@ -1,0 +1,29 @@
+# Dados e índices (não versionar conteúdo, apenas a estrutura de pastas)
+data/**
+!data/**/
+!data/**/.gitkeep
+
+# Credenciais / segredos
+.env
+kaggle.json
+*-key.json
+service-account*.json
+.streamlit/secrets.toml
+
+# Cache das respostas do modelo de linguagem
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários do Office
+~$*
