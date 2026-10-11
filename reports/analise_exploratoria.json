@@ -82,12 +82,12 @@
     }
   },
   "informatividade": {
-    "avaliacoes_com_algum_texto": 42293,
+    "avaliacoes_com_algum_texto": 42370,
     "so_elogio_generico": 6294,
     "pct_so_elogio_generico": 14.9,
     "nota_media_genericos": 4.66,
     "nota_media_demais": 3.54,
-    "sem_nenhuma_palavra": 42,
+    "sem_nenhuma_palavra": 119,
     "previsao_base_de_conhecimento": 35957
   },
   "ruido": {
@@ -121,7 +121,7 @@
       "pct_com_nota_1_2": 28.0
     },
     "Não recebeu o produto": {
-      "comentarios": 3266,
+      "comentarios": 3268,
       "pct_dos_comentarios": 8.0,
       "pct_com_nota_1_2": 86.0
     },

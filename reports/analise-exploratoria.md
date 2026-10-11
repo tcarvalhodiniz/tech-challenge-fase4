@@ -15,7 +15,7 @@ gerados por `python -m src.preparacao.exploracao`.
 | Com título | 11.519 |
 | Só título, sem comentário | 1.721 |
 | Sem título e sem comentário | 56.021 |
-| Com algum texto | 42.293 |
+| Com título ou comentário | 42.389 |
 | Previsão para a base de conhecimento | 35.957 |
 
 As avaliações vão de 02/10/2016 a 31/08/2018.
