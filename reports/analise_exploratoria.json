@@ -1,0 +1,160 @@
+{
+  "volume": {
+    "linhas_no_arquivo": 99224,
+    "review_id_unicos": 98410,
+    "review_id_repetidos": 789,
+    "linhas_removidas_na_deduplicacao": 814,
+    "repetidos_com_nota_ou_texto_diferente": 0,
+    "pedidos_com_mais_de_uma_avaliacao": 547,
+    "periodo": [
+      "2016-10-02",
+      "2018-08-31"
+    ]
+  },
+  "cobertura": {
+    "avaliacoes": 98410,
+    "com_comentario": 40668,
+    "com_titulo": 11519,
+    "com_titulo_e_comentario": 9798,
+    "so_titulo": 1721,
+    "sem_texto": 56021,
+    "pct_com_comentario": 41.3
+  },
+  "vies_de_selecao": {
+    "pct_com_comentario_por_nota": {
+      "1": 76.6,
+      "2": 68.0,
+      "3": 43.6,
+      "4": 31.3,
+      "5": 35.9
+    },
+    "distribuicao_notas_todas": {
+      "1": 11.5,
+      "2": 3.2,
+      "3": 8.2,
+      "4": 19.3,
+      "5": 57.8
+    },
+    "distribuicao_notas_com_comentario": {
+      "1": 21.2,
+      "2": 5.2,
+      "3": 8.7,
+      "4": 14.6,
+      "5": 50.3
+    },
+    "pct_notas_1_2_todas": 14.6,
+    "pct_notas_1_2_com_comentario": 26.5
+  },
+  "tamanho": {
+    "caracteres_mediana": 53,
+    "caracteres_p90": 161,
+    "caracteres_max": 208,
+    "palavras_mediana": 9,
+    "palavras_p90": 28,
+    "exatamente_no_limite": 654,
+    "a_ate_5_do_limite": 1719,
+    "pct_a_ate_5_do_limite": 4.2
+  },
+  "repeticao": {
+    "textos_unicos": 33674,
+    "pct_textos_unicos": 82.8,
+    "mais_repetidos": {
+      "muito bom": 594,
+      "bom": 367,
+      "recomendo": 314,
+      "otimo": 239,
+      "ótimo": 223,
+      "excelente": 213,
+      "ok": 158,
+      "(sem palavras)": 150,
+      "tudo ok": 131,
+      "ótimo produto": 127,
+      "boa": 93,
+      "gostei": 86,
+      "não recebi o produto": 82,
+      "tudo certo": 80,
+      "bom produto": 77,
+      "chegou antes do prazo": 70,
+      "gostei muito": 67,
+      "super recomendo": 63,
+      "entrega rápida": 63,
+      "adorei": 62
+    }
+  },
+  "informatividade": {
+    "avaliacoes_com_algum_texto": 42293,
+    "so_elogio_generico": 6294,
+    "pct_so_elogio_generico": 14.9,
+    "nota_media_genericos": 4.66,
+    "nota_media_demais": 3.54,
+    "sem_nenhuma_palavra": 42,
+    "previsao_base_de_conhecimento": 35957
+  },
+  "ruido": {
+    "quebra_de_linha": 3806,
+    "tudo_maiusculo": 1096,
+    "letra_repetida_3x": 256,
+    "emoji": 288
+  },
+  "dados_pessoais": {
+    "e-mail": 0,
+    "celular": 2,
+    "link": 2,
+    "CPF": 0
+  },
+  "termos_de_instrucao": 82,
+  "lojas_anonimizadas": 1951,
+  "temas_por_palavra_chave": {
+    "Entrega e prazo": {
+      "comentarios": 18626,
+      "pct_dos_comentarios": 45.8,
+      "pct_com_nota_1_2": 26.0
+    },
+    "Atendimento e vendedor": {
+      "comentarios": 4322,
+      "pct_dos_comentarios": 10.6,
+      "pct_com_nota_1_2": 36.0
+    },
+    "Qualidade e defeito": {
+      "comentarios": 3856,
+      "pct_dos_comentarios": 9.5,
+      "pct_com_nota_1_2": 28.0
+    },
+    "Não recebeu o produto": {
+      "comentarios": 3266,
+      "pct_dos_comentarios": 8.0,
+      "pct_com_nota_1_2": 86.0
+    },
+    "Troca e devolução": {
+      "comentarios": 1531,
+      "pct_dos_comentarios": 3.8,
+      "pct_com_nota_1_2": 78.0
+    },
+    "Embalagem": {
+      "comentarios": 1360,
+      "pct_dos_comentarios": 3.3,
+      "pct_com_nota_1_2": 18.0
+    },
+    "Produto errado ou diferente": {
+      "comentarios": 1220,
+      "pct_dos_comentarios": 3.0,
+      "pct_com_nota_1_2": 70.0
+    },
+    "Preço": {
+      "comentarios": 1372,
+      "pct_dos_comentarios": 3.4,
+      "pct_com_nota_1_2": 19.0
+    },
+    "Item faltando": {
+      "comentarios": 653,
+      "pct_dos_comentarios": 1.6,
+      "pct_com_nota_1_2": 65.0
+    }
+  },
+  "figuras": [
+    "images/01_comentario_por_nota.png",
+    "images/02_tamanho_comentarios.png",
+    "images/03_comentarios_mais_repetidos.png",
+    "images/04_temas_por_palavra_chave.png"
+  ]
+}
