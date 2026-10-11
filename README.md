@@ -52,7 +52,20 @@ mil pedidos feitos entre 2016 e 2018. O foco está no arquivo de avaliações
 (`olist_order_reviews_dataset.csv`), que traz a nota, o título e o comentário
 escrito pelo cliente.
 
-_Volume, cobertura de comentários e qualidade do texto: Passo 2._
+| | Avaliações |
+|---|---|
+| Linhas no arquivo | 99.224 |
+| `review_id` únicos | 98.410 |
+| Com algum texto (título ou comentário) | 42.293 |
+| Previsão para a base de conhecimento | 35.957 |
+
+Duas características da base orientam todo o projeto:
+
+- **Quem escreve está mais insatisfeito que a média.** As notas 1 e 2 são 14,6%
+  das avaliações e 26,5% dos comentários. A base de conhecimento representa quem
+  comentou, não todos os clientes.
+- **Os comentários são curtos.** Mediana de 53 caracteres e teto de 200 imposto
+  pela plataforma.
 
 ## 4. Arquitetura
 
@@ -60,7 +73,25 @@ _Preenchido no Passo 10._
 
 ## 5. Preparação da base de conhecimento
 
-_Preenchido nos Passos 2 e 3._
+### Análise exploratória
+
+Relatório completo em [`reports/analise-exploratoria.md`](reports/analise-exploratoria.md)
+e percurso em [`notebooks/01_analise_exploratoria.ipynb`](notebooks/01_analise_exploratoria.ipynb).
+
+| Achado | Consequência |
+|---|---|
+| 789 `review_id` registrados em dois pedidos, sempre com o mesmo texto | Uma avaliação por `review_id`, para a mesma reclamação não pesar em dobro |
+| 56.021 avaliações sem título nem comentário | Ficam fora da base: não há texto para servir de evidência |
+| 6.294 avaliações (14,9% das com texto) são só elogio genérico, como "muito bom" | Saem da base. O critério é o vocabulário, não o tamanho: "não recebi" tem duas palavras e fica |
+| Comentários de até 200 caracteres | Cada avaliação é um documento inteiro, sem divisão em pedaços |
+| 2 celulares pessoais e 2 links | Mascarados antes da indexação |
+| 82 textos com termos como "ignorar" ou "desconsiderar", todos legítimos | As avaliações entram no prompt como dado delimitado, nunca como instrução |
+| Entrega aparece em 45,8% dos comentários, só 26% deles com nota baixa | A recuperação precisa separar elogio de reclamação sobre o mesmo tema |
+| Nomes de lojas anonimizados ("lannister", "stark") | Perguntas sobre uma loja pelo nome real não têm resposta |
+
+### Construção da base
+
+_Preenchido no Passo 3._
 
 ## 6. Pipeline RAG
 
@@ -94,6 +125,13 @@ _Preenchido no Passo 9._
 | Interface | Streamlit |
 
 ## 12. Decisões técnicas
+
+| Decisão | Justificativa |
+|---|---|
+| Embeddings gerados localmente | Dezenas de milhares de textos pela API do Gemini estourariam a cota gratuita; local, o índice é reproduzível sem chave |
+| Uma avaliação por documento, sem divisão em pedaços | Comentários têm no máximo 200 caracteres, e dividir quebraria a ligação entre a evidência e a avaliação de origem |
+| Exclusão de elogio genérico pelo vocabulário | Um corte por tamanho eliminaria "não recebi" e "entrega rápida", que estão entre as evidências mais úteis |
+| Frequências sempre referidas aos comentários | Notas baixas pesam quase o dobro na base de texto do que entre os clientes |
 
 _Atualizado a cada passo._
 
@@ -139,7 +177,14 @@ pip install -r requirements.txt
 cp .env.example .env    # preencha GOOGLE_API_KEY
 ```
 
-_Os comandos de cada etapa entram aqui à medida que os passos forem concluídos._
+**Etapas**
+
+```bash
+python -m src.preparacao.carga         # baixa a base do Kaggle para data/raw (sem login)
+python -m src.preparacao.exploracao    # números e figuras da análise exploratória
+```
+
+_Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._
 
 ---
 
