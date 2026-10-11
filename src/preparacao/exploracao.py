@@ -285,8 +285,8 @@ def _salvar(fig, nome: str) -> str:
 def fig_comentario_por_nota(r: dict) -> str:
     v = r["vies_de_selecao"]
     taxa = v["pct_com_comentario_por_nota"]
-    fig, ax = _eixo("Quem dá nota baixa escreve mais",
-                    "Percentual de avaliações que trazem comentário, por nota")
+    fig, ax = _eixo("Avaliações com comentário, por nota",
+                    "Percentual de avaliações que têm comentário em cada nota")
     fig.subplots_adjust(top=0.80)
     notas = list(taxa.keys())
     barras = ax.bar([str(n) for n in notas], list(taxa.values()), width=0.55, color=COR["serie"])
@@ -307,16 +307,15 @@ def fig_comentario_por_nota(r: dict) -> str:
 def fig_tamanho(df: pd.DataFrame, r: dict) -> str:
     t = r["tamanho"]
     tamanho = df["review_comment_message"].dropna().str.len()
-    fig, ax = _eixo("Comentários curtos, com teto de 200 caracteres",
-                    f"Distribuição do tamanho dos comentários · mediana de {t['caracteres_mediana']} "
-                    f"caracteres ({t['palavras_mediana']} palavras)")
+    fig, ax = _eixo("Tamanho dos comentários",
+                    f"Mediana de {t['caracteres_mediana']} caracteres ({t['palavras_mediana']} palavras)")
     fig.subplots_adjust(top=0.80)
     # Faixas de 5 caracteres terminando em 201, para que os comentários com
     # exatamente 200 fiquem na última faixa antes da linha do limite
     ax.hist(tamanho, bins=range(1, 216, 5), color=COR["serie"], edgecolor=COR["fundo"], linewidth=1)
     ax.axvline(LIMITE_CARACTERES + 1, color=COR["texto_sec"], ls="--", lw=1.2)
     ax.text(LIMITE_CARACTERES - 4, ax.get_ylim()[1] * 0.92,
-            f"limite da plataforma\n{t['exatamente_no_limite']} comentários com exatamente 200",
+            f"limite de 200 caracteres\n{t['exatamente_no_limite']} comentários com esse tamanho",
             ha="right", va="top", fontsize=10, color=COR["texto_sec"])
     ax.set_xlabel("Caracteres", color=COR["texto_sec"])
     ax.set_ylabel("Comentários", color=COR["texto_sec"])
@@ -330,9 +329,8 @@ def fig_repetidos(r: dict) -> str:
     itens = itens[:14][::-1]
     i = r["informatividade"]
     milhar = f"{i['so_elogio_generico']:,}".replace(",", ".")
-    fig, ax = _eixo("Entre os textos mais repetidos, só um diz o que aconteceu",
-                    f"Comentários mais frequentes · {milhar} avaliações "
-                    f"({pct(i['pct_so_elogio_generico'])}) são só elogio genérico",
+    fig, ax = _eixo("Comentários mais repetidos",
+                    f"{milhar} avaliações ({pct(i['pct_so_elogio_generico'])}) têm só elogio genérico",
                     figsize=(9, 6))
     fig.subplots_adjust(top=0.84, left=0.24)
     cores = [COR["serie"] if eh_generico(t) else COR["destaque"] for t, _ in itens]
@@ -343,18 +341,18 @@ def fig_repetidos(r: dict) -> str:
     ax.set_xticks([])
     ax.spines["bottom"].set_visible(False)
     from matplotlib.patches import Patch
-    ax.legend(handles=[Patch(color=COR["serie"], label="só elogio genérico"),
-                       Patch(color=COR["destaque"], label="descreve algo da experiência")],
+    ax.legend(handles=[Patch(color=COR["serie"], label="elogio genérico"),
+                       Patch(color=COR["destaque"], label="outros")],
               loc="lower right", frameon=False, fontsize=10, labelcolor=COR["texto"])
     return _salvar(fig, "03_comentarios_mais_repetidos.png")
 
 
 def fig_temas(r: dict) -> str:
     temas = sorted(r["temas_por_palavra_chave"].items(), key=lambda kv: kv[1]["pct_dos_comentarios"])
-    fig, ax = _eixo("Entrega domina os comentários, para o bem e para o mal",
-                    "Percentual de comentários que citam cada tema · estimativa por palavras-chave;\n"
-                    "um comentário pode citar mais de um tema", figsize=(9, 5.5))
-    fig.subplots_adjust(top=0.80, left=0.27)
+    fig, ax = _eixo("Temas mais citados nos comentários",
+                    "Estimativa por palavras-chave. Um comentário pode citar mais de um tema.",
+                    figsize=(9, 5.5))
+    fig.subplots_adjust(top=0.84, left=0.27)
     nomes = [t for t, _ in temas]
     valores = [d["pct_dos_comentarios"] for _, d in temas]
     ax.barh(nomes, valores, height=0.6, color=COR["serie"])
