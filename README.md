@@ -52,8 +52,8 @@ cada avaliação.
 |---|---|
 | Linhas no arquivo | 99.224 |
 | `review_id` únicos | 98.410 |
-| Com algum texto (título ou comentário) | 42.293 |
-| Previsão para a base de conhecimento | 35.957 |
+| Com título ou comentário | 42.389 |
+| Documentos na base de conhecimento | 35.957 |
 
 Dois pontos da base influenciam o projeto:
 
@@ -88,7 +88,38 @@ e a análise passo a passo em
 
 ### Construção da base
 
-_Preenchido no Passo 3._
+A base é gerada por `python -m src.preparacao.base_conhecimento`, que aplica as
+regras da análise exploratória. O relatório está em
+[`reports/base-de-conhecimento.md`](reports/base-de-conhecimento.md).
+
+| Etapa | Avaliações |
+|---|---|
+| Linhas no arquivo | 99.224 |
+| Uma avaliação por `review_id` | 98.410 |
+| Com título ou comentário | 42.389 |
+| Com pelo menos uma palavra | 42.251 |
+| Sem os elogios genéricos | 35.957 |
+
+Cada documento da base tem dois campos: `review_id`, que identifica a avaliação de
+origem, e `texto`, com o título e o comentário juntos.
+
+Tratamento do texto:
+
+- Quando a avaliação só tem título ou só tem comentário, o texto é o campo que
+  existe. Avaliações sem os dois não entram na base.
+- Título e comentário são unidos em um texto. O título fica de fora quando já está
+  contido no comentário.
+- Quebras de linha e espaços repetidos são trocados por um espaço. Maiúsculas,
+  pontuação e emojis são mantidos.
+- Celular, link, e-mail e CPF são trocados por marcadores como `[CELULAR]`. Foram
+  alterados 4 textos.
+
+2.798 documentos têm o mesmo texto de outro documento, como "não recebi o produto".
+Eles foram mantidos, porque cada um é a avaliação de um cliente diferente.
+
+Antes de gravar, a base passa por seis checagens: `review_id` sem valor nulo e sem
+repetição, e texto sem vazio, sem quebra de linha, sem dado pessoal e sem elogio
+genérico. Se alguma falhar, a execução é interrompida.
 
 ## 6. Pipeline RAG
 
@@ -128,6 +159,8 @@ _Preenchido no Passo 9._
 | Embeddings gerados localmente | A quantidade de textos ultrapassaria a cota gratuita da API do Gemini. Rodando local, o índice pode ser recriado sem chave de API |
 | Uma avaliação por documento | Os comentários têm no máximo 200 caracteres, e dividir o texto dificultaria identificar a avaliação de origem |
 | Elogio genérico identificado por lista de palavras | Um corte por tamanho também tiraria comentários curtos e úteis, como "não recebi" e "entrega rápida" |
+| Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
+| Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
 
 _Atualizado a cada passo._
@@ -149,7 +182,7 @@ tech-challenge-fase4/
 │   └── indice/        # índices FAISS e BM25
 ├── notebooks/         # análise exploratória
 ├── src/
-│   ├── preparacao/    # seleção, limpeza e montagem dos documentos
+│   ├── preparacao/    # carga, análise exploratória e base de conhecimento
 │   ├── indexacao/     # embeddings e índices de busca
 │   ├── recuperacao/   # transformação da pergunta e busca híbrida
 │   ├── geracao/       # contexto, resposta com citações e recusa
@@ -179,6 +212,7 @@ cp .env.example .env    # preencha GOOGLE_API_KEY
 ```bash
 python -m src.preparacao.carga         # baixa a base do Kaggle para data/raw (sem login)
 python -m src.preparacao.exploracao    # números e figuras da análise exploratória
+python -m src.preparacao.base_conhecimento   # monta a base em data/processed
 ```
 
 _Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._

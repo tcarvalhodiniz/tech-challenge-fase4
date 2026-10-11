@@ -1,0 +1,26 @@
+{
+  "etapas": {
+    "linhas_no_arquivo": 99224,
+    "review_id_unicos": 98410,
+    "com_titulo_ou_comentario": 42389,
+    "com_pelo_menos_uma_palavra": 42251,
+    "sem_elogio_generico": 35957,
+    "textos_com_dado_mascarado": 4,
+    "documentos_na_base": 35957
+  },
+  "checagens": {
+    "review_id_sem_nulo": true,
+    "review_id_sem_repeticao": true,
+    "texto_sem_vazio": true,
+    "texto_sem_quebra_de_linha": true,
+    "texto_sem_dado_pessoal": true,
+    "texto_sem_elogio_generico": true
+  },
+  "perfil": {
+    "caracteres_mediana": 63,
+    "caracteres_max": 229,
+    "palavras_mediana": 10,
+    "textos_distintos": 33870,
+    "documentos_com_texto_repetido": 2798
+  }
+}

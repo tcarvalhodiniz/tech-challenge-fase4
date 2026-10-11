@@ -2,11 +2,8 @@
 Análise exploratória das avaliações da Olist.
 
 Gera os números de reports/analise_exploratoria.json e as figuras de images/.
-Cada achado daqui vira uma regra de seleção ou de limpeza no Passo 3.
-
-A normalização de texto usa o módulo `re` do Python, via `map`, e não os
-métodos de `Series.str`: no pandas 3 eles rodam no PyArrow, em que `\\w` não
-reconhece letras acentuadas.
+Os resultados daqui definem as regras de seleção e limpeza da base de
+conhecimento.
 """
 
 import json
@@ -22,26 +19,12 @@ import pandas as pd
 
 from config import settings
 from src.preparacao.carga import carregar_avaliacoes
+from src.preparacao.texto import (DADOS_PESSOAIS, VOCAB_GENERICO, eh_generico, montar_texto,
+                                  normalizar, tem_cpf, tokens)
 
 # ---------------------------------------------------------------------------
-# Vocabulário e padrões
+# Padrões usados só na análise
 # ---------------------------------------------------------------------------
-
-# Palavras que expressam satisfação sem dizer com o quê. Um comentário formado
-# só por elas ("muito bom", "recomendo", "ótimo produto") não serve de
-# evidência para nenhuma pergunta sobre a experiência. A lista é conservadora:
-# na dúvida a palavra fica de fora, e o comentário é mantido.
-VOCAB_GENERICO = set("""
-bom boa bons boas muito muita mto mt ótimo ótima otimo otima excelente
-excelentes recomendo recomendado recomendaria super ok okay tudo certo
-certinho gostei amei adorei legal perfeito perfeita top show nota dez
-parabéns parabens satisfeito satisfeita obrigado obrigada grato grata
-produto produtos compra loja maravilhoso maravilhosa lindo linda bem beleza
-sim aprovado aprovei bastante sem comentário comentários comentario
-comentarios nada declarar todos todas
-e o a os as de do da dos das um uma em no na com para pelo pela eu estou
-fiquei foi é está sou
-""".split())
 
 # Temas por palavras-chave. É uma estimativa grosseira e independente do RAG:
 # serve de referência para conferir, no Passo 8, se as respostas sobre
@@ -59,16 +42,6 @@ TEMAS = {
     "Item faltando": r"faltou|faltando|incomplet",
 }
 
-# Padrões estreitos de propósito, para não confundir com número de pedido ou
-# data: o celular exige DDD seguido de 9, e o CPF candidato só conta se o
-# dígito verificador fechar.
-DADOS_PESSOAIS = {
-    "e-mail": r"[\w.+-]+@[\w-]+\.[\w.]+",
-    "celular": r"(?<!\d)\(?\d{2}\)?[\s-]?9\d{4}[\s-]?\d{4}(?!\d)",
-    "link": r"https?://\S+|www\.\S+",
-}
-CANDIDATO_CPF = r"(?<!\d)\d{3}\.?\d{3}\.?\d{3}-?\d{2}(?!\d)"
-
 # Termos que fariam um texto parecer instrução para o modelo de linguagem.
 TERMOS_INSTRUCAO = r"ignor|instru[cç]|desconsider|prompt|system|assistente|responda|esque[cç]a"
 
@@ -78,42 +51,12 @@ LOJAS_ANONIMIZADAS = r"\b(lannister|targaryen|stark|baratheon|tyrell|martell|gre
 LIMITE_CARACTERES = 200
 
 # ---------------------------------------------------------------------------
-# Funções de texto
+# Funções auxiliares
 # ---------------------------------------------------------------------------
-
-
-def tokens(texto: str) -> list[str]:
-    return re.findall(r"\w+", texto.lower())
-
-
-def normalizar(texto: str) -> str:
-    """Minúsculas, sem pontuação e com espaços simples. Só para comparar textos."""
-    return " ".join(tokens(texto))
-
-
-def eh_generico(texto: str) -> bool:
-    """Verdadeiro quando todas as palavras são genéricas ou números soltos ("10", "nota 1000")."""
-    tk = tokens(texto)
-    return len(tk) > 0 and all(t in VOCAB_GENERICO or t.isdigit() for t in tk)
 
 
 def contem(serie: pd.Series, padrao: str) -> pd.Series:
     return serie.map(lambda t: bool(re.search(padrao, t, flags=re.IGNORECASE)))
-
-
-def cpf_valido(candidato: str) -> bool:
-    d = [int(c) for c in re.sub(r"\D", "", candidato)]
-    if len(d) != 11 or len(set(d)) == 1:
-        return False
-    for pos in (9, 10):
-        resto = sum(d[i] * (pos + 1 - i) for i in range(pos)) % 11
-        if d[pos] != (0 if resto < 2 else 11 - resto):
-            return False
-    return True
-
-
-def tem_cpf(texto: str) -> bool:
-    return any(cpf_valido(c) for c in re.findall(CANDIDATO_CPF, texto))
 
 
 def tem_emoji(texto: str) -> bool:
@@ -121,10 +64,10 @@ def tem_emoji(texto: str) -> bool:
 
 
 def texto_completo(df: pd.DataFrame) -> pd.Series:
-    """Título e comentário juntos, como vão compor o documento no Passo 3."""
-    titulo = df["review_comment_title"].fillna("").str.strip()
-    comentario = df["review_comment_message"].fillna("").str.strip()
-    return (titulo + ". " + comentario).str.strip(". ").str.strip()
+    """Título e comentário juntos, do mesmo jeito que entram na base de conhecimento."""
+    titulos = df["review_comment_title"].fillna("")
+    comentarios = df["review_comment_message"].fillna("")
+    return pd.Series([montar_texto(t, c) for t, c in zip(titulos, comentarios)], index=df.index)
 
 
 # ---------------------------------------------------------------------------
