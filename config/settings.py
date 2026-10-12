@@ -38,7 +38,9 @@ ARQUIVO_AVALIACOES = "olist_order_reviews_dataset.csv"
 #   estourariam a cota gratuita, e local o índice é reproduzível sem chave.
 #   A geração usa o Gemini, configurável pelo .env.
 # ---------------------------------------------------------------------------
-MODELO_EMBEDDINGS = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+MODELO_EMBEDDINGS = os.getenv(
+    "MODELO_EMBEDDINGS", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+)
 MODELO_GERACAO = os.getenv("GEMINI_CHAT_MODEL", "gemini-flash-lite-latest")
 
 SEMENTE = 42
