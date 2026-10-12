@@ -123,7 +123,37 @@ genérico. Se alguma falhar, a execução é interrompida.
 
 ## 6. Pipeline RAG
 
-_Preenchido nos Passos 4 e 5._
+### Embeddings e indexação
+
+Os índices são gerados por `python -m src.indexacao.indice`. O relatório está em
+[`reports/indexacao.md`](reports/indexacao.md).
+
+| | |
+|---|---|
+| Documentos indexados | 35.957 |
+| Modelo de embeddings | `paraphrase-multilingual-MiniLM-L12-v2`, com vetores de 384 posições |
+| Índice vetorial | FAISS com busca exata, 55 MB em disco |
+| Índice de palavras | BM25, montado na carga |
+| Tempo para gerar os vetores | cerca de 16 segundos com GPU (Mac) e 50 segundos em CPU |
+| Tempo de uma busca | 13 ms em cada índice |
+
+O projeto usa dois índices porque as duas buscas acertam em casos diferentes. A
+busca por significado encontra frases escritas com outras palavras: para "cliente
+não recebeu o que comprou" ela traz "O produto não foi entregue". A busca por
+palavras acerta quando o termo exato importa: para "vendedor não respondeu às
+mensagens" ela traz "Não respondeu nenhum de meus e-mails".
+
+Na busca por palavras os acentos são retirados, porque os clientes escrevem
+"ótimo" e "otimo", "não" e "nao". Palavras muito comuns também são retiradas, com
+exceção de "não", que muda o sentido da frase.
+
+O índice guarda uma assinatura da base de conhecimento e o nome do modelo. Se a
+base mudar ou o modelo for outro, o programa não carrega o índice antigo e pede
+para gerar de novo.
+
+### Recuperação
+
+_Preenchido no Passo 5._
 
 ## 7. Respostas fundamentadas em evidências
 
@@ -159,6 +189,9 @@ _Preenchido no Passo 9._
 | Embeddings gerados localmente | A quantidade de textos ultrapassaria a cota gratuita da API do Gemini. Rodando local, o índice pode ser recriado sem chave de API |
 | Uma avaliação por documento | Os comentários têm no máximo 200 caracteres, e dividir o texto dificultaria identificar a avaliação de origem |
 | Elogio genérico identificado por lista de palavras | Um corte por tamanho também tiraria comentários curtos e úteis, como "não recebi" e "entrega rápida" |
+| Modelo de embeddings multilíngue | Os comentários estão em português, e o modelo foi treinado para reconhecer frases com o mesmo sentido em vários idiomas |
+| Índice vetorial com busca exata | Com 35.957 vetores a busca exata leva 13 ms. Um índice aproximado seria mais rápido, mas pode deixar de fora um documento relevante |
+| Busca por palavras sem acento e com a palavra "não" | Os clientes escrevem a mesma palavra com e sem acento, e "não recebi" tem sentido oposto a "recebi" |
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
@@ -199,6 +232,8 @@ tech-challenge-fase4/
 - Python 3.12
 - Chave gratuita da API do Gemini, gerada no
   [Google AI Studio](https://aistudio.google.com/apikey)
+- Cerca de 500 MB livres para o modelo de embeddings, baixado do Hugging Face na
+  primeira execução
 
 ```bash
 python3.12 -m venv .venv
@@ -213,6 +248,7 @@ cp .env.example .env    # preencha GOOGLE_API_KEY
 python -m src.preparacao.carga         # baixa a base do Kaggle para data/raw (sem login)
 python -m src.preparacao.exploracao    # números e figuras da análise exploratória
 python -m src.preparacao.base_conhecimento   # monta a base em data/processed
+python -m src.indexacao.indice               # gera os embeddings e o índice em data/indice
 ```
 
 _Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._

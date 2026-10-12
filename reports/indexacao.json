@@ -1,0 +1,168 @@
+{
+  "indice": {
+    "modelo": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dispositivo": "mps:0",
+    "documentos": 35957,
+    "dimensao": 384,
+    "segundos_para_gerar_embeddings": 15.6,
+    "tamanho_do_indice_mb": 55.2,
+    "assinatura_da_base": "b5c04767e097f88ae5c17d5e6df0f112dde889b0ab01484c30ee33b07c318f7a"
+  },
+  "segundos_para_carregar": 4.7,
+  "consultas": {
+    "problemas com a entrega do pedido": {
+      "vetorial": [
+        {
+          "pontuacao": 0.759,
+          "texto": "Eficiente do pedido a entrega"
+        },
+        {
+          "pontuacao": 0.758,
+          "texto": "Nao entrega o pedido no prazo certo"
+        },
+        {
+          "pontuacao": 0.751,
+          "texto": "Pedido e entrega sem detalhes"
+        }
+      ],
+      "lexical": [
+        {
+          "pontuacao": 10.04,
+          "texto": "Sem problemas na execução do pedido, satisfação."
+        },
+        {
+          "pontuacao": 10.04,
+          "texto": "Pedido chegou no Prazo sem problemas"
+        },
+        {
+          "pontuacao": 8.809,
+          "texto": "Problemas. Entregaram apenas um produto dos quatro itens do pedido... Quero o restante do pedido... Cadê?"
+        }
+      ]
+    },
+    "produto chegou com defeito": {
+      "vetorial": [
+        {
+          "pontuacao": 0.993,
+          "texto": "produto veio com defeito"
+        },
+        {
+          "pontuacao": 0.986,
+          "texto": "O produto veio com defeito"
+        },
+        {
+          "pontuacao": 0.986,
+          "texto": "O produto veio com defeito"
+        }
+      ],
+      "lexical": [
+        {
+          "pontuacao": 8.981,
+          "texto": "Um dos bonecos chegou com defeito"
+        },
+        {
+          "pontuacao": 8.662,
+          "texto": "Produto chegou com um pequeno defeito."
+        },
+        {
+          "pontuacao": 8.662,
+          "texto": "Minha queixa é que o produto chegou com defeito."
+        }
+      ]
+    },
+    "cliente não recebeu o que comprou": {
+      "vetorial": [
+        {
+          "pontuacao": 0.792,
+          "texto": "Descaso com o cliente. O produto não foi entregue."
+        },
+        {
+          "pontuacao": 0.741,
+          "texto": "Não entregaram o produto comprado"
+        },
+        {
+          "pontuacao": 0.726,
+          "texto": "O produto não chegou à unidade dos correios. Invés de tomar a responsabilidade para si e estonar o valor, a loja disse que só faria o estorno após receber de volta o objeto. Sou cliente não entregador"
+        }
+      ],
+      "lexical": [
+        {
+          "pontuacao": 11.067,
+          "texto": "minha filha que comprou e gostou"
+        },
+        {
+          "pontuacao": 10.764,
+          "texto": "Não recebeu o produto HP"
+        },
+        {
+          "pontuacao": 10.369,
+          "texto": "Tudo certinho. Comprou chegou."
+        }
+      ]
+    },
+    "entrega mais rápida que o esperado": {
+      "vetorial": [
+        {
+          "pontuacao": 0.869,
+          "texto": "mais rápido que o esperado"
+        },
+        {
+          "pontuacao": 0.866,
+          "texto": "A entrega foi mais rápida que o previsto."
+        },
+        {
+          "pontuacao": 0.865,
+          "texto": "Produto entregue mais rápido doq esperado"
+        }
+      ],
+      "lexical": [
+        {
+          "pontuacao": 14.075,
+          "texto": "Excelente produto, entrega mais rápida do que o esperado"
+        },
+        {
+          "pontuacao": 11.858,
+          "texto": "A entrega foi mais rápido do que o esperado."
+        },
+        {
+          "pontuacao": 11.257,
+          "texto": "recomendo. entrega rápida dentro do esperado"
+        }
+      ]
+    },
+    "vendedor não respondeu às mensagens": {
+      "vetorial": [
+        {
+          "pontuacao": 0.738,
+          "texto": "Produto não foi entregue. Sem resposta das lojas lannister e sem respostas da empresa responsável, apesar de ter entrado em contato."
+        },
+        {
+          "pontuacao": 0.728,
+          "texto": "O vendedor não entregou o produto e também não informou o porquê."
+        },
+        {
+          "pontuacao": 0.711,
+          "texto": "Não entregou o produto e não entrou em contato."
+        }
+      ],
+      "lexical": [
+        {
+          "pontuacao": 11.022,
+          "texto": "A entrega demorou por conta de um problema com os correios, avisado pela lannister.com. Contudo , o lojista não respondeu às mensagens enviadas. No fim deu tudo certo."
+        },
+        {
+          "pontuacao": 10.444,
+          "texto": "Total descaso! Não respondeu nenhum de meus e-mails, não deu satisfação nenhuma a respeito! Péssimo vendedor!"
+        },
+        {
+          "pontuacao": 9.525,
+          "texto": "Encaminhou produto vencido e não respondeu minha reclamação"
+        }
+      ]
+    }
+  },
+  "ms_por_busca": {
+    "vetorial": 13.6,
+    "lexical": 13.7
+  }
+}
