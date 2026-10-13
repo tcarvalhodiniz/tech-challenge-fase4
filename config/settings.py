@@ -71,3 +71,18 @@ EVIDENCIAS = 10
 # opinião; entre 0,70 e 0,80 já aparecem textos de sentido oposto (para "Produto
 # de péssima qualidade" vem "Produto de Qualidade").
 SIMILARIDADE_TEXTO_PARECIDO = 0.80
+
+# ---------------------------------------------------------------------------
+# Perguntas sem evidência suficiente
+# ---------------------------------------------------------------------------
+# Similaridade mínima entre a pergunta e a avaliação mais parecida da base. Abaixo
+# disso a pergunta é recusada antes de chamar o modelo. O valor é baixo de
+# propósito, para nunca recusar uma pergunta válida: nos testes, perguntas válidas
+# ficaram a partir de 0,61, e perguntas sem relação com a base, como "Qual é a
+# capital da França?", ficaram abaixo de 0,50. As demais recusas ficam por conta
+# do modelo, que vê a pergunta junto com as evidências.
+SIMILARIDADE_MINIMA_DA_PERGUNTA = 0.50
+
+# Quando a resposta se apoia em menos avaliações da base do que isto, ela é
+# mostrada com um aviso de pouca evidência.
+MINIMO_DE_AVALIACOES = 5
