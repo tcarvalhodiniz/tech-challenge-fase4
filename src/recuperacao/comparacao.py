@@ -8,8 +8,8 @@ contadas duas coisas:
     baixa similaridade  evidências com similaridade abaixo de 0,40 com a
                         pergunta e com as frases de busca. São textos que
                         entraram sem ter relação com o assunto.
-    repetidas           evidências quase iguais (similaridade a partir de 0,85)
-                        a outra mais bem colocada. Ocupam uma vaga sem trazer
+    repetidas           evidências que dizem o mesmo que outra mais bem colocada
+                        (similaridade a partir de 0,80). Ocupam uma vaga sem trazer
                         informação nova.
 
 As duas medidas saem dos próprios vetores, sem depender de avaliação manual. A
@@ -81,7 +81,7 @@ def executar() -> dict:
                 item["frases_de_busca"] = r.frases
                 item["evidencias"] = [
                     {"texto": e.texto, "similaridade": e.similaridade,
-                     "avaliacoes": e.total_de_avaliacoes, "nota": int(notas[e.review_id])}
+                     "avaliacoes_na_base": e.avaliacoes_na_base, "nota": int(notas[e.review_id])}
                     for e in r.evidencias
                 ]
         resumo["perguntas"].append(item)

@@ -7,8 +7,9 @@ Etapas:
    significado. As frases também são procuradas no índice de palavras.
 3. Fusão: os rankings são combinados com RRF (Reciprocal Rank Fusion). Uma
    avaliação bem colocada em vários rankings sobe na lista final.
-4. Seleção: ficam as avaliações mais bem colocadas. Textos iguais ou quase
-   iguais contam como uma evidência só, que guarda as avaliações parecidas.
+4. Seleção: ficam as avaliações mais bem colocadas. Textos que dizem a mesma
+   coisa contam como uma evidência só. Cada evidência guarda quantas
+   avaliações da base inteira dizem o mesmo que ela.
 
 A busca por palavras não usa a pergunta original. As palavras de uma pergunta
 ("quais", "frequência", "clientes") não são as palavras de um comentário, e essa
@@ -36,12 +37,13 @@ class Evidencia:
     similaridade: float       # maior similaridade de cosseno com a pergunta ou com as frases de busca
     review_ids: list[str]     # avaliações da base com exatamente esse texto
     rankings: list[str]       # em quais rankings ela apareceu
-    parecidas: list[dict] = field(default_factory=list)   # recuperadas com texto quase igual
+    parecidas: list[dict] = field(default_factory=list)   # candidatos da busca que dizem a mesma coisa
+    posicoes_na_base: list[int] = field(default_factory=list)   # todos os documentos da base que dizem a mesma coisa
 
     @property
-    def total_de_avaliacoes(self) -> int:
-        """Avaliações que dizem isso: as de texto igual mais as de texto quase igual."""
-        return len(self.review_ids) + sum(len(p["review_ids"]) for p in self.parecidas)
+    def avaliacoes_na_base(self) -> int:
+        """Quantas avaliações da base inteira dizem a mesma coisa que esta evidência."""
+        return len(self.posicoes_na_base)
 
 
 @dataclass
@@ -109,6 +111,7 @@ class Recuperador:
                     similaridade=round(indice.similaridade(vetores, posicao), 3),
                     review_ids=ids,
                     rankings=[nome for nome, posicoes in resultado.rankings.items() if posicao in posicoes],
+                    posicoes_na_base=indice.parecidas_na_base(posicao),
                 ))
                 vetores_escolhidos.append(vetor)
         return resultado
@@ -130,7 +133,7 @@ def mostrar(r: Recuperacao, indice: Indice, por_ranking: int = 3) -> None:
 
     print(f"\n3 e 4. FUSÃO E SELEÇÃO: {len(r.evidencias)} evidências")
     for i, e in enumerate(r.evidencias, start=1):
-        total = f"  [{e.total_de_avaliacoes} avaliações dizem isso]" if e.total_de_avaliacoes > 1 else ""
+        total = f"  [{e.avaliacoes_na_base} avaliações da base dizem isso]" if e.avaliacoes_na_base > 1 else ""
         print(f"  [{i}] rrf={e.pontuacao:.4f} sim={e.similaridade:.2f} em {len(e.rankings)} rankings{total}")
         print(f"      {e.texto[:110]}")
         for p in e.parecidas[:2]:

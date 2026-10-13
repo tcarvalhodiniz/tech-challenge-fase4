@@ -46,17 +46,21 @@ vários rankings sobe na lista final.
 
 ### 4. Seleção
 
-Ficam as 10 avaliações mais bem colocadas. Textos iguais ou quase iguais contam
-como uma evidência só. O critério para "quase igual" é similaridade de cosseno a
-partir de 0,85, valor em que os pares dizem a mesma coisa, como "Demorou muito pra
-chegar" e "Demorou demais pra chegar".
+Ficam as 10 avaliações mais bem colocadas. Textos que dizem a mesma coisa contam
+como uma evidência só. O critério é similaridade de cosseno a partir de 0,80.
+
+Esse limite foi escolhido lendo amostras por faixa de similaridade. Acima de 0,80
+os textos falam do mesmo assunto com a mesma opinião, como "Demorou muito pra
+chegar" e "Achei que demora muita pra entregar". Entre 0,70 e 0,80 já aparecem
+textos de sentido oposto: para "Produto de péssima qualidade" aparece "Produto de
+Qualidade".
 
 Cada evidência guarda:
 
 - o `review_id` e o texto;
 - a similaridade com a pergunta ou com as frases de busca;
 - em quais rankings apareceu;
-- as outras avaliações recuperadas que dizem a mesma coisa.
+- quantas avaliações da base inteira dizem a mesma coisa que ela.
 
 ## Exemplo
 
@@ -70,30 +74,24 @@ Frases de busca geradas:
 4. Passou do prazo e ninguém avisou.
 5. Rastreamento não atualizava nunca o status.
 
-Primeiro resultado de alguns rankings:
-
-| Ranking | Primeiro resultado |
-|---|---|
-| significado, pergunta original | muitos desencontros nas entregas de produtos |
-| significado, frase 1 | ENTREGA MUITO ATRASADA |
-| palavras, frase 2 | O produto chegou com a caixa toda amassada! (...) |
-| significado, frase 4 | Não recebi nenhuma satisfação. Nem havia acompanhamento. (...) |
-| palavras, frase 5 | Vendedor não atualizava a situação da mercadoria (...) |
-
 Evidências selecionadas:
 
-| # | Similaridade | Avaliações | Texto |
+| # | Similaridade | Avaliações na base | Texto |
 |---|---|---|---|
-| 1 | 0,73 | 2 | O produto chegou com a caixa toda amassada! Muito amassada mesmo.. nenhum cuidado com o produto! |
+| 1 | 0,73 | 12 | O produto chegou com a caixa toda amassada! Muito amassada mesmo.. nenhum cuidado com o produto! |
 | 2 | 0,68 | 1 | Não houve nenhum comunicado sobre o atraso |
-| 3 | 0,68 | 1 | Deveriam embalar melhor o produto. A caixa veio toda amassada e vou dar de presente. |
-| 4 | 0,75 | 2 | O produto chegou certinho! Porém eu percebi que a caixa vem toda amassada (...) |
-| 5 | 0,67 | 1 | A embalagem deixou a desejar, por pouco o produto não foi danificado, a caixa estava toda amassada. |
-| 6 | 0,69 | 1 | Não recebi nem uma notificação de atraso |
-| 7 | 0,71 | 1 | recomendo. chegou, obrigada mas a caixa, a embalagem amassada e é um presente. |
-| 8 | 0,66 | 1 | não cumpre prazo. Não cumpriram prazo de entrega e nem avisaram o atraso. |
-| 9 | 0,72 | 4 | Meu produto está atrasado e ainda não chegou |
-| 10 | 0,65 | 1 | Bom, porem não otimo. A unica proteção foi a propria caixa do produto, que veio toda amassada. (...) |
+| 3 | 0,68 | 3 | Deveriam embalar melhor o produto. A caixa veio toda amassada e vou dar de presente. |
+| 4 | 0,69 | 3 | Não recebi nem uma notificação de atraso |
+| 5 | 0,72 | 69 | Meu produto está atrasado e ainda não chegou |
+| 6 | 0,66 | 2 | não cumpre prazo. Não cumpriram prazo de entrega e nem avisaram o atraso. |
+| 7 | 0,65 | 1 | Bom, porem não otimo. A unica proteção foi a propria caixa do produto, que veio toda amassada. (...) |
+| 8 | 0,65 | 24 | O prazo já passou e nada do produto chegar. |
+| 9 | 0,66 | 1 | muitos desencontros nas entregas de produtos |
+| 10 | 0,76 | 35 | ENTREGA MUITO ATRASADA |
+
+A coluna "Avaliações na base" mostra quantas avaliações da base inteira dizem a
+mesma coisa que a evidência. Ela é usada na geração da resposta para indicar o peso
+de cada conclusão.
 
 ## Comparação das configurações
 
@@ -102,45 +100,38 @@ evidências de cada configuração, duas coisas:
 
 - baixa similaridade: evidências com similaridade abaixo de 0,40, que entraram sem
   ter relação com o assunto;
-- repetidas: evidências quase iguais a outra mais bem colocada.
+- repetidas: evidências que dizem o mesmo que outra mais bem colocada.
 
 | Configuração | Baixa similaridade | Repetidas |
 |---|---|---|
 | A. Pergunta original, busca por significado | 0 | 0 |
-| B. Pergunta original, significado e palavras | 14 | 0 |
-| C. Com frases de busca, sem juntar parecidas | 0 | 5 |
+| B. Pergunta original, significado e palavras | 16 | 0 |
+| C. Com frases de busca, sem juntar parecidas | 0 | 20 |
 | D. Configuração do projeto | 0 | 0 |
 
 A configuração B mostra por que a busca por palavras não usa a pergunta original:
-14 das 60 evidências não tinham relação com o assunto. A configuração C mostra por
-que os textos parecidos são agrupados: 5 evidências repetiam outra.
+16 das 60 evidências não tinham relação com o assunto. A configuração C mostra por
+que os textos parecidos são agrupados: 20 das 60 evidências repetiam outra.
 
 Essas duas medidas não dizem qual configuração traz as evidências mais relevantes.
 A diferença entre a busca simples (A) e a configuração do projeto (D) aparece em
-perguntas como "problemas com a entrega do pedido":
-
-| Configuração | Primeiras evidências |
-|---|---|
-| A | Eficiente do pedido a entrega · Nao entrega o pedido no prazo certo · Pedido e entrega sem detalhes |
-| D | O produto chegou com a caixa toda amassada! (...) · Apesar de estar dentro do prazo prometido, demorou quase 3 semanas para chegar. (...) · O entregador contratado não permitiu a conferência do produto antes da assinatura do boleto. (...) |
-
-Na busca simples, a primeira evidência é um elogio. A comparação medida da
+perguntas como "problemas com a entrega do pedido": na busca simples, a primeira
+evidência é um elogio ("Eficiente do pedido a entrega"). A comparação medida da
 relevância entre as configurações é feita na etapa de avaliação.
 
 ## Reclamação não é o mesmo que nota baixa
 
-Das 10 evidências do exemplo acima, todas são reclamações ligadas à entrega, mas só
-4 vêm de avaliações com nota 1 ou 2. As outras 6 têm nota 3, 4 ou 5: o cliente
-gostou do produto e reclamou da caixa amassada ou da falta de aviso sobre o atraso.
+Nas quatro perguntas sobre problemas, 15 das 40 evidências vêm de avaliações com
+nota 3, 4 ou 5. São clientes que gostaram do produto e reclamaram de um ponto
+específico, como em "Só nao entendi porque a caixa veio aberta. Mais fora isso tá
+perfeito veio tudo certinho", de uma avaliação com nota 5.
 
 Um filtro por nota baixa deixaria essas reclamações de fora. A busca pelo texto
-encontra a reclamação mesmo quando a nota é alta.
+encontra a reclamação mesmo quando a nota é alta. A nota foi usada aqui só para
+essa conferência. Ela não está na base de conhecimento e a busca não usa a nota.
 
 ## Limitações
 
 - As frases de busca são uma sugestão do modelo. Em perguntas amplas, um assunto
-  pode ficar de fora. No exemplo acima nenhuma frase fala de produto não recebido,
-  que é uma das reclamações mais comuns da base.
-- O número de avaliações de cada evidência conta só as que foram recuperadas. Não é
-  a frequência na base inteira.
+  pode ficar de fora.
 - Sem acesso ao modelo, a busca usa só a pergunta original.
