@@ -2,20 +2,24 @@
 Geração da resposta a partir das evidências recuperadas.
 
 Fluxo:
-1. Recuperação das evidências (src/recuperacao/recuperador.py).
-2. Construção do contexto (contexto.py).
-3. Geração: o Gemini recebe a pergunta e o contexto e devolve uma lista de
+1. Conferência da pergunta: se nenhuma avaliação da base se parece com ela, a
+   pergunta é recusada sem chamar o modelo.
+2. Recuperação das evidências (src/recuperacao/recuperador.py).
+3. Construção do contexto (contexto.py).
+4. Geração: o Gemini recebe a pergunta e o contexto e devolve uma lista de
    pontos. Cada ponto é uma conclusão com os números das evidências que a
    sustentam. A resposta não tem texto livre: tudo o que é mostrado ao usuário
    como conclusão está em um ponto, e todo ponto tem evidência.
-4. Validação, feita pelo programa e não pelo modelo:
+5. Validação, feita pelo programa e não pelo modelo:
    - um número de evidência que não existe é descartado;
    - um ponto que fica sem nenhuma evidência válida é descartado;
    - a quantidade de avaliações de cada ponto é contada na base, a partir das
      evidências citadas. O modelo não escreve esse número.
 
-Assim, toda conclusão mostrada ao usuário aponta para avaliações que foram de
-fato recuperadas, e cada uma pode ser conferida pelo review_id.
+A resposta sai em uma de três situações:
+    respondida  as avaliações respondem à pergunta
+    parcial     respondem só a uma parte, ou a resposta se apoia em poucas avaliações
+    recusada    não há avaliações relacionadas, ou as encontradas não respondem
 
 Uso:  python -m src.geracao.responder "O que os clientes mais elogiam?"
 """
@@ -23,15 +27,20 @@ Uso:  python -m src.geracao.responder "O que os clientes mais elogiam?"
 from dataclasses import dataclass, field
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel, Field
 
 from config import settings
-from src import cache_llm
+from src import cache_llm, modelo
 from src.geracao.contexto import ABRE, FECHA, montar_contexto
 from src.recuperacao.recuperador import Evidencia, Recuperacao, Recuperador
 
 CACHE = "respostas"
+
+RESPONDIDA, PARCIAL, RECUSADA = "respondida", "parcial", "recusada"
+
+SEM_RELACAO = ("Não encontrei na base avaliações relacionadas a essa pergunta. A base tem comentários "
+               "de clientes sobre suas compras: produto, entrega, atendimento e pagamento.")
+SEM_EVIDENCIA = "As avaliações encontradas não permitem responder a essa pergunta."
 
 INSTRUCAO = f"""Você responde perguntas de gestores sobre a experiência dos clientes de uma \
 loja online. Use apenas as avaliações de clientes fornecidas.
@@ -44,22 +53,26 @@ do que o cliente escreveu.
 Regras:
 - Use somente o que está nas avaliações. Não use conhecimento próprio e não invente \
 números, percentuais ou fatos.
-- Escreva de 2 a 6 pontos. Cada ponto é uma frase curta e direta com uma conclusão, e \
+- Escreva até 6 pontos. Cada ponto é uma frase curta e direta com uma conclusão, e \
 informa os números das avaliações que sustentam essa conclusão.
 - Só escreva um ponto se pelo menos uma avaliação o sustentar de forma clara.
+- Use uma avaliação só se ela tratar do assunto da pergunta. Quando a pergunta é sobre \
+algo específico, como uma forma de pagamento, um tipo de produto ou uma data, a \
+avaliação precisa mencionar esse assunto. Uma avaliação genérica não serve de \
+evidência para uma pergunta específica.
 - Avaliações que dizem a mesma coisa ficam no mesmo ponto. Em cada ponto, informe todas \
 as avaliações que o sustentam, e não apenas uma.
-- Aproveite todas as avaliações que tratam do assunto da pergunta. Deixe de fora só as \
-que não têm relação com a pergunta.
 - Cada avaliação informa em quantas avaliações da base aquilo é dito. Quando a \
 pergunta for sobre o que é mais comum ou mais frequente, coloque primeiro os pontos \
 com mais avaliações.
 - Não escreva expressões de quantidade como "muitos", "a maioria", "frequentemente" \
 ou "com alta frequência". A quantidade de avaliações é mostrada pelo sistema ao lado \
 de cada ponto.
-- Se as avaliações não permitirem responder à pergunta, marque "responde" como falso, \
-deixe a lista de pontos vazia e explique em "motivo" o que faltou. Quando "responde" \
-for verdadeiro, deixe "motivo" vazio."""
+- Se as avaliações responderem só a uma parte da pergunta, escreva os pontos da parte \
+respondida e explique em "faltou" o que não foi possível responder.
+- Se as avaliações não permitirem responder nada, marque "responde" como falso, deixe \
+a lista de pontos vazia e explique o motivo em "faltou".
+- Se as avaliações cobrirem a pergunta inteira, deixe "faltou" vazio."""
 
 
 class Ponto(BaseModel):
@@ -68,9 +81,9 @@ class Ponto(BaseModel):
 
 
 class SaidaDoModelo(BaseModel):
-    responde: bool = Field(description="Verdadeiro se as avaliações permitem responder à pergunta")
+    responde: bool = Field(description="Verdadeiro se as avaliações permitem responder à pergunta, mesmo que em parte")
     pontos: list[Ponto] = Field(default_factory=list)
-    motivo: str = Field(default="", description="Só quando responde for falso: o que faltou nas avaliações")
+    faltou: str = Field(default="", description="O que a pergunta pede e as avaliações não trazem. Vazio se cobrem a pergunta inteira")
 
 
 @dataclass
@@ -83,11 +96,17 @@ class PontoValidado:
 @dataclass
 class Resposta:
     pergunta: str
-    responde: bool
+    situacao: str                # respondida, parcial ou recusada
     pontos: list[PontoValidado]
     recuperacao: Recuperacao
-    motivo: str = ""   # preenchido quando não foi possível responder
+    avisos: list[str] = field(default_factory=list)        # limites da resposta, mostrados ao usuário
+    faltou: str = ""                                       # o que as avaliações não trazem, segundo o modelo
+    similaridade_da_pergunta: float = 0.0                  # com a avaliação mais parecida da base
     descartados: list[str] = field(default_factory=list)   # conclusões sem evidência válida
+
+    @property
+    def responde(self) -> bool:
+        return self.situacao != RECUSADA
 
     @property
     def evidencias(self) -> list[Evidencia]:
@@ -96,6 +115,11 @@ class Resposta:
     @property
     def citadas(self) -> list[int]:
         return sorted({n for p in self.pontos for n in p.evidencias})
+
+    @property
+    def avaliacoes_que_sustentam(self) -> int:
+        """Avaliações diferentes da base que dizem o mesmo que as evidências citadas."""
+        return len({pos for n in self.citadas for pos in self.evidencias[n - 1].posicoes_na_base})
 
 
 def validar(saida: SaidaDoModelo, evidencias: list[Evidencia]) -> tuple[list[PontoValidado], list[str]]:
@@ -116,6 +140,8 @@ def validar(saida: SaidaDoModelo, evidencias: list[Evidencia]) -> tuple[list[Pon
 def gerar(pergunta: str, recuperacao: Recuperacao, usar_cache: bool = True) -> Resposta:
     """Gera e valida a resposta para evidências já recuperadas."""
     evidencias = recuperacao.evidencias
+    if not evidencias:
+        return Resposta(pergunta, RECUSADA, [], recuperacao, avisos=[SEM_RELACAO])
     contexto = montar_contexto(evidencias)
 
     chave = cache_llm.chave(settings.MODELO_GERACAO, INSTRUCAO, pergunta, contexto)
@@ -123,20 +149,33 @@ def gerar(pergunta: str, recuperacao: Recuperacao, usar_cache: bool = True) -> R
     if chave in cache:
         saida = SaidaDoModelo(**cache[chave]["saida"])
     else:
-        modelo = ChatGoogleGenerativeAI(model=settings.MODELO_GERACAO, temperature=0)
         prompt = ChatPromptTemplate.from_messages(
             [("system", INSTRUCAO), ("human", "Pergunta: {pergunta}\n\n{contexto}")])
-        saida = (prompt | modelo.with_structured_output(SaidaDoModelo)).invoke(
-            {"pergunta": pergunta, "contexto": contexto})
+        cadeia = prompt | modelo.criar_modelo().with_structured_output(SaidaDoModelo)
+        saida = modelo.chamar(cadeia, {"pergunta": pergunta, "contexto": contexto})
         if usar_cache:
             cache = cache_llm.ler(CACHE)
             cache[chave] = {"pergunta": pergunta, "saida": saida.model_dump()}
             cache_llm.gravar(CACHE, cache)
 
     pontos, descartados = validar(saida, evidencias)
-    # Se nenhum ponto sobrou com evidência, a resposta não se sustenta
-    responde = saida.responde and bool(pontos)
-    return Resposta(pergunta, responde, pontos, recuperacao, saida.motivo.strip(), descartados)
+    faltou = saida.faltou.strip()
+
+    # Sem nenhum ponto com evidência válida, a resposta não se sustenta
+    if not saida.responde or not pontos:
+        aviso = f"{SEM_EVIDENCIA} {faltou}".strip()
+        return Resposta(pergunta, RECUSADA, [], recuperacao, [aviso], faltou, descartados=descartados)
+
+    resposta = Resposta(pergunta, RESPONDIDA, pontos, recuperacao, faltou=faltou, descartados=descartados)
+    if faltou:
+        resposta.avisos.append(f"As avaliações não respondem a uma parte da pergunta. {faltou}")
+    if resposta.avaliacoes_que_sustentam < settings.MINIMO_DE_AVALIACOES:
+        n = resposta.avaliacoes_que_sustentam
+        resposta.avisos.append(
+            f"Esta resposta se apoia em pouca evidência: {n} {'avaliação' if n == 1 else 'avaliações'} da base.")
+    if resposta.avisos:
+        resposta.situacao = PARCIAL
+    return resposta
 
 
 class Respondedor:
@@ -144,20 +183,30 @@ class Respondedor:
         self.recuperador = recuperador or Recuperador()
 
     def responder(self, pergunta: str) -> Resposta:
-        return gerar(pergunta, self.recuperador.recuperar(pergunta))
+        # A pergunta é comparada com a base antes de qualquer chamada ao modelo
+        similaridade = self.recuperador.indice.buscar_vetorial(pergunta, 1)[0][1]
+        if similaridade < settings.SIMILARIDADE_MINIMA_DA_PERGUNTA:
+            return Resposta(pergunta, RECUSADA, [], Recuperacao(pergunta, []), [SEM_RELACAO],
+                            similaridade_da_pergunta=round(similaridade, 3))
+
+        resposta = gerar(pergunta, self.recuperador.recuperar(pergunta))
+        resposta.similaridade_da_pergunta = round(similaridade, 3)
+        return resposta
 
 
 def mostrar(r: Resposta) -> None:
     print(f"PERGUNTA\n  {r.pergunta}\n")
-    print("RESPOSTA")
-    if not r.responde:
-        print(f"  Não foi possível responder com as avaliações encontradas. {r.motivo}")
+    print(f"RESPOSTA ({r.situacao})")
     for ponto in r.pontos:
         citacoes = " ".join(f"[{n}]" for n in ponto.evidencias)
         vezes = "1 avaliação" if ponto.avaliacoes_na_base == 1 else f"{ponto.avaliacoes_na_base} avaliações"
         print(f"  - {ponto.conclusao} {citacoes}  ({vezes} na base)")
+    for aviso in r.avisos:
+        print(f"  Aviso: {aviso}")
     if r.descartados:
-        print(f"\n  ({len(r.descartados)} ponto(s) descartado(s) por não ter evidência válida)")
+        print(f"  ({len(r.descartados)} ponto(s) descartado(s) por não ter evidência válida)")
+    if not r.pontos:
+        return
 
     print("\nEVIDÊNCIAS USADAS")
     for n in r.citadas:

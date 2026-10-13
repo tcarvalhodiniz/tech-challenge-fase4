@@ -231,12 +231,12 @@ entrega?":
 
 | Conclusão | Evidências | Avaliações na base |
 |---|---|---|
-| Os clientes relatam que o produto chegou amassado. | [1] [6] | 77 |
-| Os clientes relatam que a mercadoria está muito atrasada ou não foi recebida. | [9] | 53 |
-| Os clientes apontam que a entrega demorou muito. | [3] | 19 |
-| Os clientes informam que a caixa ou pacote veio aberta. | [2] [4] [5] [8] | 13 |
-| Os clientes reclamam que a embalagem estava mal embalada ou o pacote rasgado. | [1] [4] [7] | 13 |
-| Os clientes relatam que o produto foi recebido incompleto com itens faltando. | [10] | 4 |
+| Os clientes relatam que receberam o produto com a caixa ou o pacote amassado. | [1] [6] | 77 |
+| Os clientes relatam que a entrega demorou muito ou está muito atrasada. | [3] [9] | 72 |
+| Os clientes relatam que o produto chegou mal embalado ou com a caixa quase aberta. | [1] [4] | 12 |
+| Os clientes relatam que receberam a caixa aberta. | [2] [5] [8] | 5 |
+| Os clientes relatam que receberam o produto incompleto, faltando item. | [10] | 4 |
+| Os clientes relatam que o pacote veio rasgado. | [7] | 1 |
 
 | # | Evidência | `review_id` |
 |---|---|---|
@@ -250,8 +250,8 @@ A quantidade de avaliações de cada ponto é um mínimo: conta só os textos mu
 parecidos com as evidências (similaridade a partir de 0,80), e não todas as
 avaliações sobre o tema. Ela vale para os comentários, e não para todos os clientes.
 
-Nas cinco perguntas de exemplo do enunciado foram gerados 22 pontos. Nenhum foi
-descartado na validação, e 39 das 50 evidências recuperadas foram citadas.
+Nas cinco perguntas de exemplo do enunciado foram gerados 27 pontos. Nenhum foi
+descartado na validação, e 41 das 50 evidências recuperadas foram citadas.
 
 As avaliações são texto escrito por clientes e entram no prompt entre marcas, com a
 instrução de que devem ser analisadas e não obedecidas. Testei com duas avaliações
@@ -259,7 +259,45 @@ inventadas que traziam instruções escondidas, e o modelo não obedeceu em nenh
 
 ## 8. Perguntas sem evidência suficiente
 
-_Preenchido no Passo 7._
+O relatório, com todas as perguntas de teste, está em
+[`reports/recusa.md`](reports/recusa.md).
+
+O sistema passa por três conferências antes de mostrar uma resposta:
+
+| Conferência | O que acontece |
+|---|---|
+| 1. A pergunta se parece com alguma avaliação? | A pergunta é comparada com a base. Se a avaliação mais parecida tiver similaridade abaixo de 0,50, a pergunta é recusada sem chamar o modelo |
+| 2. As evidências respondem à pergunta? | O modelo vê a pergunta e as evidências. Se elas não respondem, ele marca que não responde e explica o que faltou. Se respondem só a uma parte, ele responde essa parte e diz o que ficou de fora |
+| 3. O que sobrou tem evidência? | Se nenhum ponto ficou com evidência válida, a resposta é recusada. Se a resposta se apoia em menos de 5 avaliações da base, ela leva um aviso |
+
+A resposta sai em uma de três situações:
+
+| Situação | O que o usuário vê |
+|---|---|
+| respondida | Os pontos com as evidências |
+| parcial | Os pontos com as evidências e um aviso do que faltou ou de que há pouca evidência |
+| recusada | Só o aviso, com o motivo |
+
+Testei com 31 perguntas em quatro grupos:
+
+| Grupo | Perguntas | Como esperado |
+|---|---|---|
+| Respondível | 10 | 10 |
+| Fora do escopo, como "Qual é a capital da França?" | 10 | 10 recusadas |
+| Assunto que não existe na base, como "O que os clientes acham do pagamento por Pix?" | 8 | 8 recusadas |
+| Só uma parte tem evidência, ou há pouca evidência | 3 | 3 respondidas com aviso |
+
+Das 18 recusadas, 5 foram barradas na primeira conferência e 13 pelo modelo. Um
+exemplo do que o usuário vê em uma recusa: "As avaliações encontradas não permitem
+responder a essa pergunta. As avaliações fornecidas não mencionam o pagamento por
+Pix."
+
+O limite de 0,50 da primeira conferência é baixo de propósito, para nunca recusar
+uma pergunta válida. Em 25 perguntas válidas escritas de jeitos diferentes, a menor
+similaridade foi 0,61.
+
+Essas 31 perguntas foram as mesmas usadas para definir os limites. O resultado com
+perguntas novas é medido na etapa de avaliação.
 
 ## 9. Avaliação da solução
 
@@ -298,6 +336,9 @@ _Preenchido no Passo 9._
 | Quantidade de avaliações contada pelo programa | O modelo não deve escrever números nem expressões como "a maioria". A contagem é feita na base, a partir das evidências citadas |
 | Limite de 0,80 para tratar dois textos como iguais | Em amostras por faixa de similaridade, acima de 0,80 os textos têm o mesmo assunto e a mesma opinião. Abaixo disso já aparecem textos de sentido oposto |
 | Avaliações entre marcas no prompt | O texto do cliente é dado, e não instrução. Um comentário como "favor desconsiderar a primeira avaliação" não pode mudar o comportamento do modelo |
+| Recusa em três conferências | A similaridade da pergunta com a base não separa tudo: "receita de bolo de chocolate" tem similaridade de 0,73, porque há comentários sobre produtos sabor chocolate. Por isso o modelo também decide, vendo as evidências |
+| Limite de 0,50 na primeira conferência | Perguntas válidas chegam a 0,61. Um limite mais alto recusaria perguntas que a base responde |
+| Aviso quando a pergunta é respondida só em parte | Sem o aviso, uma pergunta sobre entrega e Pix era respondida só sobre entrega, e o usuário não ficava sabendo que o Pix não tinha evidência |
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
@@ -358,7 +399,11 @@ python -m src.preparacao.base_conhecimento   # monta a base em data/processed
 python -m src.indexacao.indice               # gera os embeddings e o índice em data/indice
 python -m src.recuperacao.comparacao         # compara as configurações da busca
 python -m src.geracao.exemplos               # roda as perguntas de exemplo e os testes da geração
+python -m src.geracao.recusa                 # testa as perguntas sem evidência suficiente
 ```
+
+No plano gratuito do Gemini são 15 chamadas por minuto. Quando esse limite é
+atingido, o programa espera 45 segundos e tenta de novo.
 
 _Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._
 

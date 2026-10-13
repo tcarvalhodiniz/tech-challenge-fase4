@@ -17,11 +17,10 @@ pergunta original.
 """
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel, Field
 
 from config import settings
-from src import cache_llm
+from src import cache_llm, modelo
 
 CACHE = "frases_de_busca"
 
@@ -49,10 +48,9 @@ def _chave(pergunta: str) -> str:
 
 
 def _pedir_ao_modelo(pergunta: str) -> list[str]:
-    modelo = ChatGoogleGenerativeAI(model=settings.MODELO_GERACAO, temperature=0)
     prompt = ChatPromptTemplate.from_messages([("system", INSTRUCAO), ("human", "Pergunta: {pergunta}")])
-    cadeia = prompt | modelo.with_structured_output(FrasesDeBusca)
-    return cadeia.invoke({"pergunta": pergunta, "quantidade": settings.FRASES_DE_BUSCA}).frases
+    cadeia = prompt | modelo.criar_modelo().with_structured_output(FrasesDeBusca)
+    return modelo.chamar(cadeia, {"pergunta": pergunta, "quantidade": settings.FRASES_DE_BUSCA}).frases
 
 
 def gerar_frases(pergunta: str, usar_cache: bool = True) -> list[str]:

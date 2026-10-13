@@ -1,27 +1,670 @@
 {
-  "e7348298c5ffbddc3e996e9ef2385be0396db8fbdf76b71f92aea167333e573f": {
+  "87014a36c632dc9efc431be49b2f3a768ea7b1a512a071be34eecac25d276d6e": {
+    "pergunta": "Quais são os principais problemas relatados pelos clientes?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "A entrega atrasou.",
+          "avaliacoes": [
+            4,
+            9
+          ]
+        },
+        {
+          "conclusao": "O produto tem má qualidade.",
+          "avaliacoes": [
+            1,
+            6
+          ]
+        },
+        {
+          "conclusao": "O produto chegou com defeito.",
+          "avaliacoes": [
+            10
+          ]
+        },
+        {
+          "conclusao": "O produto foi entregue no tamanho errado.",
+          "avaliacoes": [
+            3,
+            8,
+            9
+          ]
+        },
+        {
+          "conclusao": "O atendimento é ruim.",
+          "avaliacoes": [
+            2,
+            5,
+            7
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "8ee72ed9556cd24084ee44aad84d8015eabe610d5479c30c275fa4e47f34e4db": {
+    "pergunta": "Quais reclamações relacionadas à entrega aparecem com maior frequência?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O produto está atrasado e não chega no prazo.",
+          "avaliacoes": [
+            5,
+            8,
+            10,
+            6
+          ]
+        },
+        {
+          "conclusao": "A caixa do produto chega amassada devido a falta de cuidado ou de proteção na embalagem.",
+          "avaliacoes": [
+            1,
+            3,
+            7
+          ]
+        },
+        {
+          "conclusao": "Não há aviso, comunicado ou notificação sobre o atraso da entrega.",
+          "avaliacoes": [
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "conclusao": "Ocorrem desencontros nas entregas dos produtos.",
+          "avaliacoes": [
+            9
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "bc0b82fba3da1077e0bd67a936d28845361dcfaa86513ec6e420bf1286866c0d": {
+    "pergunta": "O que os clientes mais elogiam em suas experiências de compra?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes elogiam a rapidez na entrega do produto.",
+          "avaliacoes": [
+            1,
+            8,
+            10
+          ]
+        },
+        {
+          "conclusao": "Os clientes destacam que a entrega foi boa.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "Os clientes elogiam o bom atendimento.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "Os clientes afirmam que o preço foi bom.",
+          "avaliacoes": [
+            3,
+            6
+          ]
+        },
+        {
+          "conclusao": "Os clientes mencionam que a compra foi fácil e o site recomendado.",
+          "avaliacoes": [
+            5
+          ]
+        },
+        {
+          "conclusao": "Os clientes elogiam que o produto chegou bem embalado.",
+          "avaliacoes": [
+            1
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "16741f206f0ca28fe4cbd8bd7582e71b61fcddcff36487952a4cabfe6d8496fb": {
+    "pergunta": "Quais problemas são relatados por clientes insatisfeitos?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O produto veio quebrado.",
+          "avaliacoes": [
+            3,
+            7
+          ]
+        },
+        {
+          "conclusao": "A entrega atrasou.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "O material é de péssima qualidade.",
+          "avaliacoes": [
+            2,
+            8,
+            10
+          ]
+        },
+        {
+          "conclusao": "Foi enviado um produto de cor diferente da comprada.",
+          "avaliacoes": [
+            1,
+            5,
+            9
+          ]
+        },
+        {
+          "conclusao": "O atendimento foi ruim e o problema não foi resolvido.",
+          "avaliacoes": [
+            6
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "97116699a8e5d8b4f8b5da4e645c0d26b7fa8d4be65d6b005a273c4de157e9cc": {
+    "pergunta": "Existem padrões recorrentes nas avaliações relacionadas à qualidade dos produtos?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes apontam que o produto superou suas expectativas.",
+          "avaliacoes": [
+            3,
+            8
+          ]
+        },
+        {
+          "conclusao": "Há relatos de material considerado fraco.",
+          "avaliacoes": [
+            1,
+            9,
+            10
+          ]
+        },
+        {
+          "conclusao": "Alguns clientes mencionam que o tecido é muito fino.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "Existem queixas sobre má qualidade e costuras mal feitas na fronha.",
+          "avaliacoes": [
+            5
+          ]
+        },
+        {
+          "conclusao": "Clientes relataram que o produto rasgou ou quebrou na primeira tentativa de uso.",
+          "avaliacoes": [
+            4,
+            7
+          ]
+        },
+        {
+          "conclusao": "Outros clientes destacam que o produto é prático, fácil de lavar e compacto.",
+          "avaliacoes": [
+            2
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "0c733d1a193c94b89252bfb7f13d45faae828d90af4f107f611aaf7c38b92ed1": {
+    "pergunta": "O que os clientes dizem sobre o atendimento do vendedor?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes consideram o vendedor ótimo, prestativo e atencioso.",
+          "avaliacoes": [
+            2,
+            3,
+            10
+          ]
+        },
+        {
+          "conclusao": "Os clientes afirmam que o atendimento foi péssimo.",
+          "avaliacoes": [
+            7,
+            8
+          ]
+        },
+        {
+          "conclusao": "Os clientes relatam que foram bem atendidos e recomendam o atendimento.",
+          "avaliacoes": [
+            1
+          ]
+        },
+        {
+          "conclusao": "O vendedor é elogiado por ser muito atencioso e preocupado.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "Os clientes relatam que fizeram perguntas sobre a entrega várias vezes e ninguém posicionou.",
+          "avaliacoes": [
+            6
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "2fe58fb2e7a5e1987bf1dfc4df1676448bc115ab63e8e8d74f182ed189b7c1b8": {
+    "pergunta": "Os clientes reclamam de produto diferente do anunciado?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes relatam que receberam produtos inferiores aos que compraram.",
+          "avaliacoes": [
+            1,
+            4
+          ]
+        },
+        {
+          "conclusao": "Os clientes afirmam que receberam um produto totalmente diferente da compra realizada.",
+          "avaliacoes": [
+            6,
+            9
+          ]
+        },
+        {
+          "conclusao": "Os clientes reclamam que o modelo recebido é diferente da foto.",
+          "avaliacoes": [
+            2,
+            10
+          ]
+        },
+        {
+          "conclusao": "Os clientes informam que receberam produtos com cores diferentes da comprada ou ilustrada.",
+          "avaliacoes": [
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "conclusao": "O cliente relata que o produto recebido não possuía as especificações indicadas.",
+          "avaliacoes": [
+            3
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "f1494291d989c8713c98b2243c34324a17e1db1bd5dd1aa6407bec9070764fc6": {
+    "pergunta": "O que os clientes falam sobre a embalagem dos produtos?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O produto chegou bem embalado e protegido em perfeito estado.",
+          "avaliacoes": [
+            8
+          ]
+        },
+        {
+          "conclusao": "A caixa do produto chegou amassada, destruída ou velha.",
+          "avaliacoes": [
+            1,
+            9
+          ]
+        },
+        {
+          "conclusao": "A caixa veio rasgada, semi aberta e em mau estado de transporte.",
+          "avaliacoes": [
+            3
+          ]
+        },
+        {
+          "conclusao": "O produto chegou apenas embrulhado em plástico bolha, sem a embalagem do fabricante.",
+          "avaliacoes": [
+            4,
+            6
+          ]
+        },
+        {
+          "conclusao": "A caixa do produto é bonita, mas peca no acabamento.",
+          "avaliacoes": [
+            5
+          ]
+        },
+        {
+          "conclusao": "A embalagem não foi considerada segura por vir em caixa frágil e sem proteção em cima do produto.",
+          "avaliacoes": [
+            7
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "7989f8e328658c7f7cfd06cea94fb1bcebf62fc390d3721b5d47ab3df4937ba6": {
+    "pergunta": "Há reclamações sobre devolução ou reembolso?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes reclamam que a loja é ruim para devolver o dinheiro.",
+          "avaliacoes": [
+            2
+          ]
+        },
+        {
+          "conclusao": "Os clientes relatam demora no processo de devolução com entrega em lugar errado.",
+          "avaliacoes": [
+            1
+          ]
+        },
+        {
+          "conclusao": "Há reclamações de falta de resposta e demora em relação ao estorno da compra.",
+          "avaliacoes": [
+            4,
+            5
+          ]
+        },
+        {
+          "conclusao": "Clientes exigem o dinheiro de volta após não receberem os produtos e sem obter resposta por e-mail.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "Clientes informam que solicitarão o reembolso do dinheiro.",
+          "avaliacoes": [
+            7
+          ]
+        },
+        {
+          "conclusao": "Clientes perguntam como fazer a troca por terem recebido o produto errado.",
+          "avaliacoes": [
+            9
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "7cbd84ac997df838555c4b318499cb0cca518ce823362b495dac485937676e42": {
+    "pergunta": "Os clientes comentam sobre o preço do frete?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O frete é considerado caro por parte dos clientes.",
+          "avaliacoes": [
+            1,
+            3,
+            4,
+            10
+          ]
+        },
+        {
+          "conclusao": "Alguns clientes mencionam preço justo.",
+          "avaliacoes": [
+            2
+          ]
+        },
+        {
+          "conclusao": "Há comentários de que o frete deveria ser grátis.",
+          "avaliacoes": [
+            5
+          ]
+        },
+        {
+          "conclusao": "Alguns clientes relatam frete grátis para compras realizadas no mesmo ano.",
+          "avaliacoes": [
+            9
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "4465f6e4e136a45f5671ba3f891971ee66a8e1f3053969d3eac8c972bf4fb7bb": {
+    "pergunta": "Qual foi o lucro da Olist em 2018?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não contêm informações sobre o lucro da Olist em 2018."
+    }
+  },
+  "ad65de450c4ec00d565f025925601d80213742796ca8cc0b4effd9cb7e41a2f5": {
+    "pergunta": "Me passe uma receita de bolo de chocolate.",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não contêm nenhuma receita de bolo de chocolate, apenas comentários sobre entregas, sabores trocados e produtos variados."
+    }
+  },
+  "8b674432b1540616d8c3335c87dda7685bb02feeb33cc89627323245e4be58ca": {
+    "pergunta": "Quem ganhou a Copa do Mundo de 2018?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações contêm apenas opiniões sobre produtos e serviços da loja, não mencionando quem ganhou a Copa do Mundo de 2018."
+    }
+  },
+  "c9a5d033459af334abe31908c58d661e1a2d59c0b4fde1df738b33a3f4d23748": {
+    "pergunta": "Quantos funcionários a Olist tem?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações não contêm informações sobre quantos funcionários a Olist tem."
+    }
+  },
+  "4b0c5273e61617e4a8fca7decc68644ca437f5e7f422a2af8382d5f5cda7cf58": {
+    "pergunta": "Traduza bom dia para o inglês.",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não contêm a tradução de bom dia para o inglês."
+    }
+  },
+  "cffaada2f349ad5ebc5da4d074b4b69fbe4bced34d76cd478305cece2af09467": {
+    "pergunta": "O que os clientes acham do pagamento por Pix?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não mencionam o pagamento por Pix."
+    }
+  },
+  "6e35adc8438bc292ce0eef94d0854a4b37b51e6c64ec1e648468cda671c2cd43": {
+    "pergunta": "Há reclamações sobre o programa de cashback?",
+    "saida": {
+      "responde": true,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não mencionam nada sobre o programa de cashback."
+    }
+  },
+  "badf458368c5a21e22663704f01979c421c9ddab5adbb1e88cd5f74abca31a76": {
+    "pergunta": "Os clientes comentam sobre pagamento com criptomoedas?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações não mencionam pagamento com criptomoedas."
+    }
+  },
+  "de99cb1cae26407f65582e845ca19a87790a8c87631b350f72713a7cd0677e56": {
+    "pergunta": "O que os clientes acham do atendimento por videochamada?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não contêm informações sobre o atendimento por videochamada."
+    }
+  },
+  "f2954cb7202a5e8641bf918f9c54a0b4e853676628298085d395c86588f35ca6": {
+    "pergunta": "Os clientes reclamam da retirada em armários inteligentes?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas não contêm menções sobre retirada em armários inteligentes."
+    }
+  },
+  "c0fc00ca4a2f46ac8d304caa5045f947619551f42652c40f75aaf74876c3e4ca": {
+    "pergunta": "O que os clientes dizem sobre o clube de assinatura mensal?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avalia17es fornecidas n&#xE3;o mencionam o clube de assinatura mensal."
+    }
+  },
+  "1b81c97386eaffefac2bebebf7b0efaf9520d4c3d29b7b5f0f50c4ca53c46664": {
+    "pergunta": "Qual é a nota média das avaliações?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações não informam notas numéricas ou a nota média dos clientes."
+    }
+  },
+  "62d06a035aacaede23a9f4daad799218c15d1aed017e1d54c0c12ba2916934a8": {
+    "pergunta": "Quantas avaliações foram feitas em 2017?",
+    "saida": {
+      "responde": false,
+      "pontos": [],
+      "faltou": "As avaliações fornecidas contém menções a datas do ano de 2017, mas nenhuma delas informa o total de avaliações feitas nesse ano."
+    }
+  },
+  "e6ece9bb88ea10ae82c10b7c4f31e64d04cead1ac812dcb954540e019d18de47": {
+    "pergunta": "O que os clientes dizem sobre a entrega e sobre o pagamento por Pix?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes receberam os produtos antes do prazo ou rapidamente.",
+          "avaliacoes": [
+            2,
+            3,
+            4,
+            9
+          ]
+        },
+        {
+          "conclusao": "Houve reclamações sobre atrasos e demora na entrega.",
+          "avaliacoes": [
+            1,
+            5
+          ]
+        },
+        {
+          "conclusao": "Houve cobrança de frete, mas o cliente precisou retirar na agência dos Correios.",
+          "avaliacoes": [
+            7
+          ]
+        }
+      ],
+      "faltou": "As avaliações não mencionam o pagamento por Pix."
+    }
+  },
+  "d2247eb3790273526a043e167c5fcfc0f5e169f967196956529ead5e3e77f403": {
+    "pergunta": "O que os clientes dizem sobre o atendimento do vendedor e sobre o programa de cashback?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O vendedor é considerado atencioso, prestativo e preocupado.",
+          "avaliacoes": [
+            1,
+            7,
+            8
+          ]
+        },
+        {
+          "conclusao": "O atendimento nas compras efetuadas é excelente.",
+          "avaliacoes": [
+            2
+          ]
+        },
+        {
+          "conclusao": "Os funcionários do SAC são descritos como mal-educados.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "Há avaliações positivas sobre o bom atendimento nas compras efetuadas.",
+          "avaliacoes": [
+            10
+          ]
+        }
+      ],
+      "faltou": "As avaliações não trazem nenhuma menção ao programa de cashback."
+    }
+  },
+  "87caf34bf7d7c87de2b4b6bfed535cb5c2c29cd391c8429f12c505b1df51ccd6": {
+    "pergunta": "Os clientes comentam sobre garantia estendida?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "A garantia estendida veio certa para um cliente.",
+          "avaliacoes": [
+            1
+          ]
+        },
+        {
+          "conclusao": "Um cliente quer saber a respeito da nota da garantia estendida.",
+          "avaliacoes": [
+            2
+          ]
+        },
+        {
+          "conclusao": "A garantia estendida não foi enviada para um cliente.",
+          "avaliacoes": [
+            10
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "b69d860bc18de510a222273771c8d8a3a990e9c4f2957fff753d5195c9bcddfe": {
     "pergunta": "Quais são os principais problemas relatados pelos clientes em suas avaliações?",
     "saida": {
       "responde": true,
       "pontos": [
         {
-          "conclusao": "A entrega sofreu atrasos.",
+          "conclusao": "A entrega atrasou.",
           "avaliacoes": [
-            3,
             5,
-            10
-          ]
-        },
-        {
-          "conclusao": "O atendimento ao cliente é avaliado como péssimo e sem canais adequados de reclamação.",
-          "avaliacoes": [
-            1,
-            2,
             3
           ]
         },
         {
-          "conclusao": "Os produtos foram entregues no tamanho errado ou com dimensões incorretas.",
+          "conclusao": "O produto veio com defeito de fábrica ou avariado.",
+          "avaliacoes": [
+            6,
+            9
+          ]
+        },
+        {
+          "conclusao": "A qualidade do material do produto é ruim.",
+          "avaliacoes": [
+            7,
+            8
+          ]
+        },
+        {
+          "conclusao": "O produto foi entregue no tamanho ou dimensões erradas.",
           "avaliacoes": [
             4,
             9,
@@ -29,180 +672,25 @@
           ]
         },
         {
-          "conclusao": "O material dos produtos tem baixa qualidade.",
-          "avaliacoes": [
-            7,
-            8
-          ]
-        },
-        {
-          "conclusao": "Os produtos vieram com defeito, avarias ou furações que não batem.",
-          "avaliacoes": [
-            6,
-            7,
-            9
-          ]
-        }
-      ],
-      "motivo": ""
-    }
-  },
-  "5f061744cd5ad8fa69cadd76ec47d848860df8ef8d8cb3e13ad73c2b0adc3cfa": {
-    "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
-    "saida": {
-      "responde": true,
-      "pontos": [
-        {
-          "conclusao": "Os clientes relatam que o produto chegou amassado.",
+          "conclusao": "O atendimento é péssimo e sem canais adequados de suporte.",
           "avaliacoes": [
             1,
-            6
-          ]
-        },
-        {
-          "conclusao": "Os clientes apontam que a entrega demorou muito.",
-          "avaliacoes": [
+            2,
             3
           ]
         },
         {
-          "conclusao": "Os clientes informam que a caixa ou pacote veio aberta.",
-          "avaliacoes": [
-            2,
-            4,
-            5,
-            8
-          ]
-        },
-        {
-          "conclusao": "Os clientes reclamam que a embalagem estava mal embalada ou o pacote rasgado.",
-          "avaliacoes": [
-            1,
-            4,
-            7
-          ]
-        },
-        {
-          "conclusao": "Os clientes relatam que a mercadoria está muito atrasada ou não foi recebida.",
-          "avaliacoes": [
-            9
-          ]
-        },
-        {
-          "conclusao": "Os clientes relatam que o produto foi recebido incompleto com itens faltando.",
-          "avaliacoes": [
-            10
-          ]
-        }
-      ],
-      "motivo": ""
-    }
-  },
-  "535a844d7de72cefec94bdf65d568f18a1a39e901fe4468627f9885142c1d48f": {
-    "pergunta": "Quais aspectos da experiência de compra são mais elogiados pelos clientes?",
-    "saida": {
-      "responde": true,
-      "pontos": [
-        {
-          "conclusao": "A rapidez na entrega é um dos aspectos mais elogiados.",
-          "avaliacoes": [
-            1,
-            10
-          ]
-        },
-        {
-          "conclusao": "Os clientes elogiam o bom atendimento recebido.",
-          "avaliacoes": [
-            5,
-            6
-          ]
-        },
-        {
-          "conclusao": "A facilidade de compra e de uso do site é destacada positivamente.",
+          "conclusao": "O produto não chegou na data prevista.",
           "avaliacoes": [
             3,
-            4,
-            6
-          ]
-        },
-        {
-          "conclusao": "As compras atendem plenamente às expectativas dos consumidores.",
-          "avaliacoes": [
-            8,
-            9
-          ]
-        },
-        {
-          "conclusao": "Os pedidos chegam no prazo combinado.",
-          "avaliacoes": [
-            5
-          ]
-        },
-        {
-          "conclusao": "Os produtos são bem embalados.",
-          "avaliacoes": [
-            3
-          ]
-        }
-      ],
-      "motivo": ""
-    }
-  },
-  "584c07f09e1f2d3777d06f5eee3bac8118e8a89265095a8419d4d43e24ce091c": {
-    "pergunta": "Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?",
-    "saida": {
-      "responde": true,
-      "pontos": [
-        {
-          "conclusao": "Os produtos recebidos são considerados de péssima qualidade e acabamento.",
-          "avaliacoes": [
-            3,
-            8
-          ]
-        },
-        {
-          "conclusao": "Os clientes reclamam que os produtos chegam com defeito.",
-          "avaliacoes": [
-            10
-          ]
-        },
-        {
-          "conclusao": "Houve falta de produtos dentro da caixa entregue.",
-          "avaliacoes": [
-            4
-          ]
-        }
-      ],
-      "motivo": ""
-    }
-  },
-  "f9e5427ac57bdc12b7052a873a5534cef8c9b8307590b8539090edc4bfe230fe": {
-    "pergunta": "Quais avaliações sustentam a conclusão de que existem problemas recorrentes relacionados ao prazo de entrega?",
-    "saida": {
-      "responde": true,
-      "pontos": [
-        {
-          "conclusao": "O prazo de entrega não foi cumprido e as encomendas atrasaram.",
-          "avaliacoes": [
-            3,
-            9
-          ]
-        },
-        {
-          "conclusao": "A entrega demorou demais e causou insatisfação.",
-          "avaliacoes": [
-            2,
-            4,
-            5,
-            6,
             10
           ]
         }
       ],
-      "motivo": ""
+      "faltou": ""
     }
   },
-  "a259237c819eefcae728eab3c9522452f7683ff5d951e9b7a4e43021ef991740": {
+  "b5999ad2c042bdd400f8947014ccd49cc63197f9f0126a72fd200db5e5e98767": {
     "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
     "saida": {
       "responde": true,
@@ -215,38 +703,14 @@
           ]
         },
         {
-          "conclusao": "Os clientes relatam que receberam embalagens abertas, mal embaladas ou rasgadas.",
+          "conclusao": "Os clientes relatam que receberam o produto com a caixa ou o pacote amassado.",
           "avaliacoes": [
-            2,
-            4,
-            5,
-            7,
-            8
-          ]
-        }
-      ],
-      "motivo": ""
-    }
-  },
-  "edebbf05d8ab6d5a469d7dad071fcfb696cf189809ab8a5c240c321c959c2327": {
-    "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
-    "saida": {
-      "responde": true,
-      "pontos": [
-        {
-          "conclusao": "Os clientes relatam que a entrega demorou muito para chegar.",
-          "avaliacoes": [
-            3
+            1,
+            6
           ]
         },
         {
-          "conclusao": "Os clientes relatam que a entrega está muito atrasada e a mercadoria não foi recebida.",
-          "avaliacoes": [
-            9
-          ]
-        },
-        {
-          "conclusao": "Os clientes relatam que a caixa veio aberta durante a entrega.",
+          "conclusao": "Os clientes relatam que receberam a caixa aberta.",
           "avaliacoes": [
             2,
             5,
@@ -254,8 +718,9 @@
           ]
         },
         {
-          "conclusao": "Os clientes relatam que o produto chegou mal embalado com a caixa quase aberta.",
+          "conclusao": "Os clientes relatam que o produto chegou mal embalado ou com a caixa quase aberta.",
           "avaliacoes": [
+            1,
             4
           ]
         },
@@ -264,9 +729,236 @@
           "avaliacoes": [
             7
           ]
+        },
+        {
+          "conclusao": "Os clientes relatam que receberam o produto incompleto, faltando item.",
+          "avaliacoes": [
+            10
+          ]
         }
       ],
-      "motivo": ""
+      "faltou": ""
+    }
+  },
+  "0937c4d3155783d9d029b6127b1c0897dedf7d84fff1449b2eea084b04355e98": {
+    "pergunta": "Quais aspectos da experiência de compra são mais elogiados pelos clientes?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "A entrega foi rápida.",
+          "avaliacoes": [
+            1,
+            10
+          ]
+        },
+        {
+          "conclusao": "O atendimento foi considerado ótimo quando foi preciso tirar dúvidas.",
+          "avaliacoes": [
+            5
+          ]
+        },
+        {
+          "conclusao": "O atendimento no site foi bom e de fácil acesso.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "As expectativas foram atendidas.",
+          "avaliacoes": [
+            8,
+            9
+          ]
+        },
+        {
+          "conclusao": "A compra foi fácil e o site é recomendado.",
+          "avaliacoes": [
+            3,
+            4
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "581d670eb427b7341149ed37828253e7f134bdca5f29cbe6a3255412c4f9a830": {
+    "pergunta": "Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "Os clientes relatam que o produto é de péssima qualidade e acabamento.",
+          "avaliacoes": [
+            3,
+            8
+          ]
+        },
+        {
+          "conclusao": "Há reclamações de que o produto chegou com defeito.",
+          "avaliacoes": [
+            10
+          ]
+        },
+        {
+          "conclusao": "Clientes apontam que faltou produto na caixa entregue.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "Houve insatisfação com a falta de uma embalagem adequada, com os itens jogados na caixa.",
+          "avaliacoes": [
+            1,
+            5
+          ]
+        },
+        {
+          "conclusao": "Clientes consideram o preço caro associado à péssima qualidade.",
+          "avaliacoes": [
+            3
+          ]
+        },
+        {
+          "conclusao": "Alguns clientes reclamam que a entrega demorou, considerando o prazo longo demais.",
+          "avaliacoes": [
+            6
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "95a4475efd793bac2d81bda353a1fa1192fb72c7d962df746104dd854fa1eb54": {
+    "pergunta": "Quais avaliações sustentam a conclusão de que existem problemas recorrentes relacionados ao prazo de entrega?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "O prazo de entrega não foi cumprido ou a encomenda ainda não chegou.",
+          "avaliacoes": [
+            3
+          ]
+        },
+        {
+          "conclusao": "A entrega atrasou.",
+          "avaliacoes": [
+            9
+          ]
+        },
+        {
+          "conclusao": "O produto demorou demais para chegar.",
+          "avaliacoes": [
+            2,
+            5,
+            10
+          ]
+        },
+        {
+          "conclusao": "A entrega atrasou muito.",
+          "avaliacoes": [
+            6
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "175c74258c1ed7abcfff2bccecbd267e95ec03861792e8290292feaf8148bfbb": {
+    "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "A entrega sofreu atraso ou demora excessiva.",
+          "avaliacoes": [
+            3,
+            9
+          ]
+        },
+        {
+          "conclusao": "A caixa do produto veio aberta.",
+          "avaliacoes": [
+            2,
+            5,
+            8
+          ]
+        },
+        {
+          "conclusao": "O produto chegou mal embalado com a caixa quase aberta.",
+          "avaliacoes": [
+            4
+          ]
+        },
+        {
+          "conclusao": "O produto chegou amassado.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "O pacote veio rasgado.",
+          "avaliacoes": [
+            7
+          ]
+        },
+        {
+          "conclusao": "O produto foi recebido incompleto com falta de item.",
+          "avaliacoes": [
+            10
+          ]
+        }
+      ],
+      "faltou": ""
+    }
+  },
+  "8290e76ad64d523a9d3cd25f1dd7a994eb6d81446bd59ee187d63340db0a9e79": {
+    "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
+    "saida": {
+      "responde": true,
+      "pontos": [
+        {
+          "conclusao": "A entrega apresenta atraso na chegada dos produtos.",
+          "avaliacoes": [
+            3,
+            9
+          ]
+        },
+        {
+          "conclusao": "As embalagens chegam abertas.",
+          "avaliacoes": [
+            2,
+            4,
+            5,
+            8
+          ]
+        },
+        {
+          "conclusao": "O produto é entregue amassado.",
+          "avaliacoes": [
+            6
+          ]
+        },
+        {
+          "conclusao": "O pacote chega rasgado.",
+          "avaliacoes": [
+            7
+          ]
+        },
+        {
+          "conclusao": "O cliente não recebe a mercadoria.",
+          "avaliacoes": [
+            9
+          ]
+        },
+        {
+          "conclusao": "O produto é recebido de forma incompleta com falta de item.",
+          "avaliacoes": [
+            10
+          ]
+        }
+      ],
+      "faltou": ""
     }
   }
 }

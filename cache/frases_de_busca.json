@@ -108,5 +108,215 @@
       "Chegou bem depois da data prevista.",
       "Demorou demais para receber minha compra."
     ]
+  },
+  "93e98a5196d4a00479fb2a08278cac33e114ec7b1ddd6710f5202f5e141b9e2e": {
+    "pergunta": "Me passe uma receita de bolo de chocolate.",
+    "frases": [
+      "O bolo ficou super fofinho e delicioso.",
+      "Achei a massa muito seca e dura.",
+      "Faltou açúcar na receita do bolo.",
+      "Ficou com ótimo sabor de chocolate.",
+      "O tempo de forno estava errado."
+    ]
+  },
+  "afb9b72576312a02faaaf87d8ba38fe2cbe5da266f368e07568a83e2d1bfc60d": {
+    "pergunta": "Traduza bom dia para o inglês.",
+    "frases": [
+      "O produto não tem tradução.",
+      "Faltou a instrução em inglês.",
+      "Manual veio sem o idioma inglês.",
+      "Não encontrei a versão em inglês.",
+      "Queria a opção de idioma inglês."
+    ]
+  },
+  "b42eaa10d762b51667ce91c83e4e76f5ae8dfce73cece27fffd13e2de3495ec5": {
+    "pergunta": "Quem ganhou a Copa do Mundo de 2018?",
+    "frases": [
+      "Achei o produto péssimo.",
+      "Veio com defeito de fábrica.",
+      "Não recomendo esta compra ruim.",
+      "O atendimento foi bem ruim.",
+      "Fiquei muito arrependido de comprar."
+    ]
+  },
+  "b3a4436e2de098cf6ddb905d0011dd7de89d83e3fdedeadfbb9712d9e95e0f23": {
+    "pergunta": "Qual foi o lucro da Olist em 2018?",
+    "frases": [
+      "A empresa divulgou quanto lucrou em 2018?",
+      "Queria saber o balanço financeiro de 2018.",
+      "Resultados financeiros de 2018 não foram claros.",
+      "Onde acho o lucro da Olist antiga?",
+      "Mostrem os dados de faturamento de 2018."
+    ]
+  },
+  "3632204931e4b9e13568fd271162cca9c6347394b58db96d082f09360868605e": {
+    "pergunta": "O que os clientes acham do pagamento por Pix?",
+    "frases": [
+      "Achei o pagamento por Pix super rápido.",
+      "Desconto bom ao pagar no Pix.",
+      "Pix caiu na hora e aprovou.",
+      "Paguei com Pix e foi muito prático.",
+      "Gostaria de mais facilidade no Pix."
+    ]
+  },
+  "2a05f9b34859232d25132901a3eab8d3541dce6e8aef3a02cd3708a94e8aa8da": {
+    "pergunta": "Há reclamações sobre o programa de cashback?",
+    "frases": [
+      "O cashback nunca caiu na minha conta.",
+      "O resgate dos pontos é muito difícil.",
+      "Prometeram o dinheiro de volta e nada.",
+      "O saldo de cashback sumiu sozinho.",
+      "Atendimento não resolve problemas do programa."
+    ]
+  },
+  "e75f280e72639620b66e112a29ffd939588b2454ca02872667f9f2da8da38201": {
+    "pergunta": "Os clientes reclamam da retirada em armários inteligentes?",
+    "frases": [
+      "O armário inteligente não abriu com o qr code.",
+      "Meu pacote estava travado no locker errado.",
+      "Achei o armário dificil de acessar na rua.",
+      "O código de retirada demorou pra chegar.",
+      "Fui buscar no armário e estava vazio."
+    ]
+  },
+  "ebc100db7680324dd4645876d817a3e3eaec363b17d31a16bbf311079fe9a8e5": {
+    "pergunta": "Qual é a nota média das avaliações?",
+    "frases": [
+      "Achei a nota geral muito alta.",
+      "A pontuação dos produtos é boa.",
+      "Todo mundo dá nota máxima aqui.",
+      "A média das avaliações me enganou.",
+      "As notas dos clientes são baixas."
+    ]
+  },
+  "ca27adf1a974b53ac7b705d3b6eb0807d67995897f4d88d8ab1762f431a8ba89": {
+    "pergunta": "Os clientes comentam sobre garantia estendida?",
+    "frases": [
+      "Achei a garantia estendida muito cara",
+      "Contratei o seguro e valeu a pena",
+      "Nao consegui usar minha garantia estendida",
+      "O vendedor empurrou a garantia no caixa",
+      "Tive problemas e acionei a garantia facilmente"
+    ]
+  },
+  "aba931f7fba3739996783ff44acf68915ed59746918ee94d05a2a953b558f20e": {
+    "pergunta": "O que os clientes dizem sobre a entrega e sobre o pagamento por Pix?",
+    "frases": [
+      "A entrega chegou bem antes do prazo",
+      "Paguei com Pix e o pedido sumiu",
+      "Recebi tudo certinho e muito rápido",
+      "O Pix aprovou na hora sem problemas",
+      "A entrega atrasou demais e fiquei chateado"
+    ]
+  },
+  "bcb6e623366cae63c8bd28e657a3a55a97b3795faa43fbd83a15344373691898": {
+    "pergunta": "O que os clientes dizem sobre o atendimento do vendedor?",
+    "frases": [
+      "O vendedor foi muito atencioso comigo.",
+      "Atendimento péssimo, ninguém quis me ajudar.",
+      "Fui muito bem atendido na loja.",
+      "O atendimento online demorou demais hoje.",
+      "Vendedor super educado e prestativo aqui."
+    ]
+  },
+  "a153326a1424af86029b1fad613721d2c1aa426f9b096e4be8b00c9ae2c6d16a": {
+    "pergunta": "Os clientes reclamam de produto diferente do anunciado?",
+    "frases": [
+      "Recebi um modelo totalmente diferente da foto.",
+      "O produto chegou com cor trocada aqui.",
+      "Comprei uma coisa e entregaram outra bem menor.",
+      "As especificações na caixa não conferem com o site.",
+      "Veio um item inferior ao que eu comprei."
+    ]
+  },
+  "565885089ced426dc8d75258cfb0ddbabbcbc1b92ad48ead163704ac89a5039e": {
+    "pergunta": "O que os clientes falam sobre a embalagem dos produtos?",
+    "frases": [
+      "A caixa chegou bem amassada.",
+      "Veio tudo muito bem protegido.",
+      "Faltou plástico bolha na encomenda.",
+      "Achei a caixa linda e segura.",
+      "Embalagem rasgada e produto danificado."
+    ]
+  },
+  "11bb503b757acf80736e92ceaf02fffe7e29423d40121cf3d6b16c6c18c131f0": {
+    "pergunta": "Há reclamações sobre devolução ou reembolso?",
+    "frases": [
+      "Ninguém responde sobre o meu reembolso.",
+      "A loja demorou meses para devolver o dinheiro.",
+      "Foi muito difícil conseguir fazer a troca.",
+      "O processo de devolução é confuso e demorado.",
+      "Não consigo estorno da compra cancelada."
+    ]
+  },
+  "6f444c58903c9ca18c9d796c9013b84882c76d1a8903b8064f3b9d651b4155b0": {
+    "pergunta": "Os clientes comentam sobre o preço do frete?",
+    "frases": [
+      "O frete veio muito caro.",
+      "Achei o envio barato e rápido.",
+      "O frete grátis compensou a compra.",
+      "Paguei caro demais na entrega.",
+      "Taxa de entrega com valor justo."
+    ]
+  },
+  "b13577914d8246c7e4a11516e501a4756f540e2605a8f7d1864c229f0133b407": {
+    "pergunta": "Quantos funcionários a Olist tem?",
+    "frases": [
+      "Quero saber o tamanho da equipe.",
+      "Quantas pessoas trabalham nessa empresa hoje?",
+      "Me informe o total de colaboradores.",
+      "Qual o número de funcionários contratados?",
+      "Quantos empregados fazem parte da empresa?"
+    ]
+  },
+  "d9f8a3493ef2470f4eb9d49a6abd2fadf76e7ae159bd20352a91931da702c80b": {
+    "pergunta": "Os clientes comentam sobre pagamento com criptomoedas?",
+    "frases": [
+      "Paguei com bitcoin e foi super rápido.",
+      "Achei ótimo poder usar criptomoedas na compra.",
+      "O pagamento em ethereum deu erro no site.",
+      "Não consegui finalizar a compra com cripto.",
+      "Queria mais opções de moedas digitais."
+    ]
+  },
+  "be147c730e961fcfaa72091a8d9a6465b29f8eb6584be2ab651460c58ff9b950": {
+    "pergunta": "O que os clientes acham do atendimento por videochamada?",
+    "frases": [
+      "A videochamada travou durante o atendimento.",
+      "Atendente foi super educado na chamada de vídeo.",
+      "Consegui resolver tudo rapidamente por videochamada.",
+      "A qualidade da imagem estava muito ruim.",
+      "Adorei ser atendido por videochamada hoje."
+    ]
+  },
+  "68f09cc64c4a0af0e745d0e762ef391308d9a4bb36b2e92aad1e3482e1602e0e": {
+    "pergunta": "O que os clientes dizem sobre o clube de assinatura mensal?",
+    "frases": [
+      "Recebo minha caixa todos os meses perfeitamente.",
+      "Os produtos que chegam são de ótima qualidade.",
+      "O cancelamento da assinatura foi super fácil.",
+      "Achei o valor da mensalidade um pouco alto.",
+      "As surpresas mensais são sempre muito divertidas."
+    ]
+  },
+  "8981dc155f8a2771c805bfc0d0cf120d217aefa25cf2fd0d141333838a6f31f6": {
+    "pergunta": "Quantas avaliações foram feitas em 2017?",
+    "frases": [
+      "Comprei e avaliei o produto em 2017.",
+      "Deixei meu comentário sobre a compra no ano de 2017.",
+      "Minha opinião foi registrada no site em 2017.",
+      "Fiz minha avaliação da loja em 2017.",
+      "Escrevi um review para este item em 2017."
+    ]
+  },
+  "16aa8b0128de0a97aa93b2deb173f3aca12f3be9789de161a58e8c63698ed20f": {
+    "pergunta": "O que os clientes dizem sobre o atendimento do vendedor e sobre o programa de cashback?",
+    "frases": [
+      "O vendedor foi muito atencioso comigo.",
+      "Atendimento excelente na hora da compra.",
+      "Nunca recebi o meu cashback prometido.",
+      "O resgate do cashback foi bem fácil.",
+      "Funcionários mal educados e sem paciência."
+    ]
   }
 }

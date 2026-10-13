@@ -37,8 +37,15 @@ trazer informações que não estão em nenhum ponto, sem indicar a evidência. 
 que está, tudo o que é mostrado como conclusão está em um ponto, e todo ponto tem
 evidência.
 
-O modelo também é instruído a não escrever expressões como "a maioria" ou "com
-alta frequência". A quantidade de avaliações é calculada pelo programa.
+O modelo também é instruído a:
+
+- usar uma avaliação só se ela tratar do assunto da pergunta. Em uma pergunta sobre
+  algo específico, como uma forma de pagamento, a avaliação precisa mencionar esse
+  assunto;
+- não escrever expressões como "a maioria" ou "com alta frequência". A quantidade
+  de avaliações é calculada pelo programa;
+- dizer o que faltou quando as avaliações não respondem à pergunta, ou respondem só
+  a uma parte. Esse tratamento está descrito em [`recusa.md`](recusa.md).
 
 ### 3. Validação
 
@@ -70,12 +77,12 @@ Pergunta: **O que os clientes relatam sobre problemas relacionados à entrega?**
 
 | Conclusão | Evidências | Avaliações na base |
 |---|---|---|
-| Os clientes relatam que o produto chegou amassado. | [1] [6] | 77 |
-| Os clientes apontam que a entrega demorou muito. | [3] | 19 |
-| Os clientes informam que a caixa ou pacote veio aberta. | [2] [4] [5] [8] | 13 |
-| Os clientes reclamam que a embalagem estava mal embalada ou o pacote rasgado. | [1] [4] [7] | 13 |
-| Os clientes relatam que a mercadoria está muito atrasada ou não foi recebida. | [9] | 53 |
-| Os clientes relatam que o produto foi recebido incompleto com itens faltando. | [10] | 4 |
+| Os clientes relatam que receberam o produto com a caixa ou o pacote amassado. | [1] [6] | 77 |
+| Os clientes relatam que a entrega demorou muito ou está muito atrasada. | [3] [9] | 72 |
+| Os clientes relatam que o produto chegou mal embalado ou com a caixa quase aberta. | [1] [4] | 12 |
+| Os clientes relatam que receberam a caixa aberta. | [2] [5] [8] | 5 |
+| Os clientes relatam que receberam o produto incompleto, faltando item. | [10] | 4 |
+| Os clientes relatam que o pacote veio rasgado. | [7] | 1 |
 
 Evidências:
 
@@ -99,10 +106,10 @@ Rodei as cinco perguntas da seção "Exemplos de Exploração" do enunciado.
 | | |
 |---|---|
 | Perguntas | 5 |
-| Pontos gerados | 22 |
+| Pontos gerados | 27 |
 | Pontos descartados na validação | 0 |
 | Evidências recuperadas | 50 |
-| Evidências citadas em algum ponto | 39 |
+| Evidências citadas em algum ponto | 41 |
 
 As evidências não citadas são avaliações que o modelo considerou fora do assunto da
 pergunta. Na pergunta sobre elogios, por exemplo, ficaram de fora "O frete deveria
@@ -110,10 +117,6 @@ ser grátis..." e "Mandei várias dúvidas por email, não recebi respostas."
 
 Li as respostas ponto por ponto e conferi com as evidências citadas. As conclusões
 estão de acordo com os textos.
-
-A pergunta com o resultado mais fraco é "Quais padrões podem ser identificados nas
-avaliações de clientes insatisfeitos?". Ela não cita um assunto, e a busca trouxe
-avaliações variadas. O modelo usou 4 das 10 evidências e gerou 3 pontos.
 
 ## Testes
 
@@ -139,3 +142,4 @@ marcação.
   mais. As quantidades valem para os comentários, e não para todos os clientes.
 - A resposta depende das evidências recuperadas. Um assunto que a busca não trouxe
   não aparece na resposta.
+- O modelo às vezes deixa de usar uma evidência que trata do assunto.
