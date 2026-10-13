@@ -24,7 +24,7 @@ from sentence_transformers import SentenceTransformer
 
 from config import settings
 from src.preparacao.base_conhecimento import carregar_base
-from src.preparacao.texto import sem_acentos, tokens
+from src.preparacao.texto import normalizar, sem_acentos, tokens
 
 PASTA = settings.PATHS["indice"]
 ARQ_VETORIAL = os.path.join(PASTA, "vetorial.faiss")
@@ -136,19 +136,58 @@ class Indice:
         self.lexical = BM25Okapi([tokenizar(t) for t in self.documentos["texto"]])
         self.modelo = carregar_modelo()
 
-    def buscar_vetorial(self, consulta: str, k: int = 10) -> list[tuple[int, float]]:
-        """Documentos mais parecidos em significado. A pontuação é a similaridade de cosseno."""
-        pontos, posicoes = self.vetorial.search(gerar_embeddings([consulta], self.modelo), k)
-        return [(int(p), float(s)) for p, s in zip(posicoes[0], pontos[0])]
+        # Documentos com o mesmo texto (avaliações de clientes diferentes). Cada
+        # grupo é representado pelo primeiro documento, e `iguais` guarda todos.
+        chaves = self.documentos["texto"].map(normalizar)
+        self.iguais = {int(p[0]): p for p in self.documentos.groupby(chaves.to_numpy(), sort=False).indices.values()}
+        self.representante = np.empty(len(self.documentos), dtype=np.int64)
+        for primeiro, posicoes in self.iguais.items():
+            self.representante[posicoes] = primeiro
 
-    def buscar_lexical(self, consulta: str, k: int = 10) -> list[tuple[int, float]]:
+    def embutir(self, textos) -> np.ndarray:
+        return gerar_embeddings(textos, self.modelo)
+
+    def buscar_vetorial(self, consulta, k: int = 10, distintos: bool = False) -> list[tuple[int, float]]:
+        """Documentos mais parecidos em significado. A pontuação é a similaridade de cosseno.
+
+        `consulta` pode ser um texto ou um vetor já calculado.
+        """
+        vetor = consulta if isinstance(consulta, np.ndarray) else self.embutir([consulta])
+        pontos, posicoes = self.vetorial.search(vetor.reshape(1, -1), settings.K_BRUTO if distintos else k)
+        itens = [(int(p), float(s)) for p, s in zip(posicoes[0], pontos[0])]
+        return self._distintos(itens, k) if distintos else itens
+
+    def buscar_lexical(self, consulta: str, k: int = 10, distintos: bool = False) -> list[tuple[int, float]]:
         """Documentos que compartilham palavras com a consulta. A pontuação é a do BM25."""
         pontos = self.lexical.get_scores(tokenizar(consulta))
-        melhores = np.argsort(-pontos)[:k]
-        return [(int(p), float(pontos[p])) for p in melhores if pontos[p] > 0]
+        melhores = np.argsort(-pontos)[: settings.K_BRUTO if distintos else k]
+        itens = [(int(p), float(pontos[p])) for p in melhores if pontos[p] > 0]
+        return self._distintos(itens, k) if distintos else itens
+
+    def _distintos(self, itens: list[tuple[int, float]], k: int) -> list[tuple[int, float]]:
+        """Mantém um documento por texto, na ordem em que aparecem, até completar k."""
+        vistos, saida = set(), []
+        for posicao, pontos in itens:
+            primeiro = int(self.representante[posicao])
+            if primeiro not in vistos:
+                vistos.add(primeiro)
+                saida.append((primeiro, pontos))
+                if len(saida) == k:
+                    break
+        return saida
+
+    def vetor(self, posicao: int) -> np.ndarray:
+        return self.vetorial.reconstruct(posicao)
+
+    def similaridade(self, vetores: np.ndarray, posicao: int) -> float:
+        """Maior similaridade de cosseno entre o documento e os vetores informados."""
+        return float(np.max(vetores @ self.vetor(posicao)))
 
     def texto(self, posicao: int) -> str:
         return self.documentos["texto"].iat[posicao]
+
+    def review_id(self, posicao: int) -> str:
+        return self.documentos["review_id"].iat[posicao]
 
 
 def conferir(indice: Indice, k: int = 3) -> dict:

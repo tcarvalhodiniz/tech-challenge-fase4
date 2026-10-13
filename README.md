@@ -153,7 +153,45 @@ para gerar de novo.
 
 ### Recuperação
 
-_Preenchido no Passo 5._
+A recuperação recebe a pergunta e devolve as 10 avaliações que servem de evidência.
+O relatório, com um exemplo completo, está em
+[`reports/recuperacao.md`](reports/recuperacao.md). Para ver cada etapa em uma
+pergunta:
+
+```bash
+python -m src.recuperacao.recuperador "Quais os problemas com a entrega?"
+```
+
+| Etapa | O que acontece |
+|---|---|
+| 1. Transformação da pergunta | O Gemini reescreve a pergunta como cinco frases curtas que um cliente escreveria, cada uma sobre uma situação diferente. É uma variação da técnica HyDE |
+| 2. Busca | A pergunta e as frases são procuradas no índice de significado. As frases também são procuradas no índice de palavras. São 11 rankings com até 20 avaliações cada |
+| 3. Fusão | Os rankings são combinados com RRF. Quem aparece bem colocado em vários rankings sobe na lista |
+| 4. Seleção | Ficam as 10 mais bem colocadas. Textos iguais ou quase iguais contam como uma evidência só |
+
+A pergunta é transformada porque ela não se parece com os comentários. Para
+"problemas com a entrega do pedido", a busca direta traz como primeiro resultado um
+elogio ("Eficiente do pedido a entrega"). Com as frases de busca, vêm reclamações
+como "demorou quase 3 semanas para chegar".
+
+Comparei quatro configurações em seis perguntas do enunciado, com 60 evidências em
+cada configuração:
+
+| Configuração | Sem relação com o assunto | Repetidas |
+|---|---|---|
+| A. Pergunta original, busca por significado | 0 | 0 |
+| B. Pergunta original, significado e palavras | 14 | 0 |
+| C. Com frases de busca, sem juntar parecidas | 0 | 5 |
+| D. Configuração do projeto | 0 | 0 |
+
+Por causa do resultado de B, a busca por palavras usa só as frases, e não a
+pergunta original. Por causa do resultado de C, os textos quase iguais são
+agrupados. A comparação da relevância das evidências entre A e D é feita na etapa
+de avaliação.
+
+Cada evidência guarda o `review_id`, o texto, a similaridade com a pergunta, os
+rankings em que apareceu e as avaliações parecidas. Essas informações são usadas
+depois para mostrar ao usuário de onde veio a resposta.
 
 ## 7. Respostas fundamentadas em evidências
 
@@ -192,6 +230,9 @@ _Preenchido no Passo 9._
 | Modelo de embeddings multilíngue | Os comentários estão em português, e o modelo foi treinado para reconhecer frases com o mesmo sentido em vários idiomas |
 | Índice vetorial com busca exata | Com 35.957 vetores a busca exata leva 13 ms. Um índice aproximado seria mais rápido, mas pode deixar de fora um documento relevante |
 | Busca por palavras sem acento e com a palavra "não" | Os clientes escrevem a mesma palavra com e sem acento, e "não recebi" tem sentido oposto a "recebi" |
+| Transformação da pergunta em frases de busca | A pergunta do usuário não se parece com os comentários. Com as frases, a busca traz reclamações quando a pergunta é sobre problemas |
+| Busca por palavras só com as frases de busca | Com a pergunta original, 14 de 60 evidências não tinham relação com o assunto, como "Compro com frequência" |
+| Textos quase iguais contam como uma evidência | Sem isso, várias das 10 evidências diziam a mesma coisa, como "Demorou muito pra chegar" e "Demorou demais pra chegar" |
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
@@ -209,6 +250,7 @@ _Preenchido no Passo 10._
 ```
 tech-challenge-fase4/
 ├── config/            # caminhos, fonte dos dados e modelos
+├── cache/             # frases de busca já geradas, para reproduzir sem gastar cota
 ├── data/              # não versionado
 │   ├── raw/           # CSV de avaliações da Olist
 │   ├── processed/     # base de conhecimento pronta
@@ -249,6 +291,7 @@ python -m src.preparacao.carga         # baixa a base do Kaggle para data/raw (s
 python -m src.preparacao.exploracao    # números e figuras da análise exploratória
 python -m src.preparacao.base_conhecimento   # monta a base em data/processed
 python -m src.indexacao.indice               # gera os embeddings e o índice em data/indice
+python -m src.recuperacao.comparacao         # compara as configurações da busca
 ```
 
 _Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._

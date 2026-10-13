@@ -1,0 +1,72 @@
+{
+  "fa31787d6500ade0539ec03f1cc9999e3df7d484d959e83e705bb3453444db39": {
+    "pergunta": "Quais reclamações relacionadas à entrega aparecem com maior frequência?",
+    "frases": [
+      "Meu pacote chegou muito atrasado.",
+      "A caixa veio toda amassada hoje.",
+      "O entregador nem chamou no portão.",
+      "Passou do prazo e ninguém avisou.",
+      "Rastreamento não atualizava nunca o status."
+    ]
+  },
+  "f6646c085a3839400fa1684511dcdcb259aa4c1bbc8b953baf75da23992d7ad4": {
+    "pergunta": "Quais são os principais problemas relatados pelos clientes?",
+    "frases": [
+      "A entrega atrasou bastante desta vez.",
+      "O produto chegou com defeito visível.",
+      "O atendimento ao cliente é horrível.",
+      "A qualidade do material é péssima.",
+      "O tamanho veio errado na caixa."
+    ]
+  },
+  "3742e9eccea26496dd7a846d96146a903ea6695b3abe08496275abf041991eaa": {
+    "pergunta": "O que os clientes mais elogiam em suas experiências de compra?",
+    "frases": [
+      "A entrega foi extremamente rápida e eficiente.",
+      "O atendimento no chat me ajudou muito.",
+      "O produto chegou muito bem embalado.",
+      "Achei o site super fácil de usar.",
+      "O preço estava excelente nesta compra."
+    ]
+  },
+  "fecc72dfd783d15b25b1c617336343e8ddc795660e5a6011a1720fe1b1d968b0": {
+    "pergunta": "Quais problemas são relatados por clientes insatisfeitos?",
+    "frases": [
+      "Meu produto veio quebrado na caixa.",
+      "A entrega atrasou mais de um mês.",
+      "O atendimento não resolveu meu problema.",
+      "Comprei uma cor e mandaram outra.",
+      "O material é de péssima qualidade."
+    ]
+  },
+  "ecf176b17cad6e86534d7c33e488f687737568c5a4a1156ffa16c6d74d277f58": {
+    "pergunta": "O que os clientes relatam sobre problemas relacionados à entrega?",
+    "frases": [
+      "A entrega demorou muito para chegar.",
+      "Meu pacote veio todo amassado.",
+      "O entregador não achou meu endereço.",
+      "Faltou item na minha entrega.",
+      "A caixa chegou aberta na minha casa."
+    ]
+  },
+  "36980ee237c30d3ef89f40b6e622bf4c14301594f19689b5f59735cf9625393b": {
+    "pergunta": "Existem padrões recorrentes nas avaliações relacionadas à qualidade dos produtos?",
+    "frases": [
+      "O produto estragou na primeira semana de uso.",
+      "Achei o material muito fraco e mole.",
+      "Costuras soltas e acabamento bem mal feito.",
+      "A qualidade superou bastante minhas expectativas iniciais.",
+      "O tecido rasgou muito fácil ao lavar."
+    ]
+  },
+  "f67bf6b35230e74e0fca696bb380c1fa17006f6f2b9eda40b4e3897758e94af2": {
+    "pergunta": "problemas com a entrega do pedido",
+    "frases": [
+      "Meu pacote chegou com muitatraso.",
+      "O entregador nao achou meu endereco.",
+      "A caixa veio toda amassada hoje.",
+      "Demorou semanas para ser entregue.",
+      "O rastreio nunca atualizava o status."
+    ]
+  }
+}
