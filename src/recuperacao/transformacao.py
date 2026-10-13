@@ -16,17 +16,14 @@ estiver disponível, a função devolve uma lista vazia e a busca segue só com 
 pergunta original.
 """
 
-import hashlib
-import json
-import os
-
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel, Field
 
 from config import settings
+from src import cache_llm
 
-ARQ_CACHE = os.path.join(settings.RAIZ, "cache", "frases_de_busca.json")
+CACHE = "frases_de_busca"
 
 INSTRUCAO = """Você ajuda a buscar avaliações de clientes de uma loja online brasileira.
 
@@ -48,22 +45,7 @@ class FrasesDeBusca(BaseModel):
 
 
 def _chave(pergunta: str) -> str:
-    """Muda se a pergunta, o modelo, a instrução ou a quantidade de frases mudar."""
-    conteudo = "|".join([settings.MODELO_GERACAO, INSTRUCAO, str(settings.FRASES_DE_BUSCA), pergunta.strip().lower()])
-    return hashlib.sha256(conteudo.encode()).hexdigest()
-
-
-def _ler_cache() -> dict:
-    if not os.path.exists(ARQ_CACHE):
-        return {}
-    with open(ARQ_CACHE, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def _gravar_cache(cache: dict) -> None:
-    os.makedirs(os.path.dirname(ARQ_CACHE), exist_ok=True)
-    with open(ARQ_CACHE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, ensure_ascii=False, indent=2)
+    return cache_llm.chave(settings.MODELO_GERACAO, INSTRUCAO, str(settings.FRASES_DE_BUSCA), pergunta.strip().lower())
 
 
 def _pedir_ao_modelo(pergunta: str) -> list[str]:
@@ -75,7 +57,7 @@ def _pedir_ao_modelo(pergunta: str) -> list[str]:
 
 def gerar_frases(pergunta: str, usar_cache: bool = True) -> list[str]:
     """Frases de busca para a pergunta. Lista vazia se o modelo não responder."""
-    cache = _ler_cache() if usar_cache else {}
+    cache = cache_llm.ler(CACHE) if usar_cache else {}
     chave = _chave(pergunta)
     if chave in cache:
         return cache[chave]["frases"]
@@ -96,9 +78,9 @@ def gerar_frases(pergunta: str, usar_cache: bool = True) -> list[str]:
     frases = frases[: settings.FRASES_DE_BUSCA]
 
     if usar_cache:
-        cache = _ler_cache()
+        cache = cache_llm.ler(CACHE)
         cache[chave] = {"pergunta": pergunta, "frases": frases}
-        _gravar_cache(cache)
+        cache_llm.gravar(CACHE, cache)
     return frases
 
 

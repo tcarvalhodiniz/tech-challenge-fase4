@@ -68,5 +68,45 @@
       "Demorou semanas para ser entregue.",
       "O rastreio nunca atualizava o status."
     ]
+  },
+  "820fc1366991a11a7c0d8e5ade4275f64ede266763c7222c60a14d5cc7e8c4a9": {
+    "pergunta": "Quais são os principais problemas relatados pelos clientes em suas avaliações?",
+    "frases": [
+      "O produto chegou com defeito de fabrica.",
+      "A entrega atrasou muito mais que o combinado.",
+      "O atendimento ao cliente foi pessimo e demorado.",
+      "A qualidade do material e muito ruim.",
+      "O tamanho veio errado e nao serviu."
+    ]
+  },
+  "804173ce554db63ed2b2a2cf2de036d030a5706cc414226acb579822cfee0b10": {
+    "pergunta": "Quais aspectos da experiência de compra são mais elogiados pelos clientes?",
+    "frases": [
+      "A entrega foi muito rápida.",
+      "O site é fácil de usar.",
+      "O atendimento tirou todas as dúvidas.",
+      "O pacote chegou bem embalado.",
+      "O frete grátis valeu a pena."
+    ]
+  },
+  "7aeb409fb801ad1750233dbe5fa38d0c7d387ff98edbd1c8d8f30f256801510c": {
+    "pergunta": "Quais padrões podem ser identificados nas avaliações de clientes insatisfeitos?",
+    "frases": [
+      "O produto chegou com defeito grave.",
+      "A entrega demorou semanas para acontecer.",
+      "O suporte não quis trocar nada.",
+      "A qualidade é péssima e estragou rápido.",
+      "Faltou peça na caixa que recebi."
+    ]
+  },
+  "0d81d33d26c1d5f3daa86b1115ce6eb38eee0903e0aab65a6f89a11670ad23c1": {
+    "pergunta": "Quais avaliações sustentam a conclusão de que existem problemas recorrentes relacionados ao prazo de entrega?",
+    "frases": [
+      "Meu pedido atrasou muito para chegar.",
+      "A transportadora demorou semanas para entregar.",
+      "Prazo de entrega não foi cumprido.",
+      "Chegou bem depois da data prevista.",
+      "Demorou demais para receber minha compra."
+    ]
   }
 }

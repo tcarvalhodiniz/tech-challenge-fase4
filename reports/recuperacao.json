@@ -13,7 +13,7 @@
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 1
+          "repetidas": 2
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -31,62 +31,62 @@
         {
           "texto": "Produto de péssima qualidade material muito ruin",
           "similaridade": 0.845,
-          "avaliacoes": 5,
+          "avaliacoes_na_base": 23,
           "nota": 1
         },
         {
           "texto": "Péssimo atendimento, não entregam no prazo, sem qualquer tipo de satisfação ao cliente. Horrível!",
           "similaridade": 0.704,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 2
         },
         {
           "texto": "Não recomendo. O produto foi entregue no tamanho errado!",
           "similaridade": 0.754,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 5,
           "nota": 3
         },
         {
           "texto": "A entrega atrasou",
           "similaridade": 0.902,
-          "avaliacoes": 5,
+          "avaliacoes_na_base": 32,
           "nota": 5
         },
         {
           "texto": "Atendimento HORRIVEL",
           "similaridade": 0.605,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 2,
           "nota": 1
         },
         {
           "texto": "O produto é péssimo.",
           "similaridade": 0.819,
-          "avaliacoes": 9,
-          "nota": 1
-        },
-        {
-          "texto": "Produto de mal qualidade. Material que foi feito a bolsa , e muito fraco e de péssima qualidade.",
-          "similaridade": 0.798,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 14,
           "nota": 1
         },
         {
           "texto": "Pessimo atendimento, sem canal de reclamação fornecedor",
           "similaridade": 0.604,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 1
         },
         {
           "texto": "O tapete é como descrito, porém veio no tamanho errado. O pedido era 2x2,5 e veio 1x1,5",
           "similaridade": 0.679,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 3
         },
         {
           "texto": "não recomendado. O tapete não chegou na data prevista. e veio errado o tamanho que encomendei.",
           "similaridade": 0.66,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 1
+        },
+        {
+          "texto": "Produto chegou com um pequeno defeito.",
+          "similaridade": 0.751,
+          "avaliacoes_na_base": 17,
+          "nota": 2
         }
       ]
     },
@@ -103,7 +103,7 @@
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 1
+          "repetidas": 4
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -121,62 +121,62 @@
         {
           "texto": "O produto chegou com a caixa toda amassada! Muito amassada mesmo.. nenhum cuidado com o produto!",
           "similaridade": 0.728,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 12,
           "nota": 3
         },
         {
           "texto": "Não houve nenhum comunicado sobre o atraso",
           "similaridade": 0.682,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 1
         },
         {
           "texto": "Deveriam embalar melhor o produto. A caixa veio toda amassada e vou dar de presente.",
           "similaridade": 0.678,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 3,
           "nota": 4
-        },
-        {
-          "texto": "O produto chegou certinho! Porém eu percebi que a caixa vem toda amassada parecendo que sentaram nela. Eu desconfio que poderia vim com a caixa perfeita e não velha e destruída.",
-          "similaridade": 0.748,
-          "avaliacoes": 2,
-          "nota": 5
-        },
-        {
-          "texto": "A embalagem deixou a desejar, por pouco o produto não foi danificado, a caixa estava toda amassada.",
-          "similaridade": 0.667,
-          "avaliacoes": 1,
-          "nota": 3
         },
         {
           "texto": "Não recebi nem uma notificação de atraso",
           "similaridade": 0.685,
-          "avaliacoes": 1,
-          "nota": 1
-        },
-        {
-          "texto": "recomendo. chegou, obrigada mas a caixa, a embalagem amassada e é um presente.",
-          "similaridade": 0.712,
-          "avaliacoes": 1,
-          "nota": 4
-        },
-        {
-          "texto": "não cumpre prazo. Não cumpriram prazo de entrega e nem avisaram o atraso.",
-          "similaridade": 0.661,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 3,
           "nota": 1
         },
         {
           "texto": "Meu produto está atrasado e ainda não chegou",
           "similaridade": 0.718,
-          "avaliacoes": 4,
+          "avaliacoes_na_base": 69,
+          "nota": 1
+        },
+        {
+          "texto": "não cumpre prazo. Não cumpriram prazo de entrega e nem avisaram o atraso.",
+          "similaridade": 0.661,
+          "avaliacoes_na_base": 2,
           "nota": 1
         },
         {
           "texto": "Bom, porem não otimo. A unica proteção foi a propria caixa do produto, que veio toda amassada. E por ser um produto colecionavel, a caixa é de gran importancia. Deviam colocar pelo menos dentro de uma outra caixa.",
           "similaridade": 0.65,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 3
+        },
+        {
+          "texto": "O prazo já passou e nada do produto chegar.",
+          "similaridade": 0.647,
+          "avaliacoes_na_base": 24,
+          "nota": 1
+        },
+        {
+          "texto": "muitos desencontros nas entregas de produtos",
+          "similaridade": 0.664,
+          "avaliacoes_na_base": 1,
+          "nota": 1
+        },
+        {
+          "texto": "ENTREGA MUITO ATRASADA",
+          "similaridade": 0.763,
+          "avaliacoes_na_base": 35,
+          "nota": 2
         }
       ]
     },
@@ -193,7 +193,7 @@
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 1
+          "repetidas": 3
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -211,61 +211,61 @@
         {
           "texto": "Me mandaram outro produto. Comprei o produto de uma cor e me enviaram de outra cor.",
           "similaridade": 0.924,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 6,
           "nota": 1
         },
         {
           "texto": "Material de pessima qualidade...",
           "similaridade": 0.867,
-          "avaliacoes": 5,
+          "avaliacoes_na_base": 15,
           "nota": 2
         },
         {
           "texto": "Meu produto veio quebrado porque nao colocaram ele dentro de uma caixa !",
           "similaridade": 0.873,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 1
         },
         {
           "texto": "A entrega atrasou",
           "similaridade": 0.838,
-          "avaliacoes": 4,
+          "avaliacoes_na_base": 32,
           "nota": 5
         },
         {
           "texto": "comprei um relogio da cor branca e mandaram um vermelho...",
           "similaridade": 0.806,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 4
         },
         {
           "texto": "nao recomendo. mau atendimento. ate agora nao resolveram meu problema.",
           "similaridade": 0.814,
-          "avaliacoes": 1,
-          "nota": 1
-        },
-        {
-          "texto": "Produto de mal qualidade. Material que foi feito a bolsa , e muito fraco e de péssima qualidade.",
-          "similaridade": 0.842,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 1
         },
         {
           "texto": "o produto veio quebrado",
           "similaridade": 0.824,
-          "avaliacoes": 13,
+          "avaliacoes_na_base": 50,
           "nota": 1
-        },
-        {
-          "texto": "fis a compra equeria a cor vermelho e veio outra cor",
-          "similaridade": 0.795,
-          "avaliacoes": 2,
-          "nota": 3
         },
         {
           "texto": "Não gostei do produto, material de péssima qualidade.",
           "similaridade": 0.761,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 33,
+          "nota": 1
+        },
+        {
+          "texto": "Insatisfeita. Comprei na cor amarelo, entregaram na cor rosa.",
+          "similaridade": 0.761,
+          "avaliacoes_na_base": 4,
+          "nota": 2
+        },
+        {
+          "texto": "Péssima qualidade das tesouras.",
+          "similaridade": 0.754,
+          "avaliacoes_na_base": 4,
           "nota": 1
         }
       ]
@@ -283,7 +283,7 @@
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 1
+          "repetidas": 3
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -301,62 +301,62 @@
         {
           "texto": "Nao gostei do pacote, veio todo amassado, mal embalado",
           "similaridade": 0.8,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 2
         },
         {
           "texto": "caixa veio aberta!",
           "similaridade": 0.803,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 4
         },
         {
           "texto": "Demorou muito para chegar.",
           "similaridade": 0.869,
-          "avaliacoes": 7,
+          "avaliacoes_na_base": 19,
           "nota": 3
-        },
-        {
-          "texto": "o produto veio com a caixa aberta.",
-          "similaridade": 0.731,
-          "avaliacoes": 1,
-          "nota": 2
         },
         {
           "texto": "Produto chegou, mas mal embalado, caixa quase aberta.",
           "similaridade": 0.663,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 10,
           "nota": 4
         },
         {
           "texto": "Entregaram antes do prazo, porém, recebemos uma caixa aberta.",
           "similaridade": 0.682,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 4
         },
         {
           "texto": "Recebi o produto porém veio amassado",
           "similaridade": 0.723,
-          "avaliacoes": 5,
+          "avaliacoes_na_base": 75,
           "nota": 3
         },
         {
           "texto": "O pacote veio rasgado",
           "similaridade": 0.721,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 4
         },
         {
           "texto": "Só nao entendi porque a caixa veio aberta. Mais fora isso tá perfeito veio tudo certinho.",
           "similaridade": 0.722,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 5
         },
         {
-          "texto": "Produto demorou muito pra chegar.",
-          "similaridade": 0.836,
-          "avaliacoes": 6,
-          "nota": 3
+          "texto": "Não recebi a mercadoria...ESTÁ MUITO ATRASADA A ENTREGA...",
+          "similaridade": 0.776,
+          "avaliacoes_na_base": 53,
+          "nota": 1
+        },
+        {
+          "texto": "Recebi o produto incompleto, faltou 01 item!",
+          "similaridade": 0.753,
+          "avaliacoes_na_base": 4,
+          "nota": 1
         }
       ]
     },
@@ -373,7 +373,7 @@
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 0
+          "repetidas": 3
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -391,61 +391,61 @@
         {
           "texto": "produto chegou muito bem embalado e a entrega foi rápida",
           "similaridade": 0.874,
-          "avaliacoes": 16,
-          "nota": 5
-        },
-        {
-          "texto": "A entrega foi rápida e eficiente!",
-          "similaridade": 0.894,
-          "avaliacoes": 13,
+          "avaliacoes_na_base": 282,
           "nota": 5
         },
         {
           "texto": "Gostei fácil de usar super leve.",
           "similaridade": 0.696,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 5
         },
         {
           "texto": "Produto com preço bom, todo processo de compra foi excelente.",
           "similaridade": 0.865,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 10,
           "nota": 5
         },
         {
           "texto": "Gostei muito do atendimento!",
           "similaridade": 0.654,
-          "avaliacoes": 17,
+          "avaliacoes_na_base": 44,
           "nota": 4
         },
         {
           "texto": "compra fácil e site recomendado",
           "similaridade": 0.705,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 3,
           "nota": 5
         },
         {
           "texto": "Muito bom comprar nesta loja a entrega foi boa e o preço foi bom também",
           "similaridade": 0.834,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 96,
           "nota": 4
         },
         {
           "texto": "Bem embalado, facil de usar.",
           "similaridade": 0.66,
-          "avaliacoes": 3,
+          "avaliacoes_na_base": 8,
           "nota": 5
         },
         {
           "texto": "A empresa foi muito eficiente... entrega rapida.",
           "similaridade": 0.894,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 19,
           "nota": 5
         },
         {
-          "texto": "produto excelente chegou perfeito muito bem embalado",
-          "similaridade": 0.885,
-          "avaliacoes": 5,
+          "texto": "Bom atendimento no site, de fácil acesso Muito bom",
+          "similaridade": 0.662,
+          "avaliacoes_na_base": 6,
+          "nota": 4
+        },
+        {
+          "texto": "Entrega super rápida. Muito eficiente a entrega.",
+          "similaridade": 0.831,
+          "avaliacoes_na_base": 280,
           "nota": 5
         }
       ]
@@ -458,12 +458,12 @@
           "repetidas": 0
         },
         "B. pergunta original, significado e palavras": {
-          "baixa_similaridade": 2,
+          "baixa_similaridade": 4,
           "repetidas": 0
         },
         "C. com frases de busca, sem juntar parecidas": {
           "baixa_similaridade": 0,
-          "repetidas": 1
+          "repetidas": 5
         },
         "D. configuração do projeto": {
           "baixa_similaridade": 0,
@@ -481,62 +481,62 @@
         {
           "texto": "Só achei o material fraco",
           "similaridade": 0.844,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 3,
           "nota": 4
         },
         {
           "texto": "Pratico fácil de lavar bem compacto. Minha esposa amou .recomendo",
           "similaridade": 0.702,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 4,
           "nota": 5
         },
         {
           "texto": "produto de ótima qualidade superou minhas expectativas.",
           "similaridade": 0.866,
-          "avaliacoes": 13,
+          "avaliacoes_na_base": 39,
           "nota": 5
-        },
-        {
-          "texto": "Prático e fácil de usar, além de fácil de lavar. Recomendo.",
-          "similaridade": 0.624,
-          "avaliacoes": 1,
-          "nota": 4
         },
         {
           "texto": "Na primeira vez de uso a capa rasgou.",
           "similaridade": 0.647,
-          "avaliacoes": 1,
-          "nota": 5
-        },
-        {
-          "texto": "Lindo , super macio e bem leve,e antiderrapante ... ainda nao lavei , parece ser bem fácil pra lavar",
-          "similaridade": 0.671,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 1,
           "nota": 5
         },
         {
           "texto": "Fronha de má qualidade, costuras pareciam mal feitas.",
           "similaridade": 0.748,
-          "avaliacoes": 1,
-          "nota": 1
-        },
-        {
-          "texto": "Quanto à entrega do produto tudo certo, apenas achei o produto de material muito fraco.",
-          "similaridade": 0.75,
-          "avaliacoes": 1,
-          "nota": 4
-        },
-        {
-          "texto": "Material muito fraco",
-          "similaridade": 0.719,
-          "avaliacoes": 1,
+          "avaliacoes_na_base": 2,
           "nota": 1
         },
         {
           "texto": "Achei muito fino o tecido",
           "similaridade": 0.642,
-          "avaliacoes": 2,
+          "avaliacoes_na_base": 3,
           "nota": 3
+        },
+        {
+          "texto": "Produto frágil, veio lascado e acabou de quebrar Na primeira tentativa de uso.",
+          "similaridade": 0.691,
+          "avaliacoes_na_base": 1,
+          "nota": 1
+        },
+        {
+          "texto": "Superou minhas expectativas.",
+          "similaridade": 0.759,
+          "avaliacoes_na_base": 28,
+          "nota": 4
+        },
+        {
+          "texto": "O material da mochila é bem fraco.",
+          "similaridade": 0.714,
+          "avaliacoes_na_base": 1,
+          "nota": 3
+        },
+        {
+          "texto": "Não gostei do protetor de colchão, achei muito fraco.",
+          "similaridade": 0.734,
+          "avaliacoes_na_base": 2,
+          "nota": 4
         }
       ]
     }
@@ -547,12 +547,12 @@
       "repetidas": 0
     },
     "B. pergunta original, significado e palavras": {
-      "baixa_similaridade": 14,
+      "baixa_similaridade": 16,
       "repetidas": 0
     },
     "C. com frases de busca, sem juntar parecidas": {
       "baixa_similaridade": 0,
-      "repetidas": 5
+      "repetidas": 20
     },
     "D. configuração do projeto": {
       "baixa_similaridade": 0,

@@ -134,8 +134,8 @@ Os índices são gerados por `python -m src.indexacao.indice`. O relatório est�
 | Modelo de embeddings | `paraphrase-multilingual-MiniLM-L12-v2`, com vetores de 384 posições |
 | Índice vetorial | FAISS com busca exata, 55 MB em disco |
 | Índice de palavras | BM25, montado na carga |
-| Tempo para gerar os vetores | cerca de 16 segundos com GPU (Mac) e 50 segundos em CPU |
-| Tempo de uma busca | 13 ms em cada índice |
+| Tempo para gerar os vetores | cerca de 15 segundos com GPU (Mac) e 50 segundos em CPU |
+| Tempo de uma busca | cerca de 10 ms em cada índice |
 
 O projeto usa dois índices porque as duas buscas acertam em casos diferentes. A
 busca por significado encontra frases escritas com outras palavras: para "cliente
@@ -147,9 +147,15 @@ Na busca por palavras os acentos são retirados, porque os clientes escrevem
 "ótimo" e "otimo", "não" e "nao". Palavras muito comuns também são retiradas, com
 exceção de "não", que muda o sentido da frase.
 
-O índice guarda uma assinatura da base de conhecimento e o nome do modelo. Se a
-base mudar ou o modelo for outro, o programa não carrega o índice antigo e pede
-para gerar de novo.
+1.122 comentários (3,1%) estão escritos em maiúsculas, e o modelo de embeddings
+diferencia maiúsculas de minúsculas. Buscando 200 desses comentários pelo próprio
+texto em minúsculas, só 27 apareciam entre os 20 primeiros resultados. Por isso o
+vetor desses comentários é gerado com o texto em minúsculas, e os 200 passaram a
+ser encontrados. O texto mostrado ao usuário não muda.
+
+O índice guarda uma assinatura da base de conhecimento, o nome do modelo e a versão
+do código. Se algum deles mudar, o programa não carrega o índice antigo e pede para
+gerar de novo.
 
 ### Recuperação
 
@@ -167,7 +173,7 @@ python -m src.recuperacao.recuperador "Quais os problemas com a entrega?"
 | 1. Transformação da pergunta | O Gemini reescreve a pergunta como cinco frases curtas que um cliente escreveria, cada uma sobre uma situação diferente. É uma variação da técnica HyDE |
 | 2. Busca | A pergunta e as frases são procuradas no índice de significado. As frases também são procuradas no índice de palavras. São 11 rankings com até 20 avaliações cada |
 | 3. Fusão | Os rankings são combinados com RRF. Quem aparece bem colocado em vários rankings sobe na lista |
-| 4. Seleção | Ficam as 10 mais bem colocadas. Textos iguais ou quase iguais contam como uma evidência só |
+| 4. Seleção | Ficam as 10 mais bem colocadas. Textos que dizem a mesma coisa (similaridade a partir de 0,80) contam como uma evidência só |
 
 A pergunta é transformada porque ela não se parece com os comentários. Para
 "problemas com a entrega do pedido", a busca direta traz como primeiro resultado um
@@ -180,22 +186,76 @@ cada configuração:
 | Configuração | Sem relação com o assunto | Repetidas |
 |---|---|---|
 | A. Pergunta original, busca por significado | 0 | 0 |
-| B. Pergunta original, significado e palavras | 14 | 0 |
-| C. Com frases de busca, sem juntar parecidas | 0 | 5 |
+| B. Pergunta original, significado e palavras | 16 | 0 |
+| C. Com frases de busca, sem juntar parecidas | 0 | 20 |
 | D. Configuração do projeto | 0 | 0 |
 
 Por causa do resultado de B, a busca por palavras usa só as frases, e não a
-pergunta original. Por causa do resultado de C, os textos quase iguais são
-agrupados. A comparação da relevância das evidências entre A e D é feita na etapa
+pergunta original. Por causa do resultado de C, os textos que dizem a mesma coisa
+são agrupados. A comparação da relevância das evidências entre A e D é feita na etapa
 de avaliação.
 
 Cada evidência guarda o `review_id`, o texto, a similaridade com a pergunta, os
-rankings em que apareceu e as avaliações parecidas. Essas informações são usadas
-depois para mostrar ao usuário de onde veio a resposta.
+rankings em que apareceu e quantas avaliações da base inteira dizem a mesma coisa.
+Essas informações são usadas depois para mostrar ao usuário de onde veio a resposta.
+
+Nas quatro perguntas sobre problemas, 15 das 40 evidências vêm de avaliações com
+nota 3, 4 ou 5. São clientes que gostaram do produto e reclamaram de um ponto
+específico. A busca pelo texto encontra essas reclamações, que um filtro por nota
+baixa deixaria de fora.
 
 ## 7. Respostas fundamentadas em evidências
 
-_Preenchido no Passo 6._
+O relatório, com um exemplo completo e os testes, está em
+[`reports/geracao.md`](reports/geracao.md). Para fazer uma pergunta:
+
+```bash
+python -m src.geracao.responder "O que os clientes relatam sobre problemas relacionados à entrega?"
+```
+
+A resposta é montada assim:
+
+| Etapa | O que acontece |
+|---|---|
+| 1. Contexto | As 10 evidências são numeradas e enviadas ao modelo. Cada uma informa em quantas avaliações da base aquilo é dito |
+| 2. Geração | O Gemini devolve uma lista de pontos. Cada ponto é uma conclusão com os números das evidências que a sustentam |
+| 3. Validação | O programa descarta números de evidência que não existem e pontos que ficam sem evidência |
+| 4. Quantidade | O programa conta, na base inteira, quantas avaliações dizem o mesmo que as evidências de cada ponto |
+
+A resposta não tem texto livre, como um resumo. Tudo o que é mostrado como
+conclusão está em um ponto, e todo ponto tem evidência com `review_id`. A
+quantidade de avaliações é calculada pelo programa, e não escrita pelo modelo.
+
+Exemplo, para a pergunta "O que os clientes relatam sobre problemas relacionados à
+entrega?":
+
+| Conclusão | Evidências | Avaliações na base |
+|---|---|---|
+| Os clientes relatam que o produto chegou amassado. | [1] [6] | 77 |
+| Os clientes relatam que a mercadoria está muito atrasada ou não foi recebida. | [9] | 53 |
+| Os clientes apontam que a entrega demorou muito. | [3] | 19 |
+| Os clientes informam que a caixa ou pacote veio aberta. | [2] [4] [5] [8] | 13 |
+| Os clientes reclamam que a embalagem estava mal embalada ou o pacote rasgado. | [1] [4] [7] | 13 |
+| Os clientes relatam que o produto foi recebido incompleto com itens faltando. | [10] | 4 |
+
+| # | Evidência | `review_id` |
+|---|---|---|
+| 6 | Recebi o produto porém veio amassado | `aab5578d9c3b538a382064790d63a8c4` |
+| 9 | Não recebi a mercadoria...ESTÁ MUITO ATRASADA A ENTREGA... | `1a6763b35ea712ac4530a70a61898a6c` |
+| 3 | Demorou muito para chegar. | `e3560b1fd3dd7d96fb0be8962bd15476` |
+
+A lista completa das evidências está no relatório.
+
+A quantidade de avaliações de cada ponto é um mínimo: conta só os textos muito
+parecidos com as evidências (similaridade a partir de 0,80), e não todas as
+avaliações sobre o tema. Ela vale para os comentários, e não para todos os clientes.
+
+Nas cinco perguntas de exemplo do enunciado foram gerados 22 pontos. Nenhum foi
+descartado na validação, e 39 das 50 evidências recuperadas foram citadas.
+
+As avaliações são texto escrito por clientes e entram no prompt entre marcas, com a
+instrução de que devem ser analisadas e não obedecidas. Testei com duas avaliações
+inventadas que traziam instruções escondidas, e o modelo não obedeceu em nenhuma.
 
 ## 8. Perguntas sem evidência suficiente
 
@@ -228,11 +288,16 @@ _Preenchido no Passo 9._
 | Uma avaliação por documento | Os comentários têm no máximo 200 caracteres, e dividir o texto dificultaria identificar a avaliação de origem |
 | Elogio genérico identificado por lista de palavras | Um corte por tamanho também tiraria comentários curtos e úteis, como "não recebi" e "entrega rápida" |
 | Modelo de embeddings multilíngue | Os comentários estão em português, e o modelo foi treinado para reconhecer frases com o mesmo sentido em vários idiomas |
-| Índice vetorial com busca exata | Com 35.957 vetores a busca exata leva 13 ms. Um índice aproximado seria mais rápido, mas pode deixar de fora um documento relevante |
+| Índice vetorial com busca exata | Com 35.957 vetores a busca exata leva cerca de 10 ms. Um índice aproximado seria mais rápido, mas pode deixar de fora um documento relevante |
 | Busca por palavras sem acento e com a palavra "não" | Os clientes escrevem a mesma palavra com e sem acento, e "não recebi" tem sentido oposto a "recebi" |
 | Transformação da pergunta em frases de busca | A pergunta do usuário não se parece com os comentários. Com as frases, a busca traz reclamações quando a pergunta é sobre problemas |
-| Busca por palavras só com as frases de busca | Com a pergunta original, 14 de 60 evidências não tinham relação com o assunto, como "Compro com frequência" |
-| Textos quase iguais contam como uma evidência | Sem isso, várias das 10 evidências diziam a mesma coisa, como "Demorou muito pra chegar" e "Demorou demais pra chegar" |
+| Busca por palavras só com as frases de busca | Com a pergunta original, 16 de 60 evidências não tinham relação com o assunto, como "Compro com frequência" |
+| Textos que dizem a mesma coisa contam como uma evidência | Sem isso, 20 de 60 evidências repetiam outra, como "Demorou muito pra chegar" e "Demorou demais pra chegar" |
+| Vetor dos comentários em maiúsculas gerado em minúsculas | O modelo diferencia maiúsculas de minúsculas. Sem a conversão, só 27 de 200 comentários em maiúsculas eram encontrados pela busca por significado |
+| Resposta só com pontos, sem resumo livre | Um resumo escrito pelo modelo pode trazer informações sem indicar a evidência |
+| Quantidade de avaliações contada pelo programa | O modelo não deve escrever números nem expressões como "a maioria". A contagem é feita na base, a partir das evidências citadas |
+| Limite de 0,80 para tratar dois textos como iguais | Em amostras por faixa de similaridade, acima de 0,80 os textos têm o mesmo assunto e a mesma opinião. Abaixo disso já aparecem textos de sentido oposto |
+| Avaliações entre marcas no prompt | O texto do cliente é dado, e não instrução. Um comentário como "favor desconsiderar a primeira avaliação" não pode mudar o comportamento do modelo |
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
@@ -250,7 +315,7 @@ _Preenchido no Passo 10._
 ```
 tech-challenge-fase4/
 ├── config/            # caminhos, fonte dos dados e modelos
-├── cache/             # frases de busca já geradas, para reproduzir sem gastar cota
+├── cache/             # o que o modelo já respondeu, para reproduzir sem gastar cota
 ├── data/              # não versionado
 │   ├── raw/           # CSV de avaliações da Olist
 │   ├── processed/     # base de conhecimento pronta
@@ -292,6 +357,7 @@ python -m src.preparacao.exploracao    # números e figuras da análise explorat
 python -m src.preparacao.base_conhecimento   # monta a base em data/processed
 python -m src.indexacao.indice               # gera os embeddings e o índice em data/indice
 python -m src.recuperacao.comparacao         # compara as configurações da busca
+python -m src.geracao.exemplos               # roda as perguntas de exemplo e os testes da geração
 ```
 
 _Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._

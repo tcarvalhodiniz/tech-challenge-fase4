@@ -64,10 +64,10 @@ RRF_K = 60
 # Avaliações que seguem como evidência para a geração da resposta
 EVIDENCIAS = 10
 
-# Similaridade de cosseno a partir da qual dois textos são tratados como a mesma
-# evidência. Medido nos resultados da busca: acima de 0,85 os pares dizem a
-# mesma coisa ("Demorou muito pra chegar" e "Demorou demais pra chegar"); abaixo
-# disso já trazem informação diferente.
-SIMILARIDADE_TEXTO_PARECIDO = 0.85
-
-SEMENTE = 42
+# Similaridade de cosseno a partir da qual dois textos são tratados como dizendo a
+# mesma coisa. É usada para juntar evidências parecidas e para contar, na base
+# inteira, quantas avaliações repetem uma evidência. Medido em amostras por faixa
+# de similaridade: acima de 0,80 os textos falam do mesmo assunto com a mesma
+# opinião; entre 0,70 e 0,80 já aparecem textos de sentido oposto (para "Produto
+# de péssima qualidade" vem "Produto de Qualidade").
+SIMILARIDADE_TEXTO_PARECIDO = 0.80
