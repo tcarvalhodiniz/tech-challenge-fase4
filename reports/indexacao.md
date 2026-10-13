@@ -10,11 +10,11 @@ página estão em [`indexacao.json`](indexacao.json).
 | Documentos indexados | 35.957 |
 | Modelo de embeddings | `paraphrase-multilingual-MiniLM-L12-v2` |
 | Tamanho do vetor | 384 |
-| Tempo para gerar os vetores | cerca de 16 segundos com GPU (Mac) e 50 segundos em CPU |
+| Tempo para gerar os vetores | cerca de 15 segundos com GPU (Mac) e 50 segundos em CPU |
 | Tamanho do índice em disco | 55 MB |
 | Tempo para carregar os índices | 5 segundos |
-| Tempo de uma busca por significado | 13 ms |
-| Tempo de uma busca por palavras | 13 ms |
+| Tempo de uma busca por significado | 10 ms |
+| Tempo de uma busca por palavras | 11 ms |
 
 ## Embeddings
 
@@ -32,10 +32,29 @@ Escolhi o `paraphrase-multilingual-MiniLM-L12-v2` por três motivos:
 Os vetores são normalizados, e a comparação entre eles é a similaridade de cosseno.
 Na etapa de avaliação esse modelo vai ser comparado com outro.
 
+### Comentários em maiúsculas
+
+1.122 documentos da base (3,1%) estão escritos em maiúsculas, como "ENTREGA MUITO
+ATRASADA". O modelo de embeddings diferencia maiúsculas de minúsculas, e o vetor
+desses textos fica distante do vetor do mesmo texto em minúsculas: a similaridade
+mediana entre as duas versões é de 0,49.
+
+Por isso, um texto com 70% ou mais das letras em maiúsculas é convertido para
+minúsculas antes de gerar o vetor. O texto guardado na base e mostrado ao usuário
+não muda.
+
+Para medir o efeito, busquei 200 desses documentos pelo próprio texto em
+minúsculas:
+
+| | Documento encontrado entre os 20 primeiros |
+|---|---|
+| Vetor gerado com o texto em maiúsculas | 27 de 200 |
+| Vetor gerado com o texto em minúsculas | 200 de 200 |
+
 ## Índice vetorial
 
 Os vetores ficam em um índice FAISS do tipo `IndexFlatIP`, que faz busca exata:
-compara a pergunta com todos os documentos. Com 35.957 vetores essa busca leva 13
+compara a pergunta com todos os documentos. Com 35.957 vetores essa busca leva 10
 ms, então não foi preciso usar um índice aproximado, que é mais rápido mas pode
 deixar de fora um documento relevante.
 
@@ -60,9 +79,9 @@ gravado em disco.
 
 ## Conferência
 
-O índice guarda uma assinatura da base de conhecimento e o nome do modelo. Se a
-base mudar ou o modelo configurado for outro, o programa não carrega o índice
-antigo e pede para gerar de novo.
+O índice guarda uma assinatura da base de conhecimento, o nome do modelo e a
+versão do código que gerou os vetores. Se algum deles mudar, o programa não
+carrega o índice antigo e pede para gerar de novo.
 
 Para conferir as duas buscas usei cinco perguntas escritas com palavras diferentes
 das que os clientes costumam usar. A tabela mostra o primeiro resultado de cada

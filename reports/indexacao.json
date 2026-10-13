@@ -1,14 +1,15 @@
 {
   "indice": {
+    "versao": 2,
     "modelo": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
     "dispositivo": "mps:0",
     "documentos": 35957,
     "dimensao": 384,
-    "segundos_para_gerar_embeddings": 15.6,
+    "segundos_para_gerar_embeddings": 14.0,
     "tamanho_do_indice_mb": 55.2,
     "assinatura_da_base": "b5c04767e097f88ae5c17d5e6df0f112dde889b0ab01484c30ee33b07c318f7a"
   },
-  "segundos_para_carregar": 4.7,
+  "segundos_para_carregar": 4.6,
   "consultas": {
     "problemas com a entrega do pedido": {
       "vetorial": [
@@ -162,7 +163,7 @@
     }
   },
   "ms_por_busca": {
-    "vetorial": 13.6,
-    "lexical": 13.7
+    "vetorial": 9.7,
+    "lexical": 11.0
   }
 }

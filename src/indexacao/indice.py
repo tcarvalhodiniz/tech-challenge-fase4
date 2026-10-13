@@ -31,6 +31,9 @@ ARQ_VETORIAL = os.path.join(PASTA, "vetorial.faiss")
 ARQ_MANIFESTO = os.path.join(PASTA, "manifesto.json")
 CAMINHO_RESUMO = os.path.join(settings.PATHS["reports"], "indexacao.json")
 
+# Muda quando a forma de gerar os vetores muda, para um índice antigo não ser reaproveitado.
+VERSAO_DO_INDICE = 2
+
 # Palavras muito frequentes, que não ajudam a diferenciar um comentário do outro
 # na busca por palavras. Estão sem acento porque a comparação é feita sem acento.
 # "nao" fica fora da lista: "não recebi" e "recebi" têm sentidos opostos.
@@ -65,11 +68,27 @@ def carregar_modelo() -> SentenceTransformer:
     return SentenceTransformer(settings.MODELO_EMBEDDINGS)
 
 
+def em_caixa_alta(texto: str) -> bool:
+    letras = [c for c in texto if c.isalpha()]
+    return len(letras) >= 10 and sum(c.isupper() for c in letras) >= 0.7 * len(letras)
+
+
+def texto_para_vetor(texto: str) -> str:
+    """Texto usado só para calcular o vetor. O texto mostrado ao usuário não muda.
+
+    O modelo de embeddings diferencia maiúsculas de minúsculas, e um comentário
+    todo em maiúsculas fica com um vetor distante do mesmo comentário em
+    minúsculas (similaridade mediana de 0,49). Esses comentários quase não eram
+    encontrados pela busca por significado, por isso são convertidos.
+    """
+    return texto.lower() if em_caixa_alta(texto) else texto
+
+
 def gerar_embeddings(textos, modelo: SentenceTransformer) -> np.ndarray:
     """Um vetor por texto. Os vetores saem normalizados, então o produto interno
     entre dois deles é a similaridade de cosseno."""
     return modelo.encode(
-        list(textos), batch_size=128, normalize_embeddings=True,
+        [texto_para_vetor(t) for t in textos], batch_size=128, normalize_embeddings=True,
         convert_to_numpy=True, show_progress_bar=False,
     ).astype("float32")
 
@@ -100,6 +119,7 @@ def construir() -> dict:
     os.makedirs(PASTA, exist_ok=True)
     faiss.write_index(indice, ARQ_VETORIAL)
     manifesto = {
+        "versao": VERSAO_DO_INDICE,
         "modelo": settings.MODELO_EMBEDDINGS,
         "dispositivo": str(modelo.device),
         "documentos": int(indice.ntotal),
@@ -127,6 +147,8 @@ class Indice:
             self.manifesto = json.load(f)
 
         self.documentos = carregar_base()
+        if self.manifesto.get("versao") != VERSAO_DO_INDICE:
+            raise SystemExit("O índice foi gerado por uma versão anterior do código. Rode: python -m src.indexacao.indice")
         if self.manifesto["modelo"] != settings.MODELO_EMBEDDINGS:
             raise SystemExit("O índice foi gerado com outro modelo. Rode: python -m src.indexacao.indice")
         if self.manifesto["assinatura_da_base"] != assinatura(self.documentos):
@@ -178,6 +200,13 @@ class Indice:
 
     def vetor(self, posicao: int) -> np.ndarray:
         return self.vetorial.reconstruct(posicao)
+
+    def parecidas_na_base(self, posicao: int) -> list[int]:
+        """Posições de todos os documentos da base que dizem o mesmo que o documento
+        informado (similaridade a partir de SIMILARIDADE_TEXTO_PARECIDO). Inclui ele mesmo."""
+        _, _, posicoes = self.vetorial.range_search(
+            self.vetor(posicao).reshape(1, -1), settings.SIMILARIDADE_TEXTO_PARECIDO)
+        return sorted(int(p) for p in posicoes)
 
     def similaridade(self, vetores: np.ndarray, posicao: int) -> float:
         """Maior similaridade de cosseno entre o documento e os vetores informados."""
