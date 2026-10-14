@@ -116,8 +116,9 @@ que os textos parecidos são agrupados: 20 das 60 evidências repetiam outra.
 Essas duas medidas não dizem qual configuração traz as evidências mais relevantes.
 A diferença entre a busca simples (A) e a configuração do projeto (D) aparece em
 perguntas como "problemas com a entrega do pedido": na busca simples, a primeira
-evidência é um elogio ("Eficiente do pedido a entrega"). A comparação medida da
-relevância entre as configurações é feita na etapa de avaliação.
+evidência é um elogio ("Eficiente do pedido a entrega"). Na [avaliação](avaliacao.md),
+a precisão das evidências foi de 0,54 na busca simples e de 0,75 na configuração do
+projeto.
 
 ## Reclamação não é o mesmo que nota baixa
 

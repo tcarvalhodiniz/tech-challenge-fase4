@@ -30,7 +30,10 @@ Escolhi o `paraphrase-multilingual-MiniLM-L12-v2` por três motivos:
 - É o modelo usado nas aulas de RAG do curso.
 
 Os vetores são normalizados, e a comparação entre eles é a similaridade de cosseno.
-Na etapa de avaliação esse modelo vai ser comparado com outro.
+Na [avaliação](avaliacao.md) esse modelo foi comparado com a versão maior da mesma
+família (`paraphrase-multilingual-mpnet-base-v2`). Na busca simples, o maior teve
+precisão de 0,63 contra 0,58, levando quase três vezes mais tempo para gerar os
+vetores. O ganho foi considerado pequeno para a troca.
 
 ### Comentários em maiúsculas
 

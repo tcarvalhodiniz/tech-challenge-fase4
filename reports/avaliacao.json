@@ -1,0 +1,443 @@
+{
+  "precisao": {
+    "busca simples": {
+      "relevantes": 99,
+      "evidencias": 184,
+      "por_pergunta": [
+        {
+          "pergunta": "Os clientes reclamam de atraso na entrega?",
+          "relevantes": 9,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+          "relevantes": 2,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há relatos de produtos que chegaram quebrados?",
+          "relevantes": 4,
+          "evidencias": 5
+        },
+        {
+          "pergunta": "O que os clientes elogiam na entrega?",
+          "relevantes": 6,
+          "evidencias": 9
+        },
+        {
+          "pergunta": "Os clientes ficam satisfeitos com a qualidade dos produtos?",
+          "relevantes": 8,
+          "evidencias": 9
+        },
+        {
+          "pergunta": "O que os clientes reclamam sobre o atendimento da loja?",
+          "relevantes": 4,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há clientes que receberam um produto diferente do que compraram?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes reclamam de falta de peças ou itens no pedido?",
+          "relevantes": 4,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes falam sobre a comunicação da loja durante a entrega?",
+          "relevantes": 5,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes relatam dificuldade para trocar ou devolver produtos?",
+          "relevantes": 4,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre o custo do frete?",
+          "relevantes": 4,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há elogios à embalagem dos produtos?",
+          "relevantes": 4,
+          "evidencias": 6
+        },
+        {
+          "pergunta": "Os clientes recomendam a loja para outras pessoas?",
+          "relevantes": 6,
+          "evidencias": 9
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre o tamanho ou as medidas dos produtos?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes reclamam de cobrança indevida ou problemas no pagamento?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes relatam sobre pedidos entregues em partes?",
+          "relevantes": 0,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há reclamações sobre produtos falsificados ou que não são originais?",
+          "relevantes": 6,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre a retirada do produto nos Correios?",
+          "relevantes": 0,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes elogiam o custo-benefício dos produtos?",
+          "relevantes": 3,
+          "evidencias": 6
+        },
+        {
+          "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+          "relevantes": 8,
+          "evidencias": 10
+        }
+      ],
+      "precisao": 0.538
+    },
+    "configuração do projeto": {
+      "relevantes": 150,
+      "evidencias": 200,
+      "por_pergunta": [
+        {
+          "pergunta": "Os clientes reclamam de atraso na entrega?",
+          "relevantes": 10,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+          "relevantes": 4,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há relatos de produtos que chegaram quebrados?",
+          "relevantes": 5,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes elogiam na entrega?",
+          "relevantes": 10,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes ficam satisfeitos com a qualidade dos produtos?",
+          "relevantes": 10,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes reclamam sobre o atendimento da loja?",
+          "relevantes": 10,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há clientes que receberam um produto diferente do que compraram?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes reclamam de falta de peças ou itens no pedido?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes falam sobre a comunicação da loja durante a entrega?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes relatam dificuldade para trocar ou devolver produtos?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre o custo do frete?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há elogios à embalagem dos produtos?",
+          "relevantes": 6,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes recomendam a loja para outras pessoas?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre o tamanho ou as medidas dos produtos?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes reclamam de cobrança indevida ou problemas no pagamento?",
+          "relevantes": 6,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes relatam sobre pedidos entregues em partes?",
+          "relevantes": 9,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Há reclamações sobre produtos falsificados ou que não são originais?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "O que os clientes dizem sobre a retirada do produto nos Correios?",
+          "relevantes": 8,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Os clientes elogiam o custo-benefício dos produtos?",
+          "relevantes": 7,
+          "evidencias": 10
+        },
+        {
+          "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+          "relevantes": 4,
+          "evidencias": 10
+        }
+      ],
+      "precisao": 0.75
+    }
+  },
+  "fidelidade": {
+    "conclusoes": 75,
+    "sustentadas": 74,
+    "fidelidade": 0.987,
+    "evidencias_relevantes": 150,
+    "evidencias_relevantes_citadas": 141,
+    "uso_das_evidencias_relevantes": 0.94,
+    "evidencias_fora_do_assunto": 50,
+    "evidencias_fora_do_assunto_citadas": 4,
+    "conclusoes_nao_sustentadas": [
+      {
+        "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+        "conclusao": "Os clientes pedem o dinheiro de volta porque o produto chegou quebrado.",
+        "citadas": [
+          "O produto que comprei chegou quebrado e as pilhas totalmente amassadas",
+          "Decepcionada. O produto chegou quebrado, a caixa estava como se tivesse sido aberta diversas vezes!"
+        ]
+      }
+    ]
+  },
+  "recusa": {
+    "por_grupo": {
+      "fora do escopo": {
+        "perguntas": 10,
+        "recusadas": 10
+      },
+      "sem evidência": {
+        "perguntas": 10,
+        "recusadas": 8
+      }
+    },
+    "nao_recusadas": [
+      {
+        "grupo": "sem evidência",
+        "pergunta": "O que os clientes acham do vale-presente da loja?",
+        "situacao": "parcial",
+        "conclusoes": [
+          "Clientes relatam problemas com a restituição do valor por meio de voucher ou não recebimento do mesmo após o cancelamento."
+        ],
+        "avisos": [
+          "As avaliações não respondem a uma parte da pergunta. As avaliações não trazem opiniões gerais sobre a qualidade ou a experiência de uso do vale-presente, apenas relatos negativos sobre problemas no recebimento ou restituição."
+        ]
+      },
+      {
+        "grupo": "sem evidência",
+        "pergunta": "Os clientes reclamam do seguro contra roubo oferecido na compra?",
+        "situacao": "parcial",
+        "conclusoes": [
+          "Os clientes afirmam que nunca houve problemas com o seguro."
+        ],
+        "avisos": [
+          "Esta resposta se apoia em pouca evidência: 2 avaliações da base."
+        ]
+      }
+    ],
+    "perguntas_sem_resposta": 20,
+    "recusadas": 18,
+    "recusa_correta": 0.9,
+    "recusadas_sem_chamar_o_modelo": 0,
+    "perguntas_respondiveis": 20,
+    "situacao_das_respondiveis": {
+      "respondida": 19,
+      "parcial": 1
+    },
+    "recusadas_por_engano": [],
+    "recusa_indevida": 0.0
+  },
+  "elogios_genericos": {
+    "elogios_genericos_devolvidos": 6294,
+    "por_pergunta": [
+      {
+        "pergunta": "O que os clientes mais elogiam em suas experiências de compra?",
+        "relevantes_na_base_do_projeto": 10,
+        "relevantes_com_elogios_genericos": 10,
+        "genericos_entre_as_10": 1,
+        "exemplos_de_genericos": [
+          "Satisfeita com a compra, recomendo"
+        ]
+      },
+      {
+        "pergunta": "Quais aspectos da experiência de compra são mais elogiados pelos clientes?",
+        "relevantes_na_base_do_projeto": 8,
+        "relevantes_com_elogios_genericos": 8,
+        "genericos_entre_as_10": 0,
+        "exemplos_de_genericos": []
+      },
+      {
+        "pergunta": "O que os clientes elogiam na entrega?",
+        "relevantes_na_base_do_projeto": 8,
+        "relevantes_com_elogios_genericos": 8,
+        "genericos_entre_as_10": 0,
+        "exemplos_de_genericos": []
+      },
+      {
+        "pergunta": "Os clientes ficam satisfeitos com a qualidade dos produtos?",
+        "relevantes_na_base_do_projeto": 9,
+        "relevantes_com_elogios_genericos": 7,
+        "genericos_entre_as_10": 2,
+        "exemplos_de_genericos": [
+          "Muito Satisfeita com a compra e com o produto",
+          "Satisfeita com o produto é loja"
+        ]
+      },
+      {
+        "pergunta": "Há elogios à embalagem dos produtos?",
+        "relevantes_na_base_do_projeto": 5,
+        "relevantes_com_elogios_genericos": 5,
+        "genericos_entre_as_10": 0,
+        "exemplos_de_genericos": []
+      },
+      {
+        "pergunta": "Os clientes elogiam o custo-benefício dos produtos?",
+        "relevantes_na_base_do_projeto": 7,
+        "relevantes_com_elogios_genericos": 7,
+        "genericos_entre_as_10": 0,
+        "exemplos_de_genericos": []
+      }
+    ],
+    "precisao_na_base_do_projeto": 0.783,
+    "precisao_com_elogios_genericos": 0.75,
+    "genericos_entre_as_evidencias": 3,
+    "evidencias": 60
+  },
+  "temas": {
+    "perguntas": [
+      "Quais são os principais problemas relatados pelos clientes?",
+      "Quais problemas são relatados por clientes insatisfeitos?"
+    ],
+    "evidencias_citadas": 20,
+    "temas": [
+      {
+        "tema": "Entrega e prazo",
+        "pct_dos_comentarios": 45.8,
+        "pct_com_nota_1_2": 26.0,
+        "aparece_nas_respostas": true
+      },
+      {
+        "tema": "Atendimento e vendedor",
+        "pct_dos_comentarios": 10.6,
+        "pct_com_nota_1_2": 36.0,
+        "aparece_nas_respostas": true
+      },
+      {
+        "tema": "Qualidade e defeito",
+        "pct_dos_comentarios": 9.5,
+        "pct_com_nota_1_2": 28.0,
+        "aparece_nas_respostas": true
+      },
+      {
+        "tema": "Não recebeu o produto",
+        "pct_dos_comentarios": 8.0,
+        "pct_com_nota_1_2": 86.0,
+        "aparece_nas_respostas": true
+      },
+      {
+        "tema": "Troca e devolução",
+        "pct_dos_comentarios": 3.8,
+        "pct_com_nota_1_2": 78.0,
+        "aparece_nas_respostas": false
+      },
+      {
+        "tema": "Embalagem",
+        "pct_dos_comentarios": 3.3,
+        "pct_com_nota_1_2": 18.0,
+        "aparece_nas_respostas": false
+      },
+      {
+        "tema": "Produto errado ou diferente",
+        "pct_dos_comentarios": 3.0,
+        "pct_com_nota_1_2": 70.0,
+        "aparece_nas_respostas": true
+      },
+      {
+        "tema": "Preço",
+        "pct_dos_comentarios": 3.4,
+        "pct_com_nota_1_2": 19.0,
+        "aparece_nas_respostas": false
+      },
+      {
+        "tema": "Item faltando",
+        "pct_dos_comentarios": 1.6,
+        "pct_com_nota_1_2": 65.0,
+        "aparece_nas_respostas": false
+      }
+    ]
+  },
+  "tempo": {
+    "segundos_por_etapa": {
+      "transformação da pergunta": 1.39,
+      "busca, fusão e seleção": 0.19,
+      "geração da resposta": 1.57
+    },
+    "segundos_no_total": 3.15
+  },
+  "modelos_de_embeddings": {
+    "modelo_do_projeto": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "outro_modelo": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "dimensao_do_outro_modelo": 768,
+    "segundos_para_gerar_embeddings_do_outro_modelo": 39.7,
+    "evidencias": 200,
+    "precisao_do_modelo_do_projeto": 0.575,
+    "precisao_do_outro_modelo": 0.625
+  },
+  "criterios": {
+    "precisao_minima_das_evidencias": {
+      "medido": 0.75,
+      "criterio": 0.7,
+      "atingido": true
+    },
+    "fidelidade_minima": {
+      "medido": 0.987,
+      "criterio": 0.9,
+      "atingido": true
+    },
+    "recusa_correta_minima": {
+      "medido": 0.9,
+      "criterio": 0.9,
+      "atingido": true
+    },
+    "recusa_indevida_maxima": {
+      "medido": 0.0,
+      "criterio": 0.1,
+      "atingido": true
+    }
+  }
+}

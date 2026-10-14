@@ -1,0 +1,3926 @@
+{
+  "5d026940d12dec9b2b4934cb53826ae7d41500e49ea680947c7e86f942b8ea92": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "d9f6e75a77d26cfc0d03a53306dcabfec106efb6fbd1963dc9b732b7509ab1cf": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "58a105f6036b1ce335a6eb6942333ede9447304bb4c10a3ccef57dd8bbf66038": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "0d3fecd6f81e1f270ebbde05435f55179e1168a7523d61f57bb6145e35165708": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "458b320125081182539ad7aabf29b912ebe30a7db854a1df810b7b861f32f5b0": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      }
+    ]
+  },
+  "34348bfd0c4b865b888b8a4ce578326e255ee1549efa6686fe742d26fe3240de": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "6a51665d8db63a47b34a767b37bb394b726cc0729d8a02222fe6029b6bd4699e": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      }
+    ]
+  },
+  "8360278cdd603b640aca49f5740e4caacd828d0c6c49dccdc9308db3e414f4dd": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "1f9c68367034538c6c8b61650525b08afb6b72a0000d0caa708ff420172861ad": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      }
+    ]
+  },
+  "facdee766af4a7bacebc396e32c9cd3b531bbd8f34b67e55d061709780a8d663": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "36855e83fd449cb73566f99b8be6a7bfa665e47d64dcc64f8a76905889c01240": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "a8b64c0344aa1f5ab961ba92e658e4ee3b0459ef3ba7f9d68a4109a5e67915a6": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "3e91f274bb7727ea5c2891eed42eace4841e4eb798ca8105bd47485b0fb9185b": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "779664f211e411bdbf6ff97b1209aa7ea5e86bd0cf4cc97fa71e0b6a3410c2bf": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "c582ace5011ee74f57b9febde85b229cbc9e0d2cb8dfc649e35b10166de9592d": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "6add7bc30bc4a560f9e0b7292f2de8cbb46f101b2e2a115c572bccdc8dc26df8": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "43e6e6b8794ee49abde8612afbd24264cf47f19184d84b1a44aa38cfd13b8c02": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "ab85576539e5587c904888778dc6712b5515f215ae1d2d3e89161a3ff1364449": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "7254f41cf2cf74835a81e064d21b5b11f16812b91d8f5767a3d9f908749f001d": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "1489e87cfc72c81b6f12f26a8fcf67d33f9c831e13ccbbbaa041f66ef1fc2d31": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "3144605fb522672b97ca695378974c3a89ab95a073715e4c8566aa7aa816b2f8": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "2edc8f0b24345f7a34a5af53eea0cbccf47344c2d2a3af4fd1998ff6fe526049": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "f80c9db4fa6e3a4b2d1d4a11c1796634c66c89fb178f94150cc21e6a2ffcbcf3": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      }
+    ]
+  },
+  "b4fc133abdc182007ee9e26643e4c30d4b9c1bff19a3c6d145bf32b22fbcb933": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "316368cae2f3bf23f57e80022a3cb6a6bf7fff9d8eb7c0e3605646f144278b45": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      }
+    ]
+  },
+  "a26b00a3402db3de40f3ae4d9ba3e280696d486e4c00ce8763bf7234a53a2a62": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "4b550834caa0aa1a550bd00c885e0a417c704db20f52aa51bef7aa7b32d0d90a": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "837bb58bb871326e0b8d80b0b5f44cda925226f1c6dc48e4ab747dbff9a4aaf7": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "a0a1581ac34a354187a4df86b19f2b5b1362f1484993937505d64386cea7dadf": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "4b14c89617eb78419e2002e3f114a9d99c368724acc790fa0ed37ccaaf3d9c17": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "5cea9fff318cbfef3410eb4adbfe32afb086107a504be50ec14da089fcc58b68": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "03339c4a5797c67575b266c60f8218970d7485f0c9c4209246f0a41b4d3ec795": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "2f928427acc449a9f030b6abc144fd49043bf8601107bf9932fa76bc0db0b190": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "35c2d3e950dafec736f35b336c69eff918dfa5b2eadf460420b134b6b7b6362a": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "064fc05677cda5bfb19597b188e4b15bda6444e259f232fe6da0d6170cc68d36": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "e77723eb3b8d05d38a2ae66d7789b242ee5a2e81ddd151bbd607544fa8bb72a3": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "da7b4a3fee1546b3f5bcfb3f6b804a0f32641c44924902658ce9b612f1947a7c": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      }
+    ]
+  },
+  "f4713f68e3a03fed06f3ae6e9199c9caf25168aa7bd7bf044fe348109f0d36c9": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "2f9cb2958ec4fa721325650c11e728314ea6cf67f06c572ce6a1a1a8fbbad60c": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "f1b479c8d203c92c80316ef51abb9c5b3eadf66a4b90694639d657d9ead38c87": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "1f3cf6adbc972b9ae15268c8b5aa681485f7402d2e693e05d8068da2c5c7ab94": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      }
+    ]
+  },
+  "60ac8ea231d14d4e3b08f93c4d362b57afb1056d4e8d2d81b00b4f074f19c3f5": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      }
+    ]
+  },
+  "16b678323449d5de59fa00aa4faa224ed58333385e5c580cbe682fc26d6a626c": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      }
+    ]
+  },
+  "ba814f4d56eaf623cd9e90fc5f5576ebcc4b9fa48601b77ffb30ea3e5ac225db": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      }
+    ]
+  },
+  "45b12c04d7f225e61f79c28bda4d64afeb4e544a280b751aabfd7512eab2b4d4": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      }
+    ]
+  },
+  "03f19a49744d2534e292e8326a9871b0d9b66debb706101ac70b10b3c796f72f": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      }
+    ]
+  },
+  "155d6555e290e7f74d719f69c06cf815944246ef7c759eee3bb39b66c0de54ac": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      }
+    ]
+  },
+  "93f2303e06790ba68d9628954068646923f04a5cb2e393a55eab757e17eb9a21": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      }
+    ]
+  },
+  "0faaeb43428eff903f3d82549aa88f89e36f9dec46abd8bfc18839c137828f7e": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      }
+    ]
+  },
+  "bc128209ece046e0c948f81ce559aad58e72d27e5e751368f39c170e1c5f26a5": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      }
+    ]
+  },
+  "61b3788a89d65b9fb7b4eb4ac8f3025b282b3eea6460f85ed914b3fa15afbbc7": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      }
+    ]
+  },
+  "028631b3ab458f90a610f9814146ecab022578cc25ce60cfec179b1b9fe18f01": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      }
+    ]
+  },
+  "cc8a6b70fab0f5680b3a11ee3fc56b69ee78d4edca7b0c3ce9464d89f2bc4aa0": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      }
+    ]
+  },
+  "d67a9c8aa4b71f9c069d136707446ccee72a812f83dedbd43d3f8f60d2c400d3": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      }
+    ]
+  },
+  "d392ded178e9539ea394f25cdb4c22275abedaf53ff1306faab1f0b3d78fcc9e": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      }
+    ]
+  },
+  "020ba78bd96bd7b52526709878e098b257ee58ef8ad5491e228c3698687fb79d": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      }
+    ]
+  },
+  "8f21eb3d40e12c45df2eedc3a5560251269a366ec5d0170c0d9aa1c1797ca0f3": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      }
+    ]
+  },
+  "285d205c75bad74c36be51974cf746548c9dcb87f05e28b7adb92883c6dd8924": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      }
+    ]
+  },
+  "50badc35cabbf08696a2d1a7741d24fb056acce227aa6cfcb050a2b9b1cbb26c": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      }
+    ]
+  },
+  "dd8867568a2e3aca5aa221d0d019c83dec257a1409a2e54caa83c49dd2dcf462": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      }
+    ]
+  },
+  "d13efcba0073c1636fe33c643905b57386700d7a129413b66369b01afd3bc293": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "715a22221cbe2b32e5d908a12b29274cfa756c5f64d95b6a3b35340c56733af2": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "f99aac7efcd1c293f73ffc74eb34db59a3e3173c2f15ed92ab1c9d889eb317b7": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "bba2bc18b06915a529647d5ed20232406cf9a77dce23ee8ff37afeffb5117c46": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "2ffb0741d639c160bc7bb56919964ff94e389cf00948b7e37488a92f587d6d33": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "c368daac16ad42f7dd0d9763bfc4f2aa6a057c88ab3436ae75d73cd5188d80ff": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "c8f561abdb2f0a22fe08c9c0e1850cb29ba85b9286f48952e2c17b8f17e66c77": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "f72fa5e19c25943251ebe924625c643ebd866e890a94dac8f443ae32ebab203f": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "e9d1d04834c919a9486c999eed8aabc44021531f6c509ae49b20b009cfa9b04e": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "ba1f42d1173d9173e58c5e9f462726e5dad8a002231a2791ae07a0906654dd48": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "44cca39c3d657ed6052b9c000c850cae2460c95254a10881c8001157167acc91": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "500f528d679d5ef34c7f870d18bb70b1675e623171891e65474b2e6888c1469e": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "6dbd0f793922a55f1640c3adc7c2834fc22b53d7f575626e732f57db1cc1c602": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "0007fbdd9072a9c0fdc9cf78024e5724b0b6c9516be235c93f9d7aca1e23b3aa": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "f3830cbf94118b5dac9016c30f15c867ce7faa3156c845ec106b8db44e46c953": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "591a2b9aed0ab0389aee1f33e19b41ad721e313016299c3152e7a2a95c40bd07": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "6823eb8b5e7ab7e266bae76ea56ff2355d0e498c27e2880749836954142e0327": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "fbbc02e11bc37480f033f862aaa2aa5475039c46abbc79fa0eacbba1098cd62f": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "a258fa50f286f1f508099b77f03dca0da1b12550eaa884d243c595bdf46c7edc": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "b2ac024dacd27b7e80be8f6c5df5fb72bb845fda66b717d746ef2afc9aa90536": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "5d3332e859319e715c1c50caabf99a0974792d33ab1a7b03c670058c8aeafc80": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "310fddfcb31ff440a341b8941bc0c01c7d70805c808cf5c2ecc50010b1699350": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "38b1b551fca5a89b78eb7b159ca861ec3fd6dd3c3358e67765c8bdf58e2be382": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "19324ff2441e0645368cab1d0f3457c8ff179727cfcdd5f034cfa6d7b1894840": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "a767165d500f62eac16ed985692aca7612d0c8ba1e0aed3dc986caa6a1cfe3e5": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "a6856e7a9fd2c47d821990a7c806bee7042b7e04b4c26925dc82ba0481bbcf03": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "aae2f826f2fb80372d419a66c4d052dc9bf1d7a546f2a589911b86db095f3369": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "5430a2ed1ab8e3d60674f618d01a23681a3a233ddfe945e4c99e22f9a07b6a76": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "48549a291e773caddbb99ecaa370259378469a8c6277a4710cdffb094e23d97b": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "b5fcacfdcb204b537b4cd0c50adbd4072f9555396dd4ffd41ded1c91a9d4a9ae": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "1cd6a4c65d1e1e8434c845920e2c502d2fe17afb83d7a9c4d1e210559dcd49f7": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "27d30b04bf54f3434401f4a3cc198a730a84f6865e3e0c2dc3f0dd8ff45d2657": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "668f92f9a3f83e2892ee18a027cfa3a909e52d78fd8233e54b8d69bdd3997087": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "169d54379247740a5b0ff073062e79ecb917f522fdfeadb6af639d3cce2ec2f1": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "5337a2c44f8970df8ae11b2061bd4bc960d6f227b361bc0492555e093ed9ae33": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "4e1ff0e71516c91dc17bc24692ae01c4eee97c49166b218096cbcc11ff7ef925": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "86d8ee571a6495fe0327abe17dc575f5c0772b2807519d6076a6886a6067ec63": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "089ee5707bea0431d52cd378463ac775da450a08507c73a00a63b89e68d2da92": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": false
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "e74281118537c455d25d7e9c9196db2d6a443da919c749d89de5819c555ce885": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": false
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": false
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "82cccd3bc1cb0fe590506eb3c8fe2fc25bb071abb3cb433cd1cfe15eb71be1c6": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": false
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": false
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": false
+      }
+    ]
+  },
+  "e500d0f73078517a5e2c9768a0e2c3bc4403605c114a72a28d92852017b9e2d7": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": false
+      },
+      {
+        "numero": 3,
+        "sim": false
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": false
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": false
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  },
+  "df3093c344b879abc4095ec42a58ed8377cf1cab43ded4d0acda7535a007d820": {
+    "decisoes": [
+      {
+        "numero": 1,
+        "sim": true
+      },
+      {
+        "numero": 2,
+        "sim": true
+      },
+      {
+        "numero": 3,
+        "sim": true
+      },
+      {
+        "numero": 4,
+        "sim": true
+      },
+      {
+        "numero": 5,
+        "sim": true
+      },
+      {
+        "numero": 6,
+        "sim": true
+      },
+      {
+        "numero": 7,
+        "sim": true
+      },
+      {
+        "numero": 8,
+        "sim": true
+      },
+      {
+        "numero": 9,
+        "sim": true
+      },
+      {
+        "numero": 10,
+        "sim": true
+      }
+    ]
+  }
+}

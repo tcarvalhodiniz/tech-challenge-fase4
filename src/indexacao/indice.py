@@ -16,6 +16,8 @@ import json
 import os
 import time
 
+# No macOS o faiss precisa ser importado antes do sentence_transformers (PyTorch).
+# Na ordem contrária o programa termina com falha de segmentação.
 import faiss
 import numpy as np
 import pandas as pd
