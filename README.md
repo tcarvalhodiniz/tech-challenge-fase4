@@ -322,21 +322,20 @@ com 44. Nos 2 em que discordei, o juiz tinha sido mais rigoroso do que eu.
 
 Principais resultados:
 
-- **A transformação da pergunta melhora a busca.** A precisão das evidências foi de
+- A transformação da pergunta melhora a busca. A precisão das evidências foi de
   0,54 na busca simples e de 0,75 na configuração do projeto. Em "O que os clientes
   relatam sobre pedidos entregues em partes?", a busca simples trouxe 0 evidências
   relevantes em 10, e a do projeto trouxe 9.
-- **As conclusões seguem as evidências.** 74 das 75 conclusões estão sustentadas. O
-  modelo usou 141 das 150 evidências relevantes e citou só 4 das 50 que não
-  tratavam do assunto.
-- **O sistema recusou as 10 perguntas fora do escopo** e 8 das 10 sobre assuntos que
+- 74 das 75 conclusões estão sustentadas pelas evidências que citam. O modelo usou
+  141 das 150 evidências relevantes e citou só 4 das 50 que não tratavam do
+  assunto.
+- O sistema recusou as 10 perguntas fora do escopo e 8 das 10 sobre assuntos que
   não existem na base. Nenhuma das 20 perguntas respondíveis foi recusada.
-- **Uma resposta leva entre 2,5 e 3 segundos**, quase tudo nas duas chamadas ao
-  modelo.
-- **Um modelo de embeddings maior ajuda pouco.** Na busca simples, a versão maior
-  da mesma família teve precisão de 0,63 contra 0,58 do modelo do projeto, levando
-  quase três vezes mais tempo para indexar. O ganho é menor que o da transformação
-  da pergunta, e por isso o modelo foi mantido.
+- Uma resposta leva entre 2,5 e 3 segundos, quase tudo nas duas chamadas ao modelo.
+- A versão maior do modelo de embeddings teve precisão de 0,63 contra 0,58 do
+  modelo do projeto, na busca simples, e levou quase três vezes mais tempo para
+  indexar. O ganho é menor que o da transformação da pergunta, e por isso o modelo
+  foi mantido.
 
 Onde o sistema errou:
 
@@ -354,7 +353,49 @@ pergunta.
 
 ## 10. Exemplos de perguntas e respostas
 
-_Preenchido no Passo 9._
+A interface de demonstração mostra a resposta, as avaliações usadas e o caminho
+que o sistema fez até chegar nela: as frases de busca, os rankings, a fusão, o texto
+enviado ao modelo e a validação.
+
+```bash
+streamlit run app/app.py
+```
+
+![Interface de demonstração com a resposta e as evidências](images/05_interface.png)
+
+As respostas completas, com as evidências de cada ponto, estão em
+[`reports/exemplos.md`](reports/exemplos.md). Lá estão as cinco perguntas do
+enunciado, uma pergunta respondida em parte e duas recusadas.
+
+Pergunta: **Quais são os principais problemas relatados pelos clientes em suas avaliações?**
+
+| Conclusão | Evidências | Avaliações na base |
+|---|---|---|
+| O produto veio com defeito de fábrica ou avariado. | [6] [9] | 34 |
+| A entrega atrasou. | [3] [5] | 33 |
+| A qualidade do material do produto é ruim. | [7] [8] | 27 |
+| O produto foi entregue no tamanho ou dimensões erradas. | [4] [9] [10] | 26 |
+| O atendimento é péssimo e sem canais adequados de suporte. | [1] [2] [3] | 11 |
+| O produto não chegou na data prevista. | [3] [10] | 2 |
+
+Pergunta: **Quais aspectos da experiência de compra são mais elogiados pelos clientes?**
+
+| Conclusão | Evidências | Avaliações na base |
+|---|---|---|
+| A entrega foi rápida. | [1] [10] | 113 |
+| A compra foi fácil e o site é recomendado. | [3] [4] | 11 |
+| O atendimento foi considerado ótimo quando foi preciso tirar dúvidas. | [5] | 8 |
+| As expectativas foram atendidas. | [8] [9] | 7 |
+| O atendimento no site foi bom e de fácil acesso. | [6] | 6 |
+
+Na pergunta "O que os clientes dizem sobre a entrega e sobre o pagamento por Pix?",
+o sistema respondeu só sobre a entrega, com três pontos, e avisou: "As avaliações
+não mencionam o pagamento por Pix."
+
+| Pergunta recusada | Onde foi recusada | O que o usuário vê |
+|---|---|---|
+| Qual é a capital da França? | Na primeira conferência (similaridade de 0,36), sem chamar o modelo | "Não encontrei na base avaliações relacionadas a essa pergunta." |
+| O que os clientes acham do pagamento por Pix? | Pelo modelo, depois de ver as evidências | "As avaliações fornecidas não mencionam o pagamento por Pix." |
 
 ## 11. Tecnologias e bibliotecas
 
@@ -466,7 +507,14 @@ MODELO_COMPARADO=sentence-transformers/paraphrase-multilingual-mpnet-base-v2 pyt
 No plano gratuito do Gemini são 15 chamadas por minuto. Quando esse limite é
 atingido, o programa espera 45 segundos e tenta de novo.
 
-_Os comandos das próximas etapas entram aqui à medida que os passos forem concluídos._
+**Interface**
+
+```bash
+streamlit run app/app.py
+```
+
+A interface abre em `http://localhost:8501`. Ela usa a base e os índices gerados
+nas etapas acima.
 
 ---
 
