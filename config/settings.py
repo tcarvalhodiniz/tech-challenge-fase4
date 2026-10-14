@@ -43,6 +43,9 @@ MODELO_EMBEDDINGS = os.getenv(
 )
 MODELO_GERACAO = os.getenv("GEMINI_CHAT_MODEL", "gemini-flash-lite-latest")
 
+# Semente dos sorteios, para os resultados se repetirem
+SEMENTE = 42
+
 # ---------------------------------------------------------------------------
 # Recuperação
 # ---------------------------------------------------------------------------
@@ -86,3 +89,19 @@ SIMILARIDADE_MINIMA_DA_PERGUNTA = 0.50
 # Quando a resposta se apoia em menos avaliações da base do que isto, ela é
 # mostrada com um aviso de pouca evidência.
 MINIMO_DE_AVALIACOES = 5
+
+# ---------------------------------------------------------------------------
+# Avaliação
+#   Critérios mínimos, definidos antes de rodar a avaliação. Se algum não for
+#   atingido, a avaliação termina com erro e o resultado é investigado.
+# ---------------------------------------------------------------------------
+CRITERIOS = {
+    # Parcela das evidências recuperadas que tratam do assunto da pergunta
+    "precisao_minima_das_evidencias": 0.70,
+    # Parcela das conclusões que estão de fato sustentadas pelas evidências citadas
+    "fidelidade_minima": 0.90,
+    # Parcela das perguntas sem resposta possível que o sistema recusa
+    "recusa_correta_minima": 0.90,
+    # Parcela máxima das perguntas respondíveis que o sistema recusa por engano
+    "recusa_indevida_maxima": 0.10,
+}

@@ -192,8 +192,8 @@ cada configuração:
 
 Por causa do resultado de B, a busca por palavras usa só as frases, e não a
 pergunta original. Por causa do resultado de C, os textos que dizem a mesma coisa
-são agrupados. A comparação da relevância das evidências entre A e D é feita na etapa
-de avaliação.
+são agrupados. Na avaliação, a precisão das evidências foi de 0,54 na configuração A
+e de 0,75 na D.
 
 Cada evidência guarda o `review_id`, o texto, a similaridade com a pergunta, os
 rankings em que apareceu e quantas avaliações da base inteira dizem a mesma coisa.
@@ -296,12 +296,61 @@ O limite de 0,50 da primeira conferência é baixo de propósito, para nunca rec
 uma pergunta válida. Em 25 perguntas válidas escritas de jeitos diferentes, a menor
 similaridade foi 0,61.
 
-Essas 31 perguntas foram as mesmas usadas para definir os limites. O resultado com
-perguntas novas é medido na etapa de avaliação.
+Essas 31 perguntas foram as mesmas usadas para definir os limites. Com perguntas
+novas, na avaliação, o sistema recusou 18 de 20 perguntas sem resposta e nenhuma
+das 20 respondíveis.
 
 ## 9. Avaliação da solução
 
-_Preenchido no Passo 8._
+O relatório completo está em [`reports/avaliacao.md`](reports/avaliacao.md). A
+avaliação usa 40 perguntas novas, que não foram usadas nos passos anteriores para
+definir limites nem para ajustar a instrução do modelo.
+
+Os critérios mínimos foram definidos em `config/settings.py` antes de rodar a
+avaliação:
+
+| Critério | O que mede | Mínimo | Medido |
+|---|---|---|---|
+| Precisão das evidências | Parcela das evidências recuperadas que tratam do assunto da pergunta | 0,70 | 0,75 |
+| Fidelidade | Parcela das conclusões que estão apoiadas nas evidências citadas | 0,90 | 0,99 |
+| Recusa correta | Parcela das perguntas sem resposta que o sistema recusa | 0,90 | 0,90 |
+| Recusa indevida | Parcela das perguntas respondíveis recusadas por engano (máximo) | 0,10 | 0,00 |
+
+Para julgar se uma evidência trata do assunto e se uma conclusão está apoiada,
+usei o Gemini como juiz. Conferi à mão uma amostra de 46 julgamentos e concordei
+com 44. Nos 2 em que discordei, o juiz tinha sido mais rigoroso do que eu.
+
+Principais resultados:
+
+- **A transformação da pergunta melhora a busca.** A precisão das evidências foi de
+  0,54 na busca simples e de 0,75 na configuração do projeto. Em "O que os clientes
+  relatam sobre pedidos entregues em partes?", a busca simples trouxe 0 evidências
+  relevantes em 10, e a do projeto trouxe 9.
+- **As conclusões seguem as evidências.** 74 das 75 conclusões estão sustentadas. O
+  modelo usou 141 das 150 evidências relevantes e citou só 4 das 50 que não
+  tratavam do assunto.
+- **O sistema recusou as 10 perguntas fora do escopo** e 8 das 10 sobre assuntos que
+  não existem na base. Nenhuma das 20 perguntas respondíveis foi recusada.
+- **Uma resposta leva entre 2,5 e 3 segundos**, quase tudo nas duas chamadas ao
+  modelo.
+- **Um modelo de embeddings maior ajuda pouco.** Na busca simples, a versão maior
+  da mesma família teve precisão de 0,63 contra 0,58 do modelo do projeto, levando
+  quase três vezes mais tempo para indexar. O ganho é menor que o da transformação
+  da pergunta, e por isso o modelo foi mantido.
+
+Onde o sistema errou:
+
+- Em "Os clientes reclamam do seguro contra roubo oferecido na compra?", ele
+  respondeu que "nunca houve problemas com o seguro". A avaliação citada diz
+  "Seguro ... nunca houve problemas", em que "seguro" quer dizer confiável.
+- A única conclusão não sustentada foi "Os clientes pedem o dinheiro de volta
+  porque o produto chegou quebrado". As avaliações citadas falam do produto
+  quebrado, mas não do pedido de dinheiro de volta.
+- Em quatro das vinte perguntas a busca simples foi melhor que a do projeto.
+
+A avaliação não tem medida de recall por documento. Nesta base muitas avaliações
+dizem a mesma coisa, então não existe uma única avaliação correta para cada
+pergunta.
 
 ## 10. Exemplos de perguntas e respostas
 
@@ -324,8 +373,10 @@ _Preenchido no Passo 9._
 |---|---|
 | Embeddings gerados localmente | A quantidade de textos ultrapassaria a cota gratuita da API do Gemini. Rodando local, o índice pode ser recriado sem chave de API |
 | Uma avaliação por documento | Os comentários têm no máximo 200 caracteres, e dividir o texto dificultaria identificar a avaliação de origem |
+| Elogios genéricos fora da base | Com eles de volta, a precisão da busca em perguntas sobre elogios cai de 0,78 para 0,75. O efeito é pequeno, mas esses textos não dizem o que foi elogiado |
 | Elogio genérico identificado por lista de palavras | Um corte por tamanho também tiraria comentários curtos e úteis, como "não recebi" e "entrega rápida" |
 | Modelo de embeddings multilíngue | Os comentários estão em português, e o modelo foi treinado para reconhecer frases com o mesmo sentido em vários idiomas |
+| Modelo de embeddings menor (MiniLM) em vez do maior (mpnet) | Na busca simples o maior teve precisão de 0,63 contra 0,58, com quase três vezes mais tempo de indexação e 1,1 GB. A transformação da pergunta traz um ganho maior, de 0,54 para 0,75 |
 | Índice vetorial com busca exata | Com 35.957 vetores a busca exata leva cerca de 10 ms. Um índice aproximado seria mais rápido, mas pode deixar de fora um documento relevante |
 | Busca por palavras sem acento e com a palavra "não" | Os clientes escrevem a mesma palavra com e sem acento, e "não recebi" tem sentido oposto a "recebi" |
 | Transformação da pergunta em frases de busca | A pergunta do usuário não se parece com os comentários. Com as frases, a busca traz reclamações quando a pergunta é sobre problemas |
@@ -339,6 +390,8 @@ _Preenchido no Passo 9._
 | Recusa em três conferências | A similaridade da pergunta com a base não separa tudo: "receita de bolo de chocolate" tem similaridade de 0,73, porque há comentários sobre produtos sabor chocolate. Por isso o modelo também decide, vendo as evidências |
 | Limite de 0,50 na primeira conferência | Perguntas válidas chegam a 0,61. Um limite mais alto recusaria perguntas que a base responde |
 | Aviso quando a pergunta é respondida só em parte | Sem o aviso, uma pergunta sobre entrega e Pix era respondida só sobre entrega, e o usuário não ficava sabendo que o Pix não tinha evidência |
+| Avaliação por precisão, e não por recall de documento | Muitas avaliações dizem a mesma coisa, então não existe uma única avaliação correta para cada pergunta |
+| Critérios mínimos definidos antes de medir | Para o resultado não ser ajustado ao que o sistema consegue |
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
@@ -400,6 +453,14 @@ python -m src.indexacao.indice               # gera os embeddings e o índice em
 python -m src.recuperacao.comparacao         # compara as configurações da busca
 python -m src.geracao.exemplos               # roda as perguntas de exemplo e os testes da geração
 python -m src.geracao.recusa                 # testa as perguntas sem evidência suficiente
+python -m src.avaliacao.avaliar              # avaliação com perguntas novas e conferência dos critérios
+```
+
+Para incluir na avaliação a comparação com outro modelo de embeddings, que baixa
+mais 1,1 GB na primeira vez:
+
+```bash
+MODELO_COMPARADO=sentence-transformers/paraphrase-multilingual-mpnet-base-v2 python -m src.avaliacao.avaliar
 ```
 
 No plano gratuito do Gemini são 15 chamadas por minuto. Quando esse limite é

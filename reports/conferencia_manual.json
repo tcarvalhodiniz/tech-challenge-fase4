@@ -1,0 +1,361 @@
+{
+  "resumo": {
+    "relevancia": {
+      "itens": 30,
+      "concordancia": 28
+    },
+    "sustentacao": {
+      "itens": 16,
+      "concordancia": 16
+    }
+  },
+  "relevancia": [
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "O produto veio com defeito na costura",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Veio faltando duas peças.",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "O pacote veio rasgado",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "o produto veio quebrado",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Meu produto veio quebrado porque nao colocaram ele dentro de uma caixa !",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Produto mal embalado. Produto chegou com risco e manchado.",
+      "juiz_relevante": false,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Risco de acidente. Muitas rebarbas na hélice do produto, risco de corte/ acidente ao manusear. Se soubesse não teria feito a aquisição.",
+      "juiz_relevante": false,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Veio quebrado e faltando peça",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "Produto anunciado não condiz com o aparelho",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "avaliacao": "veio faltando itens",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Achei o tamanho muito pequeno",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Pedi reembolso e sem resposta até momento",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "No anuncio diz outra cor",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Ressalva. Houve um erro com o pedido e o dinheiro foi devolvido",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Médio. Não recebi na cor que estava no anúncio",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "O produto que comprei chegou quebrado e as pilhas totalmente amassadas",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "A loja me entregou um produto trocado ,inferior ao valor q paguei na compra, quero a devoluçao do produto e meu dinheiro de volta. Descaso com o cliente ! Procurar o procon.",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "O tamanho do produto é muito pequeno, e não havia especificação das medidas, o que me fez crer que seria do tamanho padrão.",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Solicitarei reembolso do dinheito",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "avaliacao": "Decepcionada. O produto chegou quebrado, a caixa estava como se tivesse sido aberta diversas vezes!",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "O frete muito caro",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Achei muito caro o custo do frete.",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Um absurdo, não foi entregue",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Frete caro. Frete muito caro!!!!",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "eu que retirei no correio, eu paguei o carreto e não me entregarão. Não gostei da atitude.",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "e não recebi o ressarcimento do valor, um absurdo.",
+      "juiz_relevante": false,
+      "manual_relevante": false
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Entrega rápida, ótimo produto, porém frete caro tendo em vista que no Mercado livre o frete do mesmo produto é grátis.",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Produto muito bom. Só o frete que é muito caro.",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "vcs podiam abaixar o valor do frete e colocar de vez enquando frete gratis,seu frete e muito caro!!!!",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "avaliacao": "Além da entrega ser demorado, o frete é caro",
+      "juiz_relevante": true,
+      "manual_relevante": true
+    }
+  ],
+  "sustentacao": [
+    {
+      "pergunta": "Os clientes reclamam de atraso na entrega?",
+      "conclusao": "Os clientes relatam que a entrega atrasou.",
+      "avaliacoes_citadas": [
+        "A entrega atrasou",
+        "A entrega atrasou demais, eu já estava cancelando.",
+        "Só atrasou por causa dos correios",
+        "Atrasou",
+        "Atrasou a entrega",
+        "atrasou muito"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes dizem quando o produto chega com defeito?",
+      "conclusao": "Há relatos de defeito na costura do produto.",
+      "avaliacoes_citadas": [
+        "O produto veio com defeito na costura"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Os clientes ficam satisfeitos com a qualidade dos produtos?",
+      "conclusao": "O material do produto é muito fraco.",
+      "avaliacoes_citadas": [
+        "Material muito fraco",
+        "Quanto à entrega do produto tudo certo, apenas achei o produto de material muito fraco."
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes reclamam sobre o atendimento da loja?",
+      "conclusao": "Um cliente relata que não há canal de reclamação para o fornecedor.",
+      "avaliacoes_citadas": [
+        "Pessimo atendimento, sem canal de reclamação fornecedor"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Há clientes que receberam um produto diferente do que compraram?",
+      "conclusao": "Clientes receberam um modelo diferente do que compraram.",
+      "avaliacoes_citadas": [
+        "Recebi o produto errado comprei um modelo e veio outro",
+        "Produto errado e falso. Me foi entregue o modelo errado e não e original. Solicitei a devolução."
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Os clientes relatam dificuldade para trocar ou devolver produtos?",
+      "conclusao": "Clientes desejam realizar a troca de produtos recebidos com defeito.",
+      "avaliacoes_citadas": [
+        "Produto com defeito desejo a troca"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o custo do frete?",
+      "conclusao": "Os clientes afirmam que o frete é caro.",
+      "avaliacoes_citadas": [
+        "O frete muito caro",
+        "Achei muito caro o custo do frete.",
+        "Frete caro. Frete muito caro!!!!",
+        "Produto muito bom. Só o frete que é muito caro.",
+        "Além da entrega ser demorado, o frete é caro"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Há elogios à embalagem dos produtos?",
+      "conclusao": "A empresa possui uma embalagem muito boa.",
+      "avaliacoes_citadas": [
+        "Empresa embalagem muito boa"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o tamanho ou as medidas dos produtos?",
+      "conclusao": "Há relatos de que o tamanho ficou pequeno e apertado.",
+      "avaliacoes_citadas": [
+        "ficou pequena, apertada"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes dizem sobre o tamanho ou as medidas dos produtos?",
+      "conclusao": "Um cliente relata que o tamanho não veio correto e a tornozeleira não fechou na panturrilha.",
+      "avaliacoes_citadas": [
+        "Chegou antes do prazo,porém o tamanho não veio correto, a medida que pediram pra tirar foi de cima do ossinho do tornozelo,porém a tornozeleira não fechou na panturrilha, tive que comprar uma maior"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Os clientes reclamam de cobrança indevida ou problemas no pagamento?",
+      "conclusao": "Houve cobrança em duplicidade no cartão do cliente devido à entrega em duplicidade.",
+      "avaliacoes_citadas": [
+        "Reclamcao. A entrega foi correta ,porém vocês entregaram em duplicidade é passaram duas vezes o meu cartão,quero ver como podemos resolver isso ,pq eu não preciso de 2 Fico no aguardo"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes relatam sobre pedidos entregues em partes?",
+      "conclusao": "Os clientes relatam que pediram múltiplos pacotes ou itens, mas receberam apenas um.",
+      "avaliacoes_citadas": [
+        "pedi dois pacotes so chegou 1",
+        "Eu paguei por dois pacotes o segundo está sendo enviado?",
+        "Só chegou 1 item mesmo tendo feito outras compras"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "O que os clientes relatam sobre pedidos entregues em partes?",
+      "conclusao": "Os clientes relatam que compraram cinco pacotes e receberam apenas dois.",
+      "avaliacoes_citadas": [
+        "So recebi dois pacotes. .. sendo que comprei cincos pacotes."
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Há reclamações sobre produtos falsificados ou que não são originais?",
+      "conclusao": "Há reclamações de que a loja vende produtos como originais, mas que são réplicas, piratas ou falsificados.",
+      "avaliacoes_citadas": [
+        "Cartucho HP Genérico. Cartucho genérico sendo vendido como original.",
+        "Produto anunciado como sendo original , porem é uma fraude , o produto é pirata , a impressora não identifica o cartucho e não permite a visualização da quantidade de tinta.",
+        "O produto vendido é falsificado . A imagem do produto é embaçada pra não dar pra perceber claras diferenças entre ele e o original",
+        "Loja vendê produto como original e é réplica. E das piores.",
+        "O produto é bom, porem é vendido como se fosse da Sony (original) mas na verdade não é original e sim uma réplica.",
+        "Produto é uma replica.",
+        "SRS, O PRODUTO ENVIADO É FALSO, NÃO É ORIGINAL LG. TRATA-SE DE PRODUTO PIRATA / CHING LING. SOLICITO TROCA POR ORIGINAL.",
+        "O perfume que recebi tem embalagem diferente da foto do site e também diferente de um perfume igual que tenho em casa. O cheiro é bem parecido, mas não igual. Enfim, parece falsificado."
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "conclusao": "Houve devolução do dinheiro devido a um erro com o pedido.",
+      "avaliacoes_citadas": [
+        "Ressalva. Houve um erro com o pedido e o dinheiro foi devolvido"
+      ],
+      "juiz_sustentada": true,
+      "manual_sustentada": true
+    },
+    {
+      "pergunta": "Quais motivos levam os clientes a pedir o dinheiro de volta?",
+      "conclusao": "Os clientes pedem o dinheiro de volta porque o produto chegou quebrado.",
+      "avaliacoes_citadas": [
+        "O produto que comprei chegou quebrado e as pilhas totalmente amassadas",
+        "Decepcionada. O produto chegou quebrado, a caixa estava como se tivesse sido aberta diversas vezes!"
+      ],
+      "juiz_sustentada": false,
+      "manual_sustentada": false
+    }
+  ]
+}

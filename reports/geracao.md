@@ -142,4 +142,5 @@ marcação.
   mais. As quantidades valem para os comentários, e não para todos os clientes.
 - A resposta depende das evidências recuperadas. Um assunto que a busca não trouxe
   não aparece na resposta.
-- O modelo às vezes deixa de usar uma evidência que trata do assunto.
+- O modelo às vezes deixa de usar uma evidência que trata do assunto. Na
+  [avaliação](avaliacao.md), ele usou 141 de 150 evidências relevantes.

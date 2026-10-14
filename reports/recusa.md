@@ -116,8 +116,9 @@ Exemplos do aviso mostrado:
 
 As perguntas deste teste foram as mesmas usadas para definir os limites e ajustar a
 instrução do modelo. Por isso o resultado mostra que o sistema faz o que foi
-planejado, mas não mede como ele se sai com perguntas novas. Essa medida é feita na
-etapa de avaliação, com perguntas que não foram usadas aqui.
+planejado, mas não mede como ele se sai com perguntas novas. Essa medida está na
+[avaliação](avaliacao.md): com perguntas novas, o sistema recusou 18 de 20 perguntas
+sem resposta e nenhuma das 20 respondíveis.
 
 ## Limitações
 

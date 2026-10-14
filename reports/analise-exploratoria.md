@@ -107,8 +107,8 @@ nomes. Por isso não é possível responder perguntas sobre uma loja pelo nome r
 
 Para ter uma ideia dos assuntos mais citados, contei os comentários que têm
 palavras-chave de cada tema. É uma estimativa simples, e um comentário pode citar
-mais de um tema. Esses números vão ser usados na etapa de avaliação para comparar
-com as respostas do sistema.
+mais de um tema. Esses números são usados na [avaliação](avaliacao.md) para
+conferir as respostas do sistema.
 
 | Tema | % dos comentários | % com nota 1 ou 2 |
 |---|---|---|
