@@ -65,7 +65,60 @@ Dois pontos da base influenciam o projeto:
 
 ## 4. Arquitetura
 
-_Preenchido no Passo 10._
+A solução tem duas partes. A preparação roda uma vez e gera a base de conhecimento
+e os índices. A resposta roda a cada pergunta e faz no máximo duas chamadas ao
+Gemini: uma para transformar a pergunta e outra para gerar a resposta.
+
+```mermaid
+flowchart TD
+    subgraph preparacao["Preparação (roda uma vez)"]
+        A["CSV de avaliações da Olist"] --> B["Seleção e limpeza<br/>35.957 documentos"]
+        B --> C["Embeddings<br/>MiniLM multilíngue, local"]
+        C --> D[("Índice FAISS")]
+        B --> E[("Índice BM25")]
+    end
+
+    subgraph resposta["Resposta (a cada pergunta)"]
+        P["Pergunta"] --> G{"A pergunta se parece<br/>com alguma avaliação?"}
+        G -- não --> R1["Recusa sem chamar o modelo"]
+        G -- sim --> T["Transformação da pergunta<br/>Gemini escreve 5 frases de cliente"]
+        T --> V["Busca por significado<br/>pergunta e frases"]
+        T --> L["Busca por palavras<br/>só as frases"]
+        V --> F["Fusão com RRF e seleção<br/>10 evidências, parecidas agrupadas"]
+        L --> F
+        F --> X["Contexto<br/>evidências numeradas entre marcas"]
+        X --> M["Geração<br/>Gemini devolve conclusões com os números das evidências"]
+        M --> W["Validação e contagem<br/>feitas pelo programa"]
+        W --> S["Resposta com evidências,<br/>resposta parcial ou recusa"]
+    end
+
+    D -.-> V
+    E -.-> L
+```
+
+O enunciado descreve o fluxo de um RAG em sete etapas. A tabela mostra o que cada
+uma faz no projeto e onde está o código.
+
+| Etapa do enunciado | No projeto | Código |
+|---|---|---|
+| Pergunta do usuário | Interface em Streamlit ou linha de comando | `app/app.py` |
+| Processamento da pergunta | A pergunta é comparada com a base para a primeira conferência de recusa. Depois o Gemini a reescreve como cinco frases que um cliente escreveria | `src/geracao/responder.py`, `src/recuperacao/transformacao.py` |
+| Representação vetorial | A pergunta e as frases viram vetores com o mesmo modelo usado na base | `src/indexacao/indice.py` |
+| Recuperação das avaliações | Busca por significado no FAISS e por palavras no BM25, fusão dos 11 rankings com RRF e agrupamento dos textos que dizem a mesma coisa | `src/recuperacao/recuperador.py` |
+| Construção do contexto | As 10 evidências vão numeradas, com a quantidade de avaliações iguais na base, entre marcas que as separam das instruções | `src/geracao/contexto.py` |
+| Geração da resposta | O Gemini devolve uma lista de conclusões, cada uma com os números das evidências que a sustentam, ou diz o que faltou para responder | `src/geracao/responder.py` |
+| Resposta fundamentada | O programa confere as citações, descarta conclusões sem evidência, conta as avaliações na base e define se a resposta é completa, parcial ou recusada | `src/geracao/responder.py` |
+
+Onde ficam os dados:
+
+| Componente | Arquivo | Versionado |
+|---|---|---|
+| Avaliações originais | `data/raw/olist_order_reviews_dataset.csv` | não, baixado do Kaggle |
+| Base de conhecimento | `data/processed/base_conhecimento.parquet` | não, gerada pelo código |
+| Índice vetorial | `data/indice/vetorial.faiss` e `manifesto.json` | não, gerado pelo código |
+| Índice de palavras | montado na memória quando a base é carregada | não |
+| Respostas do modelo já obtidas | `cache/*.json` | sim, para reproduzir os resultados sem gastar cota |
+| Parâmetros e limites | `config/settings.py` | sim |
 
 ## 5. Preparação da base de conhecimento
 
@@ -401,11 +454,13 @@ não mencionam o pagamento por Pix."
 
 | Etapa | Tecnologia |
 |---|---|
+| Linguagem | Python 3.12 |
 | Dados | pandas, kagglehub |
 | Embeddings | sentence-transformers (`paraphrase-multilingual-MiniLM-L12-v2`) |
 | Índice vetorial | FAISS |
 | Busca lexical | BM25 (`rank_bm25`) |
-| Geração da resposta | Gemini, via LangChain (`langchain-google-genai`) |
+| Transformação da pergunta e geração da resposta | Gemini (`gemini-flash-lite-latest`), via LangChain (`langchain-google-genai`), com saída estruturada em pydantic |
+| Avaliação | Gemini como juiz, com conferência manual de uma amostra |
 | Interface | Streamlit |
 
 ## 12. Decisões técnicas
@@ -436,12 +491,38 @@ não mencionam o pagamento por Pix."
 | Título junto com o comentário | Em parte das avaliações a informação está no título, como em "Não chegou meu produto" com o comentário "Péssimo" |
 | Textos repetidos mantidos na base | São avaliações de clientes diferentes, e a repetição mostra que o problema é frequente |
 | Frequências calculadas sobre os comentários | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários, então a base de texto tem mais reclamações que o total de avaliações |
-
-_Atualizado a cada passo._
+| Gemini Flash-Lite para transformar a pergunta e gerar a resposta | Tem cota gratuita, leva cerca de 1 segundo por chamada e aceita saída estruturada, o que permite receber as conclusões já com os números das evidências |
+| Chamadas ao modelo guardadas em cache | Os relatórios podem ser refeitos com as mesmas respostas e sem gastar cota. A chave do cache muda se o modelo, a instrução ou a pergunta mudar |
+| Interface que mostra cada etapa | O enunciado pede para demonstrar a transformação da pergunta, a recuperação, a seleção, o contexto e a geração. A interface mostra cada uma para a pergunta feita |
 
 ## 13. Limitações e evoluções
 
-_Preenchido no Passo 10._
+### Limitações
+
+| Limitação | Efeito |
+|---|---|
+| A base tem só quem escreveu comentário | As notas 1 e 2 são 14,6% das avaliações e 26,5% dos comentários. As quantidades da resposta valem para os comentários, e as reclamações pesam mais do que no total de clientes |
+| A quantidade de cada conclusão é um mínimo | A conta inclui só os textos muito parecidos com as evidências (similaridade a partir de 0,80). Avaliações sobre o mesmo tema escritas com outras palavras ficam de fora |
+| Cada resposta usa 10 evidências | Em perguntas amplas os temas menores ficam de fora. Na avaliação, troca e devolução, preço, embalagem e item faltando não apareceram nas respostas sobre os principais problemas |
+| Conclusões repetidas | Às vezes o modelo separa a mesma ideia em dois pontos, como "A entrega atrasou" e "O produto não chegou na data prevista" |
+| A recusa depende do modelo | A primeira conferência só barra perguntas muito distantes da base. Nas 10 perguntas novas fora do escopo, quem recusou foi o modelo |
+| Palavras com mais de um sentido | O sistema respondeu sobre seguro contra roubo com uma avaliação em que "seguro" quer dizer confiável, e sobre vale-presente com avaliações sobre voucher de reembolso |
+| Sem metadados | A base de conhecimento tem só o texto. Na avaliação, as perguntas sobre estado, categoria e mês foram recusadas, e não há como filtrar a resposta por nota ou período |
+| Lojas anonimizadas | Os nomes das lojas foram trocados na base pública, e por isso não dá para perguntar sobre uma loja específica |
+| Dependência do Gemini | No plano gratuito são 15 chamadas por minuto. O nome `gemini-flash-lite-latest` aponta para a versão mais nova do modelo, e as respostas podem mudar quando ela muda. O cache guarda as respostas usadas nos relatórios |
+| Avaliação pequena | São 40 perguntas novas, o juiz é o mesmo modelo que gera as respostas e a conferência manual cobriu 46 julgamentos |
+
+### Evoluções
+
+| Evolução | O que resolveria |
+|---|---|
+| Usar os metadados da base (nota, data, categoria e prazo de entrega) como filtros | Permitiria perguntas como "problemas nas avaliações com nota baixa" ou "elogios em uma categoria". Com as datas do pedido também dá para conferir se quem reclamou de atraso recebeu depois do prazo. É o desafio adicional do enunciado, que não foi feito |
+| Classificar todos os comentários por tema antes das perguntas | A quantidade passaria a ser o total de avaliações do tema, e as perguntas amplas poderiam cobrir os temas menores |
+| Reordenar as evidências com um cross-encoder | Na avaliação, uma em cada quatro evidências não tratava do assunto. Um modelo que lê a pergunta e a avaliação juntas pode melhorar essa precisão |
+| Juntar conclusões parecidas | Evitaria pontos repetidos na mesma resposta |
+| Conferir cada conclusão antes de mostrar | Uma chamada a mais ao modelo, como o juiz da avaliação, pegaria conclusões como a do dinheiro de volta, que junta a evidência com o assunto da pergunta |
+| Testar o modelo de embeddings maior na configuração completa | Na busca simples ele teve precisão de 0,63 contra 0,58. Os limites de similaridade teriam de ser medidos de novo |
+| Avaliação maior, com um juiz de outro modelo | Números mais estáveis e menos risco de o juiz concordar com os erros do próprio modelo |
 
 ---
 
@@ -465,7 +546,7 @@ tech-challenge-fase4/
 ├── app/               # interface de demonstração (Streamlit)
 ├── reports/           # números e resultados de cada etapa
 ├── images/            # figuras da análise
-└── docs/              # arquitetura, apresentação e vídeo
+└── docs/              # apresentação e vídeo
 ```
 
 ## Como executar
