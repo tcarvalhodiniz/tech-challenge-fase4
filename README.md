@@ -551,6 +551,7 @@ tech-challenge-fase4/
 ├── app/               # interface de demonstração (Streamlit)
 ├── reports/           # números e resultados de cada etapa
 ├── images/            # figuras da análise
+├── certificados/      # prints do curso complementar da Databricks
 └── docs/              # apresentação e vídeo
 ```
 
@@ -601,6 +602,27 @@ streamlit run app/app.py
 
 A interface abre em `http://localhost:8501`. Ela usa a base e os índices gerados
 nas etapas acima.
+
+---
+
+## Curso complementar
+
+Concluí a trilha Generative AI Engineering Pathway da Databricks Academy, com 7
+cursos, entre 4 e 13 de outubro de 2026.
+
+| Curso | Conclusão | Nota |
+|---|---|---|
+| Generative AI Fundamentals | 04/10/2026 | — |
+| Generative AI Fundamentals Accreditation | 04/10/2026 | 95 |
+| Building RAG Agents with Agent Bricks | 05/10/2026 | 90 |
+| Building Agentic Applications on Databricks | 09/10/2026 | 85 |
+| Agent Evaluation on Databricks | 11/10/2026 | 80 |
+| Deploying and Monitoring Agent Applications on Databricks | 13/10/2026 | 85 |
+| Preparing for Databricks Certification Exams | 13/10/2026 | — |
+
+![Trilha Generative AI Engineering Pathway concluída](certificados/databricks-trilha-concluida.png)
+
+![Os 7 cursos da trilha concluídos](certificados/databricks-cursos-concluidos.png)
 
 ---
 
