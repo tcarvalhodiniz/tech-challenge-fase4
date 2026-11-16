@@ -5,6 +5,11 @@ Solução de RAG sobre as avaliações de clientes da Olist. O usuário faz uma 
 em linguagem natural e recebe uma resposta baseada nos comentários dos clientes,
 junto com as avaliações usadas para montar a resposta.
 
+O vídeo da apresentação, com 5 minutos, está no
+[Loom](https://www.loom.com/share/6a830a3493a440e4a6aa1fd659d53cd8). O arquivo do
+vídeo também fica em [`docs/video-apresentacao.mp4`](docs/video-apresentacao.mp4),
+e os slides em [`docs/apresentacao.pptx`](docs/apresentacao.pptx).
+
 ---
 
 ## 1. Contexto e problema de negócio
